@@ -31,9 +31,10 @@
       "deliveryTip": 100
     }
   ],
+
   "store": [
-    { "id": 1, "address": "서울시 마포구", "deliveryFee": 2000 },
-    { "id": 2, "address": "서울시 강남구", "deliveryFee": 1350 },
-    { "id": 3, "address": "서울시 용산구", "deliveryFee": 1800 }
+    { "id": 1, "storeName": "김가네", "address": "서울시 마포구", "deliveryFee": 2000 },
+    { "id": 2, "storeName": "이가네", "address": "서울시 강남구", "deliveryFee": 1350 },
+    { "id": 3, "storeName": "최가네", "address": "서울시 용산구", "deliveryFee": 1800 }
   ]
 }

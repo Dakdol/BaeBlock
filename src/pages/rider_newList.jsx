@@ -1,11 +1,16 @@
 import React from 'react';
-import { OrderList } from '../components/OrderList';
+import { RiderOrderList } from '../components/Rider_orderList';
 
 export const RiderNewList = () => {
   return (
-    <div className='w-[350px] m-auto h-screen mt-4'>
-      <div>배달 목록 리스트</div>
-      <OrderList />
+    <div className='flex flex-col w-[350px] m-auto h-screen'>
+      <div className='font-a text-headline font-bold'>대기</div>
+      <RiderOrderList />
+      <div className='flex justify-center my-4'>
+        <button className='bg-colors-red px-4 py-2 rounded-md font-bold text-colors-lightGray'>
+          배달 시작!
+        </button>
+      </div>
     </div>
   );
 };

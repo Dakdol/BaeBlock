@@ -6,22 +6,31 @@ module.exports = {
       md: '390px',
     },
     colors: {
-      primary: {
-        lightYellow: '#FFD84D',
-        darkYellow: '#FFC805',
-        purple: '#AA3FFF',
+      colors: {
         mint: '#1EE7AB',
-      },
-
-      grayTone: {
-        defualt: '#B2B2C1',
+        purple: '#AA3FFF',
+        deepYellow: '#FFC805',
+        lightYellow: '#FFD84D',
+        red: '#fb2d2d',
         white: '#FAFAF2',
-        light: '#F1F0F8',
-        dark: '#7F7F82',
+        lightGray: '#F1F0F8',
+        gray: '#B2B2C1',
+        darkGray: '#7F7F82',
         black: '#2D2D32',
       },
     },
-    fontFamily: {},
+    fontFamily: {
+      sans: ['aGD'],
+    },
+    fontSize: {
+      headline: '26px',
+      subtitle: '20px',
+      body: '16px',
+      caption: '14px',
+    },
+    fontWeight: {
+      bold: 700,
+    },
   },
 
   plugins: [],

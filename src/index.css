@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'aGD';
+    font-weight: 400;
+    src: url(../public/fonts/aGD14.ttf) format('ttf');
+  }
+}
