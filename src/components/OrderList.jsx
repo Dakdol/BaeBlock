@@ -1,7 +1,7 @@
 import React from 'react';
 import testDB from '../db/testDB.json';
 
-export const RiderOrderList = () => {
+export const OrderList = () => {
   // 리스트 선택 시 고를 수 있는 기능
 
   return (
