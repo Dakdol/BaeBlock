@@ -2,6 +2,7 @@
   "customer": [
     {
       "id": 1,
+      "address": "서울시 마포구",
       "wishList": [
         { "foodName": "AAA", "quantity": 1, "cost": 5000 },
         { "foodName": "BBB", "quantity": 2, "cost": 12000 }
@@ -11,6 +12,7 @@
     },
     {
       "id": 2,
+      "address": "서울시 강남구",
       "wishList": [
         { "foodName": "CCC", "quantity": 1, "cost": 1200 },
         { "foodName": "DDD", "quantity": 2, "cost": 3800 }
@@ -20,6 +22,7 @@
     },
     {
       "id": 3,
+      "address": "서울시 용산구",
       "wishList": [
         { "foodName": "EEE", "quantity": 1, "cost": 15000 },
         { "foodName": "FFF", "quantity": 2, "cost": 27000 }
