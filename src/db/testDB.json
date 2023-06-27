@@ -1,0 +1,36 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "wishList": [
+        { "foodName": "AAA", "quantity": 1, "cost": 5000 },
+        { "foodName": "BBB", "quantity": 2, "cost": 12000 }
+      ],
+      "deliveryFee": 2000,
+      "deliveryTip": 500
+    },
+    {
+      "id": 2,
+      "wishList": [
+        { "foodName": "CCC", "quantity": 1, "cost": 1200 },
+        { "foodName": "DDD", "quantity": 2, "cost": 3800 }
+      ],
+      "deliveryFee": 1350,
+      "deliveryTip": 0
+    },
+    {
+      "id": 3,
+      "wishList": [
+        { "foodName": "EEE", "quantity": 1, "cost": 15000 },
+        { "foodName": "FFF", "quantity": 2, "cost": 27000 }
+      ],
+      "deliveryFee": 1800,
+      "deliveryTip": 100
+    }
+  ],
+  "store": [
+    { "id": 1, "address": "서울시 마포구", "deliveryFee": 2000 },
+    { "id": 2, "address": "서울시 강남구", "deliveryFee": 1350 },
+    { "id": 3, "address": "서울시 용산구", "deliveryFee": 1800 }
+  ]
+}
