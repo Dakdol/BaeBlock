@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className='min-h-screen flex justify-center items-center'>
-        <div className='bg-colors-white border-2 rounded-2xl border-colors-black max-w-screen-md max-h-[844px] h-screen mx-auto overflow-y-auto pt-[44px] text-colors-black'>
+        <div className='bg-colors-white border-2 rounded-2xl border-colors-black w-screen max-w-screen-md max-h-[844px] h-screen mx-auto overflow-y-auto pt-[44px] text-colors-black'>
           <Routes>
             <Route path='/store/newlist' element={<StoreNewList />} />
             <Route path='/store/mylist' element={<StoreMyList />} />
