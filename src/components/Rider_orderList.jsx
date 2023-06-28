@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import testDB from '../db/testDB.json';
 
 export const RiderOrderList = () => {
@@ -8,7 +7,7 @@ export const RiderOrderList = () => {
     <div>
       <ul className=''>
         {testDB.customer.map((v, i) => (
-          <li key={i} className='bg-colors-lightYellow my-2 rounded-md'>
+          <li key={i} className='bg-lightYellow my-2 rounded-md'>
             <div className='px-4 py-2'>
               <div className='flex justify-between font-bold'>
                 <div>15분</div>

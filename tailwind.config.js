@@ -5,15 +5,14 @@ module.exports = {
     screens: {
       md: '390px',
     },
-    colors: {
+    extend: {
       colors: {
         mint: '#1EE7AB',
         purple: '#AA3FFF',
         deepYellow: '#FFC805',
         lightYellow: '#FFD84D',
-        red: '#fb2d2d',
-        lightbage: '#FAFAF2',
         white: '#FFFFFF',
+        lightbage: '#FAFAF2',
         lightGray: '#F1F0F8',
         gray: '#B2B2C1',
         darkGray: '#7F7F82',
