@@ -6,11 +6,16 @@ import NftMarket from '../components/Main_nftMarket';
 
 import LongBox from '../components/Main_longBox';
 import Box from '../components/Main_recBox';
-import Badge from '../components/Work_Btn';
+import WorkBadgeBTN from '../components/Work_Btn';
 
 export default function RiderMain() {
   const [storeName, setStoreName] = useState('놀부 부대찌개'); //로그인에서 프롭스로 내려야할것같음
   const [monthProfit, setMonthProfit] = useState('100,000,000'); //로그인에서 프롭스로 내려야할것같음
+  const [isWork, setIsWork] = useState(false);
+
+  const toggleWorkBtn = () => {
+    setIsWork(!isWork);
+  };
 
   const nftTitle = [
     { title: '리뷰 최다' },
@@ -40,8 +45,11 @@ export default function RiderMain() {
             ))}
           </div>
         </div>
-        <div>
-          <Badge text='영업안함' color='bg-mint' />
+        <div onClick={toggleWorkBtn}>
+          <WorkBadgeBTN
+            text={isWork ? '영업중' : '영업안함'}
+            color={isWork ? 'bg-mint' : 'bg-gray'}
+          />
         </div>
       </div>
 

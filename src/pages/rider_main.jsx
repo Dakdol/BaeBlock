@@ -5,12 +5,17 @@ import { NFTChips } from '../components/Nft_Chips';
 import NftMarket from '../components/Main_nftMarket';
 import LongBox from '../components/Main_longBox';
 import Box from '../components/Main_recBox';
-import Badge from '../components/Work_Btn';
+import WorkBadgeBTN from '../components/Work_Btn';
 
 export default function RiderMain() {
   const [location, setLocation] = useState('서울시 강남구');
   const [nickName, setNickName] = useState('나는라이더다'); //로그인에서 프롭스로 내려야할것같음
   const [deliveryCount, setDeliveryCount] = useState(0); //로그인에서 프롭스로 내려야할것같음
+  const [isWork, setIsWork] = useState(false);
+
+  const toggleWorkBtn = () => {
+    setIsWork(!isWork);
+  };
 
   const nftTitle = [
     { title: '멕시칸' },
@@ -43,8 +48,11 @@ export default function RiderMain() {
             ))}
           </div>
         </div>
-        <div>
-          <Badge text='영업안함' color='bg-mint' />
+        <div onClick={toggleWorkBtn}>
+          <WorkBadgeBTN
+            text={isWork ? '배달중' : '배달안함'}
+            color={isWork ? 'bg-mint' : 'bg-gray'}
+          />
         </div>
       </div>
 

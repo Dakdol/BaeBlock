@@ -4,7 +4,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { AiOutlinePlusSquare } from 'react-icons/ai';
 import food from '../images/food.png';
 
-import MenuList from '../components/menuList';
+import MenuList from '../components/MenuList';
 import StoreIntroEdit from '../components/Store_IntroEdit';
 import { useState } from 'react';
 

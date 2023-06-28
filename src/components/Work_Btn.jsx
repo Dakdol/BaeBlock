@@ -1,10 +1,13 @@
-const workBadgeBTN = (props) => {
+const WorkBadgeBTN = (props) => {
+  const textWidth = props.color === 'bg-gray' ? 'w-12' : '';
+
   return (
     <div
       className={`w-20 h-20 ${props.color} text-lightBage flex justify-center items-center rounded-full border-2 basic-shadow`}>
-      <div className='text-subtitle font-bold text-center leading-tight'>영업중</div>
-      {/* <div className='text-subtitle font-bold text-center w-12 leading-tight'>영업안함</div> */}
+      <div className={`text-subtitle font-bold text-center leading-tight ${textWidth}`}>
+        {props.text}
+      </div>
     </div>
   );
 };
-export default workBadgeBTN;
+export default WorkBadgeBTN;
