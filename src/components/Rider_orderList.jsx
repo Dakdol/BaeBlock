@@ -6,11 +6,6 @@ export const RiderOrderList = () => {
 
   return (
     <div>
-      <div className='flex justify-center my-4'>
-        <button className='bg-colors-mint px-4 py-2 rounded-md mr-8 font-bold'>거리순</button>
-        <button className='bg-colors-purple px-4 py-2 rounded-md font-bold'>배달료순</button>
-      </div>
-
       <ul className=''>
         {testDB.customer.map((v, i) => (
           <li key={i} className='bg-colors-lightYellow my-2 rounded-md'>
