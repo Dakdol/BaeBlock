@@ -35,8 +35,8 @@ const StoreIntroEdit = (props) => {
         <AiOutlineRight size={20} color='7F7F82' />
       </div>
       <div className=' flex justify-center items-center gap-2 mt-4 '>
-        {[...Array(parseInt(props.NFTChips.length))].map((v, i) => (
-          <NFTChips title={props.NFTChips[i].name} key={i} size={24} color='FFD84D' />
+        {[...Array(parseInt(props.nftTitle.length))].map((v, i) => (
+          <NFTChips title={props.nftTitle[i].name} key={i} size={24} color='FFD84D' />
         ))}
       </div>
     </div>
