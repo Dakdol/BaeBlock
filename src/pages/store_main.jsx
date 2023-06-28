@@ -64,7 +64,7 @@ export default function RiderMain() {
 
         <div className='flex justify-between w-full'>
           <Box text='매출 보기' color='bg-lightBage' />
-          <Link to={'/store/menu-edit'}>
+          <Link to={'/store/menuedit'}>
             <Box text='메뉴 수정' color='bg-deepYellow' />
           </Link>
         </div>

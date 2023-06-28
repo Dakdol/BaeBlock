@@ -1,16 +1,18 @@
-import { IoIosArrowBack } from 'react-icons/io';
-import { AiOutlineHome } from 'react-icons/ai';
-
+import { useState } from 'react';
 import { AiOutlinePlusSquare } from 'react-icons/ai';
-import food from '../images/food.png';
+import plus from '../images/icon_plus.png';
 
+import back from '../images/icon_ArrowBack.png';
+import home from '../images/icon_home_.png';
+import food from '../images/food.png';
 import MenuList from '../components/MenuList';
 import StoreIntroEdit from '../components/Store_IntroEdit';
-import { useState } from 'react';
 
-export default function StoreMenu() {
-  const [storeName, setStoreName] = useState('매장명'); //로그인시 프롭스로 내려줘야함??
-  const nftTitle = [{ name: 'qwe' }, { name: 'Asd' }]; //로그인시 프롭스로 내려줘야함??
+export default function CustomerViewMenu() {
+  const [deliveryFee, setDeliveryFee] = useState(1000);
+  const [cartCount, setCartCount] = useState(0); //로그인시 프롭스로 내려줘야함??
+
+  const nftTitle = [{ name: '사장님' }, { name: '잘 되는지 확인' }]; //로그인시 프롭스로 내려줘야함??
   const menuList = [
     {
       menuName: '사과',
@@ -20,7 +22,7 @@ export default function StoreMenu() {
       ownerRecommend: true,
     },
     {
-      menuName: '복숭이',
+      menuName: '복숭아',
       menuFrom: '캐나다산',
       menuPrice: '17000',
       menuImage: '../images/orange.png',
@@ -28,41 +30,41 @@ export default function StoreMenu() {
     },
   ]; //로그인시 프롭스로 내려줘야함??
   return (
-    <div className='flex flex-col justify-start items-center relative'>
-      <div className='min-w-full bg-pink-100 h-[250px] relative'>
-        <button className='absolute top-[44px] left-[24px]'>
-          <IoIosArrowBack size={24} />
-        </button>
-        <button className='absolute top-[44px] left-[342px]'>
-          <AiOutlineHome size={24} />
-        </button>
-        <img src={food} alt='food' />
-      </div>
+    <>
+      <div className='flex flex-col justify-start items-center relative'>
+        <div className='min-w-full bg-pink-100 h-[250px] relative'>
+          <div className='absolute top-11 flex justify-between items-center min-w-full px-6'>
+            <img src={back} alt='back' />
+            <img src={home} alt='home' />
+          </div>
+          <img className='w-full h-full object-cover' src={food} alt='food' />
+        </div>
 
-      <div className='absolute top-[200px]'>
-        <StoreIntroEdit starCount='3' nftTitle={nftTitle} storeName={storeName} />
-      </div>
-
-      <div className='mt-[130px]' style={{ fontSize: '20px' }}>
-        <div className='font-agothic16'>메뉴</div>
-        {menuList.map((v, i) => (
-          <MenuList
-            key={i}
-            menuName={menuList[i].menuName}
-            menuFrom={menuList[i].menuFrom}
-            menuPrice={menuList[i].menuPrice}
-            menuImage={menuList[i].menuImage}
-            ownerRecommend={menuList[i].ownerRecommend}
-          />
-        ))}
-
-        <div
-          className='sticky  bottom-4 bg-white mb-4 font-agothic16 w-[350px]  flex justify-center items-center py-[20px]  mt-4 rounded-lg border-[2px] border-[#2D2D32]'
-          style={{ fontSize: '24px' }}>
-          메뉴 추가
-          <AiOutlinePlusSquare className='ml-2' size={24} color='purple' />
+        <div className='flex flex-col justify-center items-center absolute top-[180px]'>
+          <div className='flex flex-col'>
+            <StoreIntroEdit storeName='도널드 트럼프의 점심' nftTitle={nftTitle} starCount='5' />
+          </div>
+          <div className='mt-4'>
+            <div className='text-subtitle font-bold mb-2'>메뉴</div>
+            <div className='flex flex-col gap-4'>
+              {menuList.map((v, i) => (
+                <MenuList
+                  key={i}
+                  menuName={menuList[i].menuName}
+                  menuFrom={menuList[i].menuFrom}
+                  menuPrice={menuList[i].menuPrice}
+                  menuImage={menuList[i].menuImage}
+                  ownerRecommend={menuList[i].ownerRecommend}
+                />
+              ))}
+              <div className='bg-white w-[350px] h-[100px] flex justify-center items-center p-4 rounded-2xl border-2 border-darkGray solid-shadow font-bold text-headline'>
+                메뉴 추가
+                <img className='ml-4 w-6 h-6' src={plus} alt='plus button' />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

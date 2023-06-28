@@ -6,13 +6,13 @@ import user from '../images/icon_user.png';
 
 const BottomBar = () => {
   return (
-    <div className=' min-w-full'>
-      <div className='bg-white shadow-custom rounded-tl-[5px] rounded-tr-[5px] w-[390px] h-[60px] flex justify-evenly  items-center'>
-        <img className='w-[40px]' src={shop} alt='shop' />
-        <img className='w-[40px]' src={list} alt='list' />
-        <img className='w-[40px]' src={rocket} alt='rocket' />
-        <img className='w-[40px]' src={like} alt='like' />
-        <img className='w-[40px]' src={user} alt='user' />
+    <div className='w-[390px]'>
+      <div className='bg-white up-shadow rounded-t-3xl w-[390px] h-[60px] flex justify-evenly items-center'>
+        <img className='w-12' src={shop} alt='shop' />
+        <img className='w-12' src={list} alt='list' />
+        <img className='w-12' src={rocket} alt='rocket' />
+        <img className='w-12' src={like} alt='like' />
+        <img className='w-12' src={user} alt='user' />
       </div>
     </div>
   );

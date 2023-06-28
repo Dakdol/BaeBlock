@@ -20,7 +20,7 @@ function App() {
             <Route path='/store' element={<StoreMain />} />
             <Route path='/store/newlist' element={<StoreNewList />} />
             <Route path='/store/mylist' element={<StoreMyList />} />
-            <Route path='/store/menu-edit' element={<StoreMenu />} />
+            <Route path='/store/menuedit' element={<StoreMenu />} />
 
             <Route path='/rider' element={<RiderMain />} />
             <Route path='/rider/delivery' element={<RiderDeliveryStatus />} />
