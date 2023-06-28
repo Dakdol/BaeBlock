@@ -13,9 +13,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className='min-h-screen flex justify-center items-center'>
-        <div className='bg-white border-2 rounded-2xl border-black w-screen max-w-screen-md max-h-[844px] h-screen mx-auto overflow-y-auto pt-[44px] text-black'>
+        <div className='bg-white border-2 rounded-2xl border-black w-screen max-w-screen-md max-h-[844px] h-screen mx-auto overflow-y-auto text-black'>
           <Routes>
-            <Route path='/customer/storeview' element={<CustomerViewMenu />} />
+            <Route path='/customer/viewmenu' element={<CustomerViewMenu />} />
 
             <Route path='/store/main' element={<StoreMain />} />
             <Route path='/store/newlist' element={<StoreNewList />} />

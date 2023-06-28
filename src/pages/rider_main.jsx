@@ -1,48 +1,63 @@
 import { useState } from 'react';
-import NftTitle from '../badges/nftTitle';
+import { NFTChips } from '../components/Nft_Chips';
 
-import NftMarket from '../components/nftMarket';
+import NftMarket from '../components/Main_nftMarket';
 
-import LongBox from '../components/longBox';
-import Box from '../components/box';
-import Badge from '../badges/badge';
+import LongBox from '../components/Main_longBox';
+import Box from '../components/Main_recBox';
+import Badge from '../components/Work_Btn';
 
 export default function RiderMain() {
-  const [nickName, setNickName] = useState('나의 닉네임'); //로그인에서 프롭스로 내려야할것같음
+  const [location, setLocation] = useState('서울시 강남구');
+  const [nickName, setNickName] = useState('나는라이더다'); //로그인에서 프롭스로 내려야할것같음
   const [deliveryCount, setDeliveryCount] = useState(0); //로그인에서 프롭스로 내려야할것같음
 
-  const nftTitle = [{ title: '멕시칸' }, { title: '리뷰 최다' }, { title: '친절한 사장님' }]; //로그인에서 프롭스로 내려야할것같음
+  const nftTitle = [
+    { title: '멕시칸' },
+    { title: '리뷰 최다' },
+    { title: '친절한 사장님' },
+    { title: '친절한 사장님' },
+    { title: '친절한 사장님' },
+    { title: '친절한 사장님' },
+    { title: '친절한 사장님' },
+    { title: '친절한 사장님' },
+  ]; //로그인에서 프롭스로 내려야할것같음
 
   return (
-    <div className='flex flex-col justify-start items-center'>
-      <div className='border-[1px] mt-[44px] px-[6px] py-[3px]  rounded-[10px] border-[#2D2D32]'>
-        {nickName}
+    <div className='flex flex-col justify-center items-center pt-11 tracking-tighter mb-6'>
+      <div className='border-[1px] px-2 rounded-lg max-w-[250px] whitespace-nowrap overflow-ellipsis overflow-hidden '>
+        {location}
       </div>
-      <div
-        className='font-agothic13 w-[340px] h-[156px] mt-[16px] flex justify-start font-bold'
-        style={{ fontSize: '22px' }}>
-        {nickName} 라이더님!
-        <br />
-        어제 {deliveryCount}번 배달했어요!
-        <br />
-        <br />
-        오늘도 안전운전하세요!
-      </div>
-      <div className='w-[340px] flex justify-between  items-center mt-8 gap-2'>
-        <div className=' flex justify-start items-center mt-8 gap-2'>
-          {nftTitle.map((v, i) => (
-            <NftTitle title={nftTitle[i].title} key={i} size={24} color='FFD84D' />
-          ))}
-        </div>
-        <Badge text1='배달중' text2='' color='bg-mint' />
-      </div>
-      <LongBox text='새로운 배달을 시작해요!' color='bg-lightGray' />
 
-      <div className='w-[340px] flex justify-between items-center'>
-        <Box text1='오늘의' text2='수익' color='bg-white' />
-        <Box text1='나의' text2='프로필' color='bg-deepYellow' />
+      <div className='w-[360px] h-[156px] flex flex-col justify-between  mt-6'>
+        <div className='text-headline font-bold'>{nickName} 라이더님!</div>
+        <div className='text-headline font-bold'>어제 {deliveryCount}번 배달했어요!</div>
+        <div className='text-headline font-bold'>오늘도 안전 운전하세요!</div>{' '}
       </div>
-      <NftMarket />
+
+      <div className='w-[360px] flex justify-between items-end mt-6'>
+        <div className='w-80'>
+          <div className=' flex justify-start items-center gap-2 flex-wrap overflow-hidden h-16'>
+            {nftTitle.map((v, i) => (
+              <NFTChips key={i} title={nftTitle[i].title} />
+            ))}
+          </div>
+        </div>
+        <div>
+          <Badge text='영업안함' color='bg-mint' />
+        </div>
+      </div>
+
+      <div className='w-[360px] flex flex-col justify-between items-center gap-4 mt-6'>
+        <LongBox text='새로운 배달을 시작해요!' color='bg-lightGray' />
+
+        <div className='flex justify-between w-full'>
+          <Box text='오늘의 수익' color='bg-lightBage' />
+          <Box text='나의 프로필' color='bg-deepYellow' />
+        </div>
+
+        <NftMarket />
+      </div>
     </div>
   );
 }

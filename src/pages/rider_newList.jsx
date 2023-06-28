@@ -3,7 +3,7 @@ import { RiderOrderList } from '../components/Rider_orderList';
 
 export const RiderNewList = () => {
   return (
-    <div className='flex flex-col w-[350px] m-auto h-screen'>
+    <div className='flex flex-col w-[350px] m-auto h-screen pt-11'>
       <div className='font-a text-headline font-bold'>대기</div>
       <div className='flex justify-center my-4'>
         <button className='bg-mint px-4 py-2 rounded-md mr-8 font-bold'>거리순</button>

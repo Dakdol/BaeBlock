@@ -5,7 +5,7 @@ import { AiOutlinePlusSquare } from 'react-icons/ai';
 import food from '../images/food.png';
 
 import MenuList from '../components/menuList';
-import StoreIntroEdit from '../components/storeIntroEdit';
+import StoreIntroEdit from '../components/Store_IntroEdit';
 import { useState } from 'react';
 
 export default function StoreMenu() {

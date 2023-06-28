@@ -1,4 +1,4 @@
-import NftTitle from '../badges/nftTitle';
+import { NFTChips } from '../components/Nft_Chips';
 import star from '../images/icon_star.png';
 import rightArrow from '../images/icon_chevron right_.png';
 
@@ -17,8 +17,8 @@ const StoreIntro = (props) => {
         <img src={rightArrow} alt='rightArrow' />
       </div>
       <div className=' flex justify-center items-center gap-2 mt-4 '>
-        {[...Array(parseInt(props.nftTitle.length))].map((v, i) => (
-          <NftTitle title={props.nftTitle[i].name} key={i} size={24} color='FFD84D' />
+        {[...Array(parseInt(props.NFTChips.length))].map((v, i) => (
+          <NFTChips title={props.NFTChips[i].name} key={i} size={24} color='FFD84D' />
         ))}
       </div>
     </div>

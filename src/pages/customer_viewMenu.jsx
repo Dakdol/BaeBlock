@@ -8,7 +8,7 @@ import food from '../images/food.png';
 import MenuList from '../components/menuList';
 import CartIcon from '../components/cartIcon';
 import BottomBar from '../components/bottomBar';
-import StoreIntro from '../components/storeIntro';
+import StoreIntro from '../components/Store_Intro';
 import { useState } from 'react';
 
 export default function CustomerViewMenu() {
