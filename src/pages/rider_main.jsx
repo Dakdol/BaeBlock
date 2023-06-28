@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { NFTChips } from '../components/Nft_Chips';
-
 import NftMarket from '../components/Main_nftMarket';
-
 import LongBox from '../components/Main_longBox';
 import Box from '../components/Main_recBox';
 import Badge from '../components/Work_Btn';
@@ -49,7 +49,13 @@ export default function RiderMain() {
       </div>
 
       <div className='w-[360px] flex flex-col justify-between items-center gap-4 mt-6'>
-        <LongBox text='새로운 배달을 시작해요!' color='bg-lightGray' />
+        <Link to={'/rider/newlist'}>
+          <LongBox text='새로운 배달을 시작해요!' color='bg-lightGray' />
+        </Link>
+
+        <Link to={'/rider/delivery'}>
+          <LongBox text='현재 배달 중인 목록' color='bg-lightGray' />
+        </Link>
 
         <div className='flex justify-between w-full'>
           <Box text='오늘의 수익' color='bg-lightBage' />
