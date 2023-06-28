@@ -1,13 +1,11 @@
-import { IoIosArrowBack } from 'react-icons/io';
-import { AiOutlineHome } from 'react-icons/ai';
 import back from '../images/icon_ArrowBack.png';
 import home from '../images/icon_home_.png';
 
 import food from '../images/food.png';
 
 import MenuList from '../components/MenuList';
-import CartIcon from '../components/cartIcon';
-import BottomBar from '../components/bottomBar';
+import CartIcon from '../components/CartIcon';
+import BottomBar from '../components/Customer_BottomNav';
 import StoreIntro from '../components/Store_Intro';
 import { useState } from 'react';
 
@@ -15,7 +13,7 @@ export default function CustomerViewMenu() {
   const [deliveryFee, setDeliveryFee] = useState(1000);
   const [cartCount, setCartCount] = useState(0); //로그인시 프롭스로 내려줘야함??
 
-  const nftTitle = [{ name: 'qwe' }, { name: 'Asd' }]; //로그인시 프롭스로 내려줘야함??
+  const nftTitle = [{ name: '사장님' }, { name: '잘 되는지 확인' }]; //로그인시 프롭스로 내려줘야함??
   const menuList = [
     {
       menuName: '사과',
@@ -25,7 +23,7 @@ export default function CustomerViewMenu() {
       ownerRecommend: true,
     },
     {
-      menuName: '복숭이',
+      menuName: '복숭아',
       menuFrom: '캐나다산',
       menuPrice: '17000',
       menuImage: '../images/orange.png',
@@ -36,7 +34,7 @@ export default function CustomerViewMenu() {
     <>
       <div className='flex flex-col justify-start items-center relative'>
         <div className='min-w-full bg-pink-100 h-[250px] relative'>
-          <div className='absolute top-[44px] flex justify-between items-center min-w-full px-6'>
+          <div className='absolute top-11 flex justify-between items-center min-w-full px-6'>
             <img src={back} alt='back' />
             <img src={home} alt='home' />
           </div>
@@ -51,21 +49,23 @@ export default function CustomerViewMenu() {
             배달료 {deliveryFee}원!
           </div>
 
-          <StoreIntro storeName='도널드 트럼프의 점심식사!' nftTitle={nftTitle} starCount='3' />
+          <StoreIntro storeName='안녕하세요!' nftTitle={nftTitle} starCount='3' />
         </div>
 
-        <div className='mt-[150px]' style={{ fontSize: '20px' }}>
-          <div className='font-agothic16'>메뉴</div>
-          {menuList.map((v, i) => (
-            <MenuList
-              key={i}
-              menuName={menuList[i].menuName}
-              menuFrom={menuList[i].menuFrom}
-              menuPrice={menuList[i].menuPrice}
-              menuImage={menuList[i].menuImage}
-              ownerRecommend={menuList[i].ownerRecommend}
-            />
-          ))}
+        <div className='mt-[150px]'>
+          <div className='text-subtitle font-bold mb-4'>메뉴</div>
+          <div className='flex flex-col gap-4'>
+            {menuList.map((v, i) => (
+              <MenuList
+                key={i}
+                menuName={menuList[i].menuName}
+                menuFrom={menuList[i].menuFrom}
+                menuPrice={menuList[i].menuPrice}
+                menuImage={menuList[i].menuImage}
+                ownerRecommend={menuList[i].ownerRecommend}
+              />
+            ))}
+          </div>
         </div>
       </div>
       <div className='sticky bottom-0  mt-[250px]'>
