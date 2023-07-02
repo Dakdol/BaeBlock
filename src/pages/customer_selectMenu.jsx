@@ -7,7 +7,7 @@ import BtnNav from '../components/BtnNav';
 import { CustomerMenuDetail } from '../components/Customer_menuDetail';
 
 function CustomerSelectMenu() {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   const onClickAdd = () => {
     setCounter(counter + 1);
   };
@@ -37,7 +37,7 @@ function CustomerSelectMenu() {
         <div className='flex flex-col gap-3'>
           <div className='flex items-center gap-2'>
             <FaRegSquareMinus size={22} color='#AA3FFF' onClick={onClickSub} />
-            <div className='text-caption'>{counter}</div>
+            <div className='text-body'>{counter}</div>
             <FaRegSquarePlus size={22} color='#AA3FFF' onClick={onClickAdd} />
           </div>
         </div>

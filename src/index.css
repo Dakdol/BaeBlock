@@ -26,14 +26,22 @@
     box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.15);
   }
 
+  .category-shadow {
+    box-shadow: 0px 1px 1px 0px rgba(178, 178, 193, 0.25);
+  }
+
   .yellow-shadow {
-    box-shadow: 2px 2px 0px 2px #ffd84d;
+    box-shadow: 0px 4px 0px 0px #ffc805;
+  }
+
+  .gray-shadow {
+    box-shadow: 0px 4px 0px 0px #b2b2c1;
   }
 
   .red-shadow {
     box-shadow: 0px 2px 0px 0px #c72121;
   }
   .btn-style {
-    @apply w-[276px] h-[53px] rounded-[10px] font-bold text-[20px];
+    @apply w-[276px] h-[52px] rounded-[12px] font-bold text-[20px];
   }
 }

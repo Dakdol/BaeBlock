@@ -1,9 +1,5 @@
 import { useState } from 'react';
-import { AiOutlinePlusSquare } from 'react-icons/ai';
 import plus from '../images/icon_plus.png';
-
-import back from '../images/icon_ArrowBack.png';
-import home from '../images/icon_home_.png';
 import food from '../images/food.png';
 import MenuList from '../components/MenuList';
 import StoreIntroEdit from '../components/Store_IntroEdit';
@@ -36,7 +32,7 @@ export default function CustomerViewMenu() {
           <img className='w-full h-full object-cover' src={food} alt='food' />
         </div>
 
-        <div className='flex flex-col justify-center items-center absolute top-[300px]'>
+        <div className='flex flex-col justify-center items-center absolute top-[360px]'>
           <div className='flex flex-col'>
             <StoreIntroEdit storeName='도널드 트럼프의 점심' nftTitle={nftTitle} starCount='5' />
           </div>

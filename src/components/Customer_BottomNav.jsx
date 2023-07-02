@@ -6,7 +6,7 @@ import user from '../images/icon_user.png';
 
 const BottomBar = () => {
   return (
-    <div className='bg-white up-shadow rounded-t-3xl w-[386px] h-[60px] flex justify-evenly items-center'>
+    <div className='bg-white up-shadow rounded-t-3xl pt-1 w-[386px] h-[60px] flex justify-evenly items-center'>
       <img className='w-12' src={shop} alt='shop' />
       <img className='w-12' src={list} alt='list' />
       <img className='w-12' src={rocket} alt='rocket' />
