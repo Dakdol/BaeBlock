@@ -1,6 +1,3 @@
-import back from '../images/icon_ArrowBack.png';
-import home from '../images/icon_home_.png';
-
 import food from '../images/food.png';
 
 import MenuList from '../components/MenuList';
