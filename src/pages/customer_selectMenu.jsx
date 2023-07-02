@@ -18,8 +18,11 @@ function CustomerSelectMenu() {
   };
 
   return (
-    <div className='flex flex-col h-[808px] relative'>
-      <img src={food} alt='food' />
+    <div className='flex flex-col h-[808px]'>
+      <div className='min-w-full bg-pink-100 h-[250px]'>
+        <img className='w-full h-full object-cover' src={food} alt='food' />
+      </div>
+
       <div className='flex justify-between items-center mx-6 mt-4 mb-6'>
         <div className='font-bold text-headline'>타코야키</div>
         <div className='font-bold text-body'>15000원</div>

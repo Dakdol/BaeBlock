@@ -4,7 +4,7 @@ import rightArrow from '../images/icon_chevron right_.png';
 
 const StoreIntro = (props) => {
   return (
-    <div className='bg-white w-80 h-[140px] flex flex-cols justify-center items-center rounded-2xl border-2 border-black yellow-shadow'>
+    <div className='bg-white w-80 h-[140px] flex flex-cols justify-center items-center rounded-2xl border-[1.5px] border-black yellow-shadow'>
       <div>
         <div className='flex flex-col justify-center items-center'>
           <div className='w-72 text-center font-bold text-headline whitespace-nowrap overflow-hidden overflow-ellipsis tracking-tighter'>

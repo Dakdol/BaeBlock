@@ -2,6 +2,7 @@
   "customer": [
     {
       "id": 1,
+      "wallet": "0x0000",
       "address": "서울시 마포구",
       "wishList": [
         { "foodName": "AAA", "quantity": 1, "cost": 5000 },
@@ -12,6 +13,7 @@
     },
     {
       "id": 2,
+      "wallet": "0x0000",
       "address": "서울시 강남구",
       "wishList": [
         { "foodName": "CCC", "quantity": 1, "cost": 1200 },
@@ -22,6 +24,7 @@
     },
     {
       "id": 3,
+      "wallet": "0x0000",
       "address": "서울시 용산구",
       "wishList": [
         { "foodName": "EEE", "quantity": 1, "cost": 15000 },
@@ -33,8 +36,32 @@
   ],
 
   "store": [
-    { "id": 1, "storeName": "김가네", "address": "서울시 마포구", "deliveryFee": 2000 },
-    { "id": 2, "storeName": "이가네", "address": "서울시 강남구", "deliveryFee": 1350 },
-    { "id": 3, "storeName": "최가네", "address": "서울시 용산구", "deliveryFee": 1800 }
+    {
+      "id": 1,
+      "wallet": "0x0000",
+      "storeName": "김가네",
+      "address": "서울시 마포구",
+      "deliveryFee": 2000
+    },
+    {
+      "id": 2,
+      "wallet": "0x0000",
+      "storeName": "이가네",
+      "address": "서울시 강남구",
+      "deliveryFee": 1350
+    },
+    {
+      "id": 3,
+      "wallet": "0x0000",
+      "storeName": "최가네",
+      "address": "서울시 용산구",
+      "deliveryFee": 1800
+    }
+  ],
+
+  "rider": [
+    {
+      "wallet": "0x0000"
+    }
   ]
 }
