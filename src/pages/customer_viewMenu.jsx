@@ -8,6 +8,7 @@ import CartIcon from '../components/CartIcon';
 import BottomBar from '../components/Customer_BottomNav';
 import StoreIntro from '../components/Store_Intro';
 import { useState } from 'react';
+import BtnNav from '../components/BtnNav';
 
 export default function CustomerViewMenu() {
   const [deliveryFee, setDeliveryFee] = useState(1000);
@@ -30,14 +31,11 @@ export default function CustomerViewMenu() {
       ownerRecommend: false,
     },
   ]; //로그인시 프롭스로 내려줘야함??
+
   return (
     <>
       <div className='flex flex-col justify-start items-center relative'>
         <div className='min-w-full bg-pink-100 h-[250px] relative'>
-          {/* <div className='absolute top-11 flex justify-between items-center min-w-full px-6'>
-            <img src={back} alt='back' />
-            <img src={home} alt='home' />
-          </div> */}
           <img className='w-full h-full object-cover' src={food} alt='food' />
         </div>
 

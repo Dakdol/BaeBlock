@@ -7,6 +7,7 @@ import NftMarket from '../components/Main_nftMarket';
 import LongBox from '../components/Main_longBox';
 import Box from '../components/Main_recBox';
 import WorkBadgeBTN from '../components/Work_Btn';
+import BtnNav from '../components/BtnNav';
 
 export default function RiderMain() {
   const [storeName, setStoreName] = useState('놀부 부대찌개'); //로그인에서 프롭스로 내려야할것같음
@@ -26,18 +27,18 @@ export default function RiderMain() {
   ]; //로그인에서 프롭스로 내려야할것같음
 
   return (
-    <div className='flex flex-col justify-center items-center pt-11 tracking-tighter mb-6'>
-      <div className='border-[1px] px-2 rounded-lg max-w-[250px] whitespace-nowrap overflow-ellipsis overflow-hidden '>
+    <div className='flex flex-col justify-center items-center tracking-tighter mt-4 mb-6'>
+      <div className='border-[1px] px-2 rounded-lg max-w-[250px] whitespace-nowrap overflow-ellipsis overflow-hidden'>
         {storeName}
       </div>
 
-      <div className='w-[360px] h-[156px] mt-6 flex flex-col justify-between'>
+      <div className='w-[360px] flex flex-col gap-2 justify-between my-8'>
         <div className='text-headline font-bold'>{storeName} 사장님!</div>
-        <div className='text-headline font-bold'>이번 달 매출은 {monthProfit}원 입니다!</div>
-        <div className='text-headline font-bold'>오늘도 잘 먹겠습니다!</div>{' '}
+        <div className='text-subtitle font-bold'>이번 달 매출은 {monthProfit}원 입니다!</div>
+        <div className='text-subtitle font-bold'>오늘도 잘 먹겠습니다!</div>{' '}
       </div>
 
-      <div className='w-[360px] flex justify-between items-end mt-6'>
+      <div className='w-[360px] flex justify-between items-end'>
         <div className='w-80'>
           <div className=' flex justify-start items-center gap-2 flex-wrap overflow-hidden h-16'>
             {nftTitle.map((v, i) => (
@@ -53,7 +54,7 @@ export default function RiderMain() {
         </div>
       </div>
 
-      <div className='w-[360px] flex flex-col justify-between items-center gap-4 mt-6'>
+      <div className='w-[360px] flex flex-col justify-between items-center gap-4 mt-8'>
         <Link to={'/store/newlist'}>
           <LongBox text='새로운 주문이 들어왔어요!' color='bg-lightGray' />
         </Link>
@@ -64,7 +65,7 @@ export default function RiderMain() {
 
         <div className='flex justify-between w-full'>
           <Box text='매출 보기' color='bg-lightBage' />
-          <Link to={'/store/menuedit'}>
+          <Link to={'/store/edit'}>
             <Box text='메뉴 수정' color='bg-deepYellow' />
           </Link>
         </div>

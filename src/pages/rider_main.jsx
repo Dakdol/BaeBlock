@@ -29,18 +29,18 @@ export default function RiderMain() {
   ]; //로그인에서 프롭스로 내려야할것같음
 
   return (
-    <div className='flex flex-col justify-center items-center pt-11 tracking-tighter mb-6'>
+    <div className='flex flex-col justify-center items-center tracking-tighter mt-4 mb-6'>
       <div className='border-[1px] px-2 rounded-lg max-w-[250px] whitespace-nowrap overflow-ellipsis overflow-hidden '>
         {location}
       </div>
 
-      <div className='w-[360px] h-[156px] flex flex-col justify-between  mt-6'>
+      <div className='w-[360px] flex flex-col gap-2 justify-between my-8'>
         <div className='text-headline font-bold'>{nickName} 라이더님!</div>
-        <div className='text-headline font-bold'>어제 {deliveryCount}번 배달했어요!</div>
-        <div className='text-headline font-bold'>오늘도 안전 운전하세요!</div>{' '}
+        <div className='text-subtitle font-bold'>어제 {deliveryCount}번 배달했어요!</div>
+        <div className='text-subtitle font-bold'>오늘도 안전 운전하세요!</div>{' '}
       </div>
 
-      <div className='w-[360px] flex justify-between items-end mt-6'>
+      <div className='w-[360px] flex justify-between items-end'>
         <div className='w-80'>
           <div className=' flex justify-start items-center gap-2 flex-wrap overflow-hidden h-16'>
             {nftTitle.map((v, i) => (
@@ -56,7 +56,7 @@ export default function RiderMain() {
         </div>
       </div>
 
-      <div className='w-[360px] flex flex-col justify-between items-center gap-4 mt-6'>
+      <div className='w-[360px] flex flex-col justify-between items-center gap-4 mt-8'>
         <Link to={'/rider/newlist'}>
           <LongBox text='새로운 배달을 시작해요!' color='bg-lightGray' />
         </Link>
