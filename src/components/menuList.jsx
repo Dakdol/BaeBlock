@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import pencil from '../images/icon_pencil_.png';
 
 const MenuList = (props) => {
@@ -20,7 +21,9 @@ const MenuList = (props) => {
       <div className='relative bg-darkGray rounded-lg w-20 h-20 border-4 border-deepYellow'>
         <img src={props.menuImage} alt='' />
         <div className='absolute bottom-[-12px] right-[-12px]'>
-          <img src={pencil} alt='pencil' />
+          <Link to='/store/edit/menu'>
+            <img src={pencil} alt='pencil' />
+          </Link>
         </div>
       </div>
     </div>

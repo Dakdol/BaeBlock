@@ -31,16 +31,12 @@ export default function CustomerViewMenu() {
   ]; //로그인시 프롭스로 내려줘야함??
   return (
     <>
-      <div className='flex flex-col justify-start items-center relative'>
-        <div className='min-w-full bg-pink-100 h-[250px] relative'>
-          <div className='absolute top-11 flex justify-between items-center min-w-full px-6'>
-            <img src={back} alt='back' />
-            <img src={home} alt='home' />
-          </div>
+      <div className='flex flex-col justify-start items-center'>
+        <div className='min-w-full bg-pink-100 h-[250px]'>
           <img className='w-full h-full object-cover' src={food} alt='food' />
         </div>
 
-        <div className='flex flex-col justify-center items-center absolute top-[180px]'>
+        <div className='flex flex-col justify-center items-center absolute top-[300px]'>
           <div className='flex flex-col'>
             <StoreIntroEdit storeName='도널드 트럼프의 점심' nftTitle={nftTitle} starCount='5' />
           </div>

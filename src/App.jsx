@@ -23,7 +23,6 @@ function App() {
           <BtnNav />
           <Routes>
             <Route path='/customer/viewmenu' element={<CustomerViewMenu />} />
-
             <Route path='/customer/selectmenu' element={<CustomerSelectMenu />} />
             <Route path='/customer/ordercomplete' element={<CustomerOrderComplete />} />
 
