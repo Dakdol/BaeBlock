@@ -18,14 +18,10 @@ function CustomerSelectMenu() {
   };
 
   return (
-    <div className='flex flex-col overflow-y-auto'>
-      <div className='flex flex-col'>
-        <BtnNav />
-        <img src={food} alt='food' />
-      </div>
-
-      <div className='flex justify-between items-center mx-8 mt-4 mb-6'>
-        <div className='font-bold text-headline'>귤</div>
+    <div className='flex flex-col h-[808px] relative'>
+      <img src={food} alt='food' />
+      <div className='flex justify-between items-center mx-6 mt-4 mb-6'>
+        <div className='font-bold text-headline'>타코야키</div>
         <div className='font-bold text-body'>15000원</div>
       </div>
 
@@ -33,7 +29,7 @@ function CustomerSelectMenu() {
       <CustomerMenuDetail />
       <CustomerMenuDetail />
 
-      <div className='flex flex-col mx-6 mb-12'>
+      <div className='flex flex-col mx-6 mb-8'>
         <div className='font-bold text-body mb-4'>수량</div>
         <div className='flex flex-col gap-3'>
           <div className='flex items-center gap-2'>
@@ -41,15 +37,18 @@ function CustomerSelectMenu() {
             <div className='text-caption'>{counter}</div>
             <FaRegSquarePlus size={22} color='#AA3FFF' onClick={onClickAdd} />
           </div>
-          <div class='border-t border-lightGray border-[1px]'></div>
         </div>
       </div>
 
-      <div className='flex justify-between items-center px-4 py-4 border-t-2 border-lightGray'>
-        <div className='font-bold text-body'>총 : 15000 원</div>
-        <button className='text-subtitle font-bold bg-lightYellow rounded-xl px-6 py-2'>
-          카트에 담기
-        </button>
+      <div className='sticky bottom-0'>
+        <div className='bg-white rounded-b-2xl w-[386px]'>
+          <div className='flex justify-between items-center px-4 py-4 border-t-2 border-lightGray'>
+            <div className='font-bold text-body'>총 : 15000 원</div>
+            <button className='text-subtitle font-bold bg-lightYellow rounded-xl px-6 py-2'>
+              카트에 담기
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

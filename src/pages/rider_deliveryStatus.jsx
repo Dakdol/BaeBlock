@@ -18,7 +18,7 @@ export const RiderDeliveryStatus = () => {
           />
         </div>
       </div>
-      <div className='flex overflow-x-auto mt-6 ml-5'>
+      <div className='flex overflow-x-auto pt-5 pb-2 ml-5'>
         <RiderSelectedOrder />
         <RiderSelectedOrder />
         <RiderSelectedOrder />

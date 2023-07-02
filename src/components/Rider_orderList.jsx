@@ -5,9 +5,9 @@ export const RiderOrderList = () => {
 
   return (
     <div>
-      <ul className=''>
+      <ul>
         {testDB.customer.map((v, i) => (
-          <li key={i} className='bg-lightYellow my-2 rounded-md'>
+          <li key={i} className='bg-white mb-3 rounded-lg border-2 border-black solid-shadow'>
             <div className='px-4 py-2'>
               <div className='flex justify-between font-bold'>
                 <div>15분</div>
