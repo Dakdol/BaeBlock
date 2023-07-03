@@ -30,7 +30,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className='min-h-screen flex justify-center items-center'>
-        <div className='bg-white border-2 rounded-2xl border-black w-screen max-w-screen-md max-h-[844px] h-screen mx-auto overflow-y-auto text-black tracking-tighter'>
+        <div className='bg-white border-2 rounded-2xl border-black w-screen h-screen  max-w-screen-md max-h-[844px] mx-auto overflow-y-auto text-black tracking-tighter'>
           <Header />
           <BtnNav />
           <Routes>

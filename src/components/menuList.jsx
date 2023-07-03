@@ -23,11 +23,13 @@ const MenuList = (props) => {
 
       <div className='relative bg-darkGray rounded-lg w-20 h-20 border-4 border-deepYellow'>
         <img src={props.menuImage} alt='' />
-        <div className='absolute bottom-[-12px] right-[-12px]'>
-          <Link to='/store/edit/menu'>
-            <img src={pencil} alt='pencil' />
-          </Link>
-        </div>
+        {props.showPencile && (
+          <div className='absolute bottom-[-12px] right-[-12px]'>
+            <Link to='/store/edit/menu'>
+              <img src={pencil} alt='pencil' />
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

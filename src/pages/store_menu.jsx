@@ -47,6 +47,7 @@ export default function CustomerViewMenu() {
                   menuPrice={menuList[i].menuPrice}
                   menuImage={menuList[i].menuImage}
                   ownerRecommend={menuList[i].ownerRecommend}
+                  showPencile={true}
                 />
               ))}
               <div className='bg-white w-[350px] h-[100px] flex justify-center items-center p-4 rounded-2xl border-2 border-darkGray solid-shadow font-bold text-headline'>
