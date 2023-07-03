@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const RiderRegistDetail = () => {
   return (
-    <div className='flex flex-col justify-center items-center mt-24 tracking-tighter'>
+    <div className='flex flex-col justify-center items-center mt-24'>
       <div className='font-bold text-[24px]'>메타마스크 연결에 성공했어요!</div>
       <div className='text-subtitle text-center mt-5'>
         라이더님의 추가정보를<p className='mt-1'>입력해주세요!</p>

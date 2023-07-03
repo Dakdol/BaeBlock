@@ -21,7 +21,7 @@ export const StoreRegist = () => {
   };
 
   return (
-    <div className='flex flex-col justify-center items-center mt-24 tracking-tighter'>
+    <div className='flex flex-col justify-center items-center mt-24'>
       <div className='font-bold text-[24px]'>메타마스크로 간편하게 가입해요.</div>
       <div className='flex flex-col justify-center items-center gap-1 mt-8'>
         <div className='text-body'>배불럭은 이더리움의 스마트 컨트랙트를 활용한</div>

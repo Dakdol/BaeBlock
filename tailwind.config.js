@@ -28,9 +28,6 @@ module.exports = {
         body: '16px',
         caption: '14px',
       },
-      fontWeight: {
-        bold: 700,
-      },
     },
   },
 
