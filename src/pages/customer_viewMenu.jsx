@@ -66,7 +66,7 @@ export default function CustomerViewMenu() {
   ]; //로그인시 프롭스로 내려줘야함??
 
   return (
-    <div className='flex flex-col justify-start items-center'>
+    <div className='flex flex-col justify-start items-center z-20'>
       <div className='min-w-full h-[250px]'>
         <img className='w-full h-full object-cover' src={food} alt='food' />
 

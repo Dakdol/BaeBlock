@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
-import BtnNav from '../components/BtnNav';
 function CustomerOrderComplete() {
   return (
     <div>
-      <BtnNav />
       <div className='flex flex-col items-center'>
         <div className='w-[350px] mt-[8px] border-[1px] border-darkGray '></div>
         <div className='flex flex-col items-center gap-6 mt-16'>
@@ -21,7 +19,9 @@ function CustomerOrderComplete() {
           <Link to='/customer/main'>
             <button className='bg-purple btn-style text-lightGray'>주문 내역 보기</button>
           </Link>
-          <div className='text-purple text-body mt-4'>다른 메뉴도 구경할래!</div>
+          <Link to='/customer/main'>
+            <div className='text-purple text-body mt-4'>다른 메뉴도 구경할래!</div>
+          </Link>
         </div>
       </div>
     </div>

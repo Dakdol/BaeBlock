@@ -1,10 +1,7 @@
-import { FaRegSquarePlus } from 'react-icons/fa6';
-import { FaRegSquareMinus } from 'react-icons/fa6';
-
 import food from '../images/food.png';
 import { useState } from 'react';
-import BtnNav from '../components/BtnNav';
 import { CustomerMenuDetail } from '../components/Customer_menuDetail';
+import { Link } from 'react-router-dom';
 
 function CustomerSelectMenu() {
   const [counter, setCounter] = useState(1);
@@ -45,9 +42,11 @@ function CustomerSelectMenu() {
 
       <div className='sticky bottom-0 bg-white rounded-b-2xl w-[386px] flex justify-between items-center px-4 py-4 border-t-2 border-lightGray'>
         <div className='font-bold text-body'>총 : 15000 원</div>
-        <button className='text-subtitle font-bold bg-lightYellow rounded-xl px-6 py-2'>
-          카트에 담기
-        </button>
+        <Link to='/customer/viewmenu'>
+          <button className='text-subtitle font-bold bg-lightYellow rounded-xl px-6 py-2'>
+            카트에 담기
+          </button>
+        </Link>
       </div>
     </div>
   );

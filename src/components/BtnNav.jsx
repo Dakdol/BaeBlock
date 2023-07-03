@@ -7,7 +7,7 @@ const BtnNav = ({ scrollPosition }) => {
   const onClickBtn = () => {
     navigate(-1);
   };
-  const bgColor = scrollPosition >= 202 ? 'bg-white' : 'transparent';
+  const bgColor = scrollPosition >= 250 ? 'bg-white' : 'transparent';
 
   return (
     <div className='flex justify-center'>

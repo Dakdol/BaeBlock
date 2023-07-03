@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { PaymentMenu } from '../components/Payment_menu';
 
 export const CustomerPayment = () => {
@@ -60,9 +61,11 @@ export const CustomerPayment = () => {
       </div>
 
       <div className='sticky bottom-0 bg-white px-4 pb-4'>
-        <button className='flex justify-center gap-2 bg-lightYellow w-[350px] py-3 rounded-md text-subtitle font-bold text-black'>
-          <span>31,350원</span>결제하기
-        </button>
+        <Link to='/customer/ordercomplete'>
+          <button className='flex justify-center gap-2 bg-lightYellow w-[350px] py-3 rounded-md text-subtitle font-bold text-black'>
+            <span>31,350원</span>결제하기
+          </button>
+        </Link>
       </div>
     </div>
   );
