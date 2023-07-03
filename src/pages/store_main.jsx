@@ -42,7 +42,7 @@ export default function RiderMain() {
           <div className='text-subtitle font-bold'>오늘도 잘 먹겠습니다!</div>{' '}
         </div>
 
-        <div className='w-[360px] flex justify-between items-end'>
+        <div className='w-[360px] flex justify-between items-end gap-2'>
           <div className='w-80'>
             <div className=' flex justify-start items-center gap-2 flex-wrap overflow-hidden h-16'>
               {nftTitle.map((v, i) => (
@@ -68,9 +68,9 @@ export default function RiderMain() {
           </Link>
 
           <div className='flex justify-between w-full'>
-            <Box text='매출 보기' color='bg-lightBage' />
+            <Box text='매출 보기' color='bg-lightBage' width='20' />
             <Link to={'/store/edit'}>
-              <Box text='메뉴 수정' color='bg-deepYellow' />
+              <Box text='메뉴 수정' color='bg-deepYellow' width='20' />
             </Link>
           </div>
 

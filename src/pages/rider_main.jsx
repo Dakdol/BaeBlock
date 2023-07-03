@@ -23,7 +23,7 @@ export default function RiderMain() {
     { title: '친절한 사장님' },
     { title: '친절한 사장님' },
     { title: '친절한 사장님' },
-    { title: '친절한 사장님' },
+    { title: '친절한 사장' },
     { title: '친절한 사장님' },
     { title: '친절한 사장님' },
   ]; //로그인에서 프롭스로 내려야할것같음
@@ -44,7 +44,7 @@ export default function RiderMain() {
           <div className='text-subtitle font-bold'>오늘도 안전 운전하세요!</div>{' '}
         </div>
 
-        <div className='w-[360px] flex justify-between items-end'>
+        <div className='w-[360px] flex justify-between items-end gap-2'>
           <div className='w-80'>
             <div className=' flex justify-start items-center gap-2 flex-wrap overflow-hidden h-16'>
               {nftTitle.map((v, i) => (
@@ -70,8 +70,8 @@ export default function RiderMain() {
           </Link>
 
           <div className='flex justify-between w-full'>
-            <Box text='오늘의 수익' color='bg-lightBage' />
-            <Box text='나의 프로필' color='bg-deepYellow' />
+            <Box text='오늘의 수익' color='bg-lightBage' width='24' />
+            <Box text='프로필 보기' color='bg-deepYellow' width='24' />
           </div>
 
           <NftMarket />
