@@ -12,7 +12,7 @@ export const LatestOrderCard = ({ img, storeName, menuName }) => {
             {Array(5)
               .fill('')
               .map((_, index) => (
-                <img className='w-[18px] mr-0.5 mt-1' src={star} alt='star' />
+                <img className='w-[17px] mr-0.5 mt-1' src={star} alt='star' />
                 // <div>⭐</div>
               ))}
           </div>

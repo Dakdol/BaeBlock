@@ -28,7 +28,7 @@ export const MatZipCard = ({ img1, img2, img3 }) => {
         <div className='text-caption text-darkGray'>21-31분</div>
       </div>
       <div className='flex justify-start items-center gap-2 text-caption text-darkGray px-1'>
-        <img className='w-[18px] mr-0.5' src={star} alt='star' />
+        <img className='w-[17px] mr-0.5' src={star} alt='star' />
         {/* ⭐ */}
         <span>5.0</span>
         <span>(123)</span>

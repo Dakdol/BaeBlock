@@ -54,7 +54,7 @@ function App() {
     <BrowserRouter>
       <div className='min-h-screen flex justify-center items-center noDrag'>
         <div
-          className='bg-white border-2 rounded-2xl border-black w-screen h-screen max-w-screen-width max-h-[844px] mx-auto overflow-y-auto text-black tracking-tighter'
+          className='bg-white border-2 rounded-2xl border-black w-screen h-screen max-w-screen-width max-h-[844px] mx-auto overflow-y-auto text-black'
           ref={scrollRef}>
           <Header />
           <BtnNav scrollPosition={scrollPosition} />

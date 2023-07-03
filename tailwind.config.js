@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['SUIT-Regular'],
+      },
       screens: {
         width: '390px',
         height: '844px',
@@ -28,9 +31,6 @@ module.exports = {
       fontWeight: {
         bold: 700,
       },
-    },
-    fontFamily: {
-      sans: ['aGD'],
     },
   },
 
