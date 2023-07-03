@@ -27,7 +27,8 @@ const StoreIntro = (props) => {
           </div>
           <div className='flex justify-center items-end mt-2'>
             {[...Array(parseInt(props.starCount))].map((_, i) => (
-              <div className='text-subtitle'>⭐</div>
+              <img className='w-5 mr-0.5' src={star} alt='star' />
+              // <div className='text-subtitle'>⭐</div>
             ))}
             <img src={rightArrow} alt='rightArrow' />
           </div>

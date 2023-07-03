@@ -10,10 +10,10 @@ const StoreIntro = (props) => {
           <div className='w-72 text-center font-bold text-headline whitespace-nowrap overflow-hidden overflow-ellipsis tracking-tighter'>
             {props.storeName}
           </div>
-          <div className='flex justify-center items-center mt-1'>
+          <div className='flex justify-center items-center'>
             {[...Array(parseInt(props.starCount))].map((_, i) => (
               // <AiFillStar key={i} size={24} color="FFD84D" />
-              <img src={star} alt='star' />
+              <img className='w-5 mr-0.5' src={star} alt='star' />
             ))}
             <img src={rightArrow} alt='rightArrow' />
           </div>

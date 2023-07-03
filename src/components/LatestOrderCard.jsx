@@ -1,7 +1,7 @@
 import React from 'react';
-// import star from '../images/icon_star.png';
+import star from '../images/icon_star.png';
 
-export const LatestOrderCard = ({ img }) => {
+export const LatestOrderCard = ({ img, storeName, menuName }) => {
   return (
     <div className='flex-shrink-0 w-72 h-[115px] px-4 pt-1 border-darkGray border-[1.5px] rounded-2xl solid-shadow'>
       <div className='flex justify-between items-center'>
@@ -12,7 +12,8 @@ export const LatestOrderCard = ({ img }) => {
             {Array(5)
               .fill('')
               .map((_, index) => (
-                <div>⭐</div>
+                <img className='w-[18px] mr-0.5 mt-1' src={star} alt='star' />
+                // <div>⭐</div>
               ))}
           </div>
           <div className='text-caption mt-3 text-darkGray'>제네시스 버거세트</div>

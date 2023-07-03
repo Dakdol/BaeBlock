@@ -3,7 +3,7 @@ import ShopCart from '../images/shoppingCart.png';
 
 const CartIcon = ({ cartMenuCount }) => {
   return (
-    <Link to='/customer/shoppingcart'>
+    <Link to='/customer/payment'>
       <div className='flex justify-end'>
         <div className='relative'>
           <img className='w-[90px] h-auto' src={ShopCart} alt='' />
