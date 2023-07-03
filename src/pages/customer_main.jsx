@@ -6,7 +6,7 @@ import CartIcon from '../components/CartIcon';
 import BottomBar from '../components/Customer_BottomNav';
 import { CategoryCard } from '../components/CategoryCard';
 import { LatestOrderCard } from '../components/LatestOrderCard';
-import { MatZipCard } from '../components/matZipCard';
+import { MatZipCard } from '../components/MatZipCard';
 
 import moneyBag from '../images/icon_moneyBag.png';
 import Korean from '../images/korean.png';
