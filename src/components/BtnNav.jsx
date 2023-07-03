@@ -13,7 +13,9 @@ const BtnNav = () => {
     <div className='flex justify-center z-50'>
       <div className='flex justify-between items-center pt-4 w-[360px] fixed'>
         <HiOutlineArrowSmLeft size={24} onClick={onClickBtn} />
-        <HiOutlineHome size={24} />
+        <Link to={'/'}>
+          <HiOutlineHome size={24} />
+        </Link>
       </div>
     </div>
   );
