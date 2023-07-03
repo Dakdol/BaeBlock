@@ -25,12 +25,13 @@ import { StoreRegistDetail } from './pages/store_registDetail';
 import { CustomerRegistDetail } from './pages/customer_registDetail';
 import { RiderRegistDetail } from './pages/rider_registDetail';
 import { CustomerMain } from './pages/customer_main';
+import { CustomerShoppingCart } from './pages/customer_shoppingCart';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className='min-h-screen flex justify-center items-center'>
-        <div className='bg-white border-2 rounded-2xl border-black w-screen h-screen  max-w-screen-md max-h-[844px] mx-auto overflow-y-auto text-black tracking-tighter'>
+      <div className='min-h-screen flex justify-center items-center noDrag'>
+        <div className='bg-white border-2 rounded-2xl border-black w-screen h-screen max-w-screen-md max-h-[844px] mx-auto overflow-y-auto text-black tracking-tighter'>
           <Header />
           <BtnNav />
           <Routes>
@@ -43,6 +44,7 @@ function App() {
             <Route path='/customer/viewmenu' element={<CustomerViewMenu />} />
             <Route path='/customer/selectmenu' element={<CustomerSelectMenu />} />
             <Route path='/customer/ordercomplete' element={<CustomerOrderComplete />} />
+            <Route path='/customer/shoppingcart' element={<CustomerShoppingCart />} />
 
             <Route path='/store/signin' element={<StoreSignIn />} />
             <Route path='/store/regist' element={<StoreRegist />} />

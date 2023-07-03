@@ -5,8 +5,8 @@ import CartIcon from '../components/CartIcon';
 import BottomBar from '../components/Customer_BottomNav';
 import StoreIntro from '../components/Store_Intro';
 import { useState } from 'react';
-import BtnNav from '../components/BtnNav';
 import { DeliveryFeeChip } from '../components/DeliveryFeeChip';
+import { Link } from 'react-router-dom';
 
 export default function CustomerViewMenu() {
   const [deliveryFee, setDeliveryFee] = useState(1000);
@@ -20,6 +20,13 @@ export default function CustomerViewMenu() {
       menuPrice: '12000',
       menuImage: '../images/orange.png',
       ownerRecommend: true,
+    },
+    {
+      menuName: '복숭아',
+      menuFrom: '캐나다산',
+      menuPrice: '17000',
+      menuImage: '../images/orange.png',
+      ownerRecommend: false,
     },
     {
       menuName: '복숭아',
@@ -77,21 +84,23 @@ export default function CustomerViewMenu() {
         <div className='text-subtitle font-bold text-left mb-2 ml-1'>메뉴</div>
         <div className='flex flex-col gap-4 mb-8'>
           {menuList.map((v, i) => (
-            <MenuList
-              key={i}
-              menuName={menuList[i].menuName}
-              menuFrom={menuList[i].menuFrom}
-              menuPrice={menuList[i].menuPrice}
-              menuImage={menuList[i].menuImage}
-              ownerRecommend={menuList[i].ownerRecommend}
-            />
+            <Link to='/customer/selectmenu'>
+              <MenuList
+                key={i}
+                menuName={menuList[i].menuName}
+                menuFrom={menuList[i].menuFrom}
+                menuPrice={menuList[i].menuPrice}
+                menuImage={menuList[i].menuImage}
+                ownerRecommend={menuList[i].ownerRecommend}
+              />
+            </Link>
           ))}
         </div>
       </div>
 
       <div className='sticky bottom-0'>
         <div className='absolute right-2 bottom-16'>
-          <CartIcon cartMenuCount='4' />
+          <CartIcon cartMenuCount={cartCount} />
         </div>
         <BottomBar />
       </div>
