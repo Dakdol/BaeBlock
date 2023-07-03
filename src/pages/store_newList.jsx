@@ -3,10 +3,16 @@ import { RiderOrderList } from '../components/Rider_orderList';
 
 export const StoreNewList = () => {
   return (
-    <div className='flex flex-col w-[350px] m-auto h-screen mt-12'>
-      <div className='font-a text-headline font-bold mb-4'>대기 중인 주문</div>
-      <RiderOrderList />
-      <div className='flex justify-center my-4'></div>
+    <div className='flex flex-col'>
+      <div className='bg-white w-[386px] h-14 absolute z-10'></div>
+      <div className='flex justify-center pt-4'>
+        <div className='font-bold text-subtitle max-w-[250px] whitespace-nowrap overflow-ellipsis overflow-hidden absolute z-20'>
+          새로운 주문
+        </div>
+      </div>
+      <div className='flex flex-col justify-center items-center mt-14'>
+        <RiderOrderList />
+      </div>
     </div>
   );
 };
