@@ -74,7 +74,9 @@ export default function RiderMain() {
             </Link>
           </div>
 
-          <NftMarket />
+          <Link to='/store/nftmarket'>
+            <NftMarket />
+          </Link>
         </div>
       </div>
     </>

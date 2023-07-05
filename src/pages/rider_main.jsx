@@ -74,7 +74,9 @@ export default function RiderMain() {
             <Box text='프로필 보기' color='bg-deepYellow' width='24' />
           </div>
 
-          <NftMarket />
+          <Link to='/rider/nftmarket'>
+            <NftMarket />
+          </Link>
         </div>
       </div>
     </>

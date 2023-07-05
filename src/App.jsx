@@ -22,6 +22,7 @@ import StoreMenuEdit from './pages/store_menuEdit';
 import { StoreSignIn } from './pages/store_signIn';
 import { StoreRegist } from './pages/store_regist';
 import { StoreRegistDetail } from './pages/store_registDetail';
+import StoreMarket from './pages/store_market';
 
 import RiderMain from './pages/rider_main';
 import { RiderNewList } from './pages/rider_newList';
@@ -29,6 +30,7 @@ import { RiderDeliveryStatus } from './pages/rider_deliveryStatus';
 import { RiderSignIn } from './pages/rider_signIn';
 import { RiderRegist } from './pages/rider_regist';
 import { RiderRegistDetail } from './pages/rider_registDetail';
+import RiderMarket from './pages/rider_market';
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -78,6 +80,7 @@ function App() {
             <Route path='/store/mylist' element={<StoreMyList />} />
             <Route path='/store/edit' element={<StoreMenu />} />
             <Route path='/store/edit/menu' element={<StoreMenuEdit />} />
+            <Route path='/store/nftmarket' element={<StoreMarket />} />
 
             <Route path='/rider/signin' element={<RiderSignIn />} />
             <Route path='/rider/regist' element={<RiderRegist />} />
@@ -85,6 +88,7 @@ function App() {
             <Route path='/rider/main' element={<RiderMain />} />
             <Route path='/rider/delivery' element={<RiderDeliveryStatus />} />
             <Route path='/rider/newlist' element={<RiderNewList />} />
+            <Route path='/rider/nftmarket' element={<RiderMarket />} />
           </Routes>
         </div>
       </div>
