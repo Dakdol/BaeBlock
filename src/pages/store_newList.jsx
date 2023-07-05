@@ -1,5 +1,5 @@
 import React from 'react';
-import { RiderOrderList } from '../components/Rider_orderList';
+import { StoreOrderList } from '../components/Store_orderList';
 
 export const StoreNewList = () => {
   return (
@@ -11,7 +11,7 @@ export const StoreNewList = () => {
         </div>
       </div>
       <div className='flex flex-col justify-center items-center mt-14'>
-        <RiderOrderList />
+        <StoreOrderList />
       </div>
     </div>
   );
