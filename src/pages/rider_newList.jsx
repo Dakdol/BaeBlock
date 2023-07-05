@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { RiderOrderList } from '../components/Rider_orderList';
 import { Link } from 'react-router-dom';
 
 export const RiderNewList = () => {
   const [startDelivery, setStartDelivery] = useState(false);
+  // 배달 몇 개 골랐는지
+  const [selectDelivery, setSelectDelivery] = useState(0);
 
   const onClickPopUp = () => {
     setStartDelivery(!startDelivery);
@@ -18,9 +20,21 @@ export const RiderNewList = () => {
         </div>
       </div>
 
-      <div className='flex justify-center mt-14'>
+      <div className='flex justify-evenly items-center mt-14'>
+        <div className='flex justify-center items-center w-8 h-8 rounded-full border-2 border-black'>
+          1
+        </div>
+        <div className='flex justify-center items-center w-8 h-8 rounded-full border-2 border-black'>
+          2
+        </div>
+        <div className='flex justify-center items-center w-8 h-8 rounded-full border-2 border-black'>
+          3
+        </div>
+      </div>
+
+      <div className='flex justify-center mt-8'>
         <button className='bg-mint px-4 py-2 rounded-md mr-8 font-bold'>거리순</button>
-        <button className='bg-purple px-4 py-2 rounded-md font-bold'>배달료순</button>
+        <button className='bg-deepYellow px-4 py-2 rounded-md font-bold'>배달료순</button>
       </div>
 
       <div className='flex flex-col justify-center items-center mt-4'>
@@ -29,7 +43,7 @@ export const RiderNewList = () => {
 
       {startDelivery ? (
         <div className='flex justify-center items-center'>
-          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mb-40 bg-white border-2 border-black solid-shadow px-4 py-2 rounded-2xl text-black'>
+          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mb-64 bg-white border-2 border-black solid-shadow px-4 py-2 rounded-2xl text-black'>
             <div className='flex flex-col gap-2 justify-center items-center'>
               <div className='font-bold text-headline'>배달을 시작하세요!</div>
               <div className='text-caption'>배달을 시작하세요!!</div>
