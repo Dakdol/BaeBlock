@@ -9,10 +9,10 @@ export const StoreMySelectedList = () => {
   };
 
   return (
-    <div className='flex flex-col '>
+    <div className='flex flex-col'>
       {finished ? (
         <div className='flex justify-center items-center'>
-          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mt-[500px] bg-white border-2 border-black solid-shadow px-4 py-2 rounded-2xl text-black'>
+          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mt-[500px] bg-white border-2 border-black solid-shadow px-4 rounded-2xl text-black'>
             <div className='flex flex-col gap-2 justify-center items-center'>
               <div className='font-bold text-headline'>조리를 완료했어요!</div>
               <div className='text-caption'>고객님께 조리 완료를 알려요!</div>

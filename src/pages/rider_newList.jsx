@@ -43,7 +43,7 @@ export const RiderNewList = () => {
 
       {startDelivery ? (
         <div className='flex justify-center items-center'>
-          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mb-64 bg-white border-2 border-black solid-shadow px-4 py-2 rounded-2xl text-black'>
+          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mb-64 bg-white border-2 border-black solid-shadow px-4 rounded-2xl text-black'>
             <div className='flex flex-col gap-2 justify-center items-center'>
               <div className='font-bold text-headline'>배달을 시작하세요!</div>
               <div className='text-caption'>배달을 시작하세요!!</div>

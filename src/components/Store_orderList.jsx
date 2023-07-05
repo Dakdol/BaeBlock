@@ -17,7 +17,7 @@ export const StoreOrderList = () => {
     <div className='flex flex-col '>
       {accept ? (
         <div className='flex justify-center items-center'>
-          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mt-[500px] bg-white border-2 border-black solid-shadow px-4 py-2 rounded-2xl text-black'>
+          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mt-[500px] bg-white border-2 border-black solid-shadow px-4 rounded-2xl text-black'>
             <div className='flex flex-col gap-2 justify-center items-center'>
               <div className='font-bold text-headline'>주문을 수락해요!</div>
               <div className='text-caption'>조리를 시작해주세요!</div>
@@ -35,7 +35,7 @@ export const StoreOrderList = () => {
 
       {decline ? (
         <div className='flex justify-center items-center'>
-          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mt-[500px] bg-white border-2 border-black solid-shadow px-4 py-2 rounded-2xl text-black'>
+          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mt-[500px] bg-white border-2 border-black solid-shadow px-4 rounded-2xl text-black'>
             <div className='flex flex-col gap-2 justify-center items-center'>
               <div className='font-bold text-headline'>주문을 거절할까요?</div>
               <div className='text-caption'>주문을 취소해요.</div>

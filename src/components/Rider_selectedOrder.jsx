@@ -1,10 +1,12 @@
 import React from 'react';
 
-export const RiderSelectedOrder = () => {
+export const RiderSelectedOrder = (props) => {
   // Rider_orderList에서 선택한 애들의 정보가 여기에 떠야함.
 
   return (
-    <div className='flex-none w-60 h-[180px] border-2 rounded-lg px-2 py-1 bg-lightGray border-darkGray mr-4 solid-shadow'>
+    <div
+      className='flex-none w-60 h-[180px] border-2 rounded-lg px-2 py-1 bg-white border-darkGray mr-4 solid-shadow cursor-pointer'
+      onClick={props.onClickEvent}>
       <div className='font-bold text-subtitle'>1번</div>
       <div className='flex flex-col gap-4 mt-1'>
         <div className='text-body overflow-hidden overflow-ellipsis line-clamp-2'>
