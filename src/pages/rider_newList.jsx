@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const RiderNewList = () => {
   const [startDelivery, setStartDelivery] = useState(false);
-  // 배달 몇 개 골랐는지
+  // 배달 최대 3개 선택 되면 1, 2, 3 동그라미 컬러 변경
   const [selectDelivery, setSelectDelivery] = useState(0);
 
   const onClickPopUp = () => {
@@ -43,7 +43,7 @@ export const RiderNewList = () => {
 
       {startDelivery ? (
         <div className='flex justify-center items-center'>
-          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mb-64 bg-white border-2 border-black solid-shadow px-4 rounded-2xl text-black'>
+          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mb-[360px] bg-white border-2 border-black solid-shadow px-4 rounded-2xl text-black'>
             <div className='flex flex-col gap-2 justify-center items-center'>
               <div className='font-bold text-headline'>배달을 시작하세요!</div>
               <div className='text-caption'>배달을 시작하세요!!</div>
