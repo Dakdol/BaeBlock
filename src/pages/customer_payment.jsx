@@ -27,15 +27,15 @@ export const CustomerPayment = () => {
             </div>
             <div className='flex justify-center gap-4'>
               <button
-                className='bg-lightGray p-2 rounded-xl font-bold border-[1.5px] border-black'
+                className='bg-lightGray w-20 p-2 rounded-xl font-bold border-[1.5px] border-black'
                 onClick={onClickPay}>
-                다시 선택
+                아직...
               </button>
               <Link to='/customer/ordercomplete'>
                 <button
                   className='bg-lightYellow p-2 rounded-xl font-bold border-[1.5px] border-black'
                   onClick={onClickPay}>
-                  결제 하기
+                  결제하기
                 </button>
               </Link>
             </div>
