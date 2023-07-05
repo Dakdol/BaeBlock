@@ -30,7 +30,7 @@ export default function RiderMain() {
     <>
       <div className='bg-white w-[386px] h-14 absolute z-10'></div>
       <div className='flex justify-center mt-4'>
-        <div className='border-[1px] px-2 rounded-lg max-w-[250px] whitespace-nowrap overflow-ellipsis overflow-hidden absolute z-20'>
+        <div className='border-[1px] px-2 rounded-lg max-w-[250px] border-darkGray whitespace-nowrap overflow-ellipsis overflow-hidden absolute z-20'>
           {storeName}
         </div>
       </div>

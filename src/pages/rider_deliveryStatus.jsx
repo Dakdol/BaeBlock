@@ -6,7 +6,7 @@ export const RiderDeliveryStatus = () => {
     <div>
       <div className='flex flex-col justify-center items-center mt-4'>
         <div className='flex justify-center'>
-          <div className='border-[1px] px-2 rounded-lg max-w-[250px] whitespace-nowrap overflow-ellipsis overflow-hidden'>
+          <div className='border-[1px] px-2 rounded-lg max-w-[250px] border-darkGray whitespace-nowrap overflow-ellipsis overflow-hidden'>
             서울시 강남구 언주로 18길 여기는 잘리는 곳
           </div>
         </div>

@@ -13,7 +13,7 @@ function CustomerOrderComplete() {
           <div className='text-caption'>라이더와 매장의 사정으로 취소될 수 있어요.</div>
         </div>
 
-        <div className='w-[340px] h-[340px] my-8 border-[1px] rounded-3xl'></div>
+        <div className='w-[340px] h-[340px] my-8 border-[1px] rounded-3xl border-darkGray'></div>
 
         <div className='flex flex-col items-center mt-4'>
           <Link to='/customer/main'>

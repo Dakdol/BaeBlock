@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RiderOrderList } from '../components/Rider_orderList';
+import { Link } from 'react-router-dom';
 
 export const RiderNewList = () => {
+  const [startDelivery, setStartDelivery] = useState(false);
+
+  const onClickPopUp = () => {
+    setStartDelivery(!startDelivery);
+  };
+
   return (
     <div className='flex flex-col'>
       <div className='bg-white w-[386px] h-14 absolute z-10'></div>
@@ -20,8 +27,35 @@ export const RiderNewList = () => {
         <RiderOrderList />
       </div>
 
+      {startDelivery ? (
+        <div className='flex justify-center items-center'>
+          <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mb-40 bg-white border-2 border-black solid-shadow px-4 py-2 rounded-2xl text-black'>
+            <div className='flex flex-col gap-2 justify-center items-center'>
+              <div className='font-bold text-headline'>배달을 시작하세요!</div>
+              <div className='text-caption'>배달을 시작하세요!!</div>
+            </div>
+            <div className='flex justify-center gap-4'>
+              <button
+                className='bg-lightGray p-2 rounded-xl font-bold border-[1.5px] border-black'
+                onClick={onClickPopUp}>
+                다시 선택
+              </button>
+              <Link to='/rider/delivery'>
+                <button
+                  className='bg-lightYellow p-2 rounded-xl font-bold border-[1.5px] border-black'
+                  onClick={onClickPopUp}>
+                  배달 시작!
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
       <div className='flex justify-center my-4'>
-        <button className='bg-red-400 px-4 py-2 rounded-md font-bold text-colors-lightGray'>
+        <button
+          className='bg-red-500 px-4 py-2 rounded-md font-bold text-white'
+          onClick={onClickPopUp}>
           배달 시작!
         </button>
       </div>
