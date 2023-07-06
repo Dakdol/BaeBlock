@@ -59,9 +59,24 @@
       "wallet": "0x0000",
       "sto_address": "서울 강남구 선릉로 429",
       "menu": [
-        { "name": "와퍼", "detail": "맛있는 와퍼세트", "price": 5000, "recommend": false },
-        { "name": "치즈와퍼", "detail": "맛있는 치즈와퍼", "price": 8600, "recommend": false },
-        { "name": "제로콜라", "detail": "H662의 추천템", "price": 1400, "recommend": true }
+        {
+          "name": "와퍼",
+          "detail": "맛있는 와퍼세트",
+          "price": 5000,
+          "recommend": false
+        },
+        {
+          "name": "치즈와퍼",
+          "detail": "맛있는 치즈와퍼",
+          "price": 8600,
+          "recommend": false
+        },
+        {
+          "name": "제로콜라",
+          "detail": "H662의 추천템",
+          "price": 1400,
+          "recommend": true
+        }
       ],
       "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
       "deliveryFee": 990,
@@ -73,8 +88,8 @@
       "sto_address": "서울 강남구 테헤란로64길 18",
       "menu": [
         {
-          "name": "아이스 아메리카노",
-          "detail": "맛있는 커피를 드세요!",
+          "name": "아메리카노",
+          "detail": "Ice",
           "price": 4500,
           "recommend": true
         }
