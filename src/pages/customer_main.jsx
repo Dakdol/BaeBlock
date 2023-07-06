@@ -16,6 +16,8 @@ import Japanese from '../images/japanese.png';
 import Chick from '../images/chick.jpg';
 import Hen from '../images/hen.jpg';
 import Chicken from '../images/roastedChicken.jpg';
+import user from '../db/user.json';
+import { Link } from 'react-router-dom';
 
 export const CustomerMain = () => {
   const [count, setCount] = useState(0);
@@ -80,19 +82,31 @@ export const CustomerMain = () => {
       <div className='bg-white mt-4 px-5 py-3 category-shadow'>
         <div className='font-bold text-subtitle text-left mb-2'>최근 주문한 음식</div>
         <div className='flex overflow-x-auto gap-3 pb-2'>
-          <LatestOrderCard img={Hamburger} />
-          <LatestOrderCard img={Hamburger} />
-          <LatestOrderCard img={Hamburger} />
+          {user.store.map((v, i) => (
+            <LatestOrderCard
+              key={i}
+              img={Hamburger}
+              storeName={v.storeName}
+              menuName={v.menu[0].name}
+            />
+          ))}
         </div>
       </div>
 
       <div className='bg-white mt-4 px-5 py-3 category-shadow'>
         <div className='font-bold text-subtitle text-left mb-2'>우리 동네 맛집</div>
         <div className='flex flex-col gap-4 mb-4'>
-          <MatZipCard img1={Chick} img2={Hen} img3={Chicken} />
-          <MatZipCard img1={Chick} img2={Hen} img3={Chicken} />
-          <MatZipCard img1={Chick} img2={Hen} img3={Chicken} />
-          <MatZipCard img1={Chick} img2={Hen} img3={Chicken} />
+          {user.store.map((v, i) => (
+            <MatZipCard
+              key={i}
+              storeId={i}
+              storeName={v.storeName}
+              deliveryFee={v.deliveryFee}
+              img1={Chick}
+              img2={Hen}
+              img3={Chicken}
+            />
+          ))}
         </div>
       </div>
 

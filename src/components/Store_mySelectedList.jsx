@@ -35,7 +35,11 @@ export const StoreMySelectedList = () => {
           <div className='px-4 py-2'>
             <div className='flex justify-between font-bold'>
               <div>15분</div>
-              <div>{user.customer[i].deliveryFee * 2 + user.customer[i].deliveryTip}원</div>
+              <div>
+                {user.customer[i].orderList.deliveryFee * 2 +
+                  user.customer[i].orderList.deliveryTip}
+                원
+              </div>
             </div>
             <div className='text-caption'>
               <div className='flex justify-between'>

@@ -7,7 +7,6 @@ import NftMarket from '../components/Main_nftMarket';
 import LongBox from '../components/Main_longBox';
 import Box from '../components/Main_recBox';
 import WorkBadgeBTN from '../components/Work_Btn';
-import BtnNav from '../components/BtnNav';
 
 export default function RiderMain() {
   const [storeName, setStoreName] = useState('놀부 부대찌개'); //로그인에서 프롭스로 내려야할것같음

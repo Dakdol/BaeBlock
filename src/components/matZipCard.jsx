@@ -1,10 +1,10 @@
 import React from 'react';
-import star from '../images/icon_star.png';
 import { Link } from 'react-router-dom';
+import star from '../images/icon_star.png';
 
-export const MatZipCard = ({ img1, img2, img3 }) => {
+export const MatZipCard = ({ storeId, storeName, deliveryFee, img1, img2, img3 }) => {
   return (
-    <Link to='/customer/viewmenu'>
+    <Link to={`/customer/viewmenu/${storeId}`}>
       <div className='flex justify-center'>
         <div className='flex relative w-[350px] h-[200px] border-[1.5px] rounded-3xl border-black overflow-hidden solid-shadow bg-white'>
           <img
@@ -25,7 +25,7 @@ export const MatZipCard = ({ img1, img2, img3 }) => {
         </div>
       </div>
       <div className='flex justify-between items-center px-1 mt-1'>
-        <div className='text-body font-bold'>AI는 조류독감이다</div>
+        <div className='text-body font-bold'>{storeName}</div>
         <div className='text-caption text-darkGray'>21-31분</div>
       </div>
       <div className='flex justify-start items-center gap-2 text-caption text-darkGray px-1'>
@@ -36,7 +36,7 @@ export const MatZipCard = ({ img1, img2, img3 }) => {
         <span>·</span>
         <span>1.3km</span>
         <span>·</span>
-        <span>1350원</span>
+        <span>{deliveryFee}원</span>
       </div>
     </Link>
   );
