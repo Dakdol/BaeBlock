@@ -35,7 +35,7 @@ const StoreIntro = (props) => {
         </div>
         <div className="flex justify-center items-center gap-2 mt-4">
           {[...Array(parseInt(props.nftTitle.length))].map((v, i) => (
-            <NFTChips key={i} title={props.nftTitle[i]} />
+            <NFTChips key={i} title={props.nftTitle[i].title} />
           ))}
         </div>
       </div>

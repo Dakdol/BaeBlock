@@ -7,13 +7,11 @@ import StoreIntroEdit from "../components/Store_IntroEdit";
 import { Link } from "react-router-dom";
 
 import user from "../db/user.json";
-import nftTitle from "../db/nftTitle.json";
 
 export default function CustomerViewMenu() {
   const [deliveryFee, setDeliveryFee] = useState(1000);
   const [cartCount, setCartCount] = useState(0); //로그인시 프롭스로 내려줘야함??
   const Astore = user.store[0];
-  // const nftTitle = [{ name: "친절한 사장님" }, { name: "친환경" }];
 
   return (
     <div className="flex flex-col justify-start items-center">
@@ -25,7 +23,7 @@ export default function CustomerViewMenu() {
             <div className="flex flex-col">
               <StoreIntroEdit
                 storeName={Astore.storeName}
-                nftTitle={[nftTitle[0], nftTitle[1], nftTitle[2]]}
+                nftTitle={Astore.nft}
                 starCount="5"
               />
             </div>
@@ -47,11 +45,10 @@ export default function CustomerViewMenu() {
           {Astore.menu.map((v, i) => (
             <MenuList
               key={i}
-              menuName={v.name}
-              menuFrom={v.detail}
-              menuPrice={v.price}
-              menuImage={v.price}
-              ownerRecommend={v.recommend}
+              name={v.name}
+              caption={v.caption}
+              price={v.price}
+              isRecommend={v.recommend}
               showPencile={true}
             />
           ))}

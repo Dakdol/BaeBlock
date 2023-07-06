@@ -2,7 +2,6 @@ import { useState } from "react";
 import { NFTChips } from "../components/Nft_Chips";
 import { Link } from "react-router-dom";
 
-import nftTitle from "../db/nftTitle.json";
 import user from "../db/user.json";
 
 import NftMarket from "../components/Main_nftMarket";
@@ -42,8 +41,8 @@ export default function RiderMain() {
         <div className="w-[360px] flex justify-between items-end gap-2">
           <div className="w-80">
             <div className=" flex justify-start items-center gap-2 flex-wrap overflow-hidden h-16">
-              {nftTitle.map((v, i) => (
-                <NFTChips key={i} title={nftTitle[i]} />
+              {Astore.nft.map((v, i) => (
+                <NFTChips key={i} title={v.title} />
               ))}
             </div>
           </div>

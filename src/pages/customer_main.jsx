@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BiSolidDownArrow } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 
-import CartIcon from "../components/CartIcon";
+import CartIcon from "../components/cartIcon";
 import BottomBar from "../components/Customer_BottomNav";
 import { CategoryCard } from "../components/CategoryCard";
 import { LatestOrderCard } from "../components/LatestOrderCard";

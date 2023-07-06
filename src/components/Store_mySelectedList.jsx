@@ -1,11 +1,23 @@
 import { useState } from "react";
-import user from "../db/user.json";
+import storeNewOrder from "../db/storeNewOrder.json";
 
 export const StoreMySelectedList = () => {
   const [finished, setFinished] = useState(false);
 
   const onClickFinish = () => {
     setFinished(!finished);
+  };
+
+  const calculateTotalCost = (i) => {
+    const orderList = storeNewOrder[i].orderMenu;
+    let totalCost = 0;
+
+    orderList.forEach((item) => {
+      const { price, quantity } = item;
+      totalCost += price * quantity;
+    });
+
+    return totalCost;
   };
 
   return (
@@ -29,26 +41,25 @@ export const StoreMySelectedList = () => {
         </div>
       ) : null}
 
-      {user.customer.map((v, i) => (
+      {storeNewOrder.map((v, i) => (
         <div
           key={i}
           className="bg-white w-[350px] mb-3 rounded-lg border-[1.5px] border-darkGray solid-shadow"
         >
           <div className="px-4 py-2">
             <div className="flex justify-between font-bold">
-              <div>15분</div>
-              <div>
-                {user.customer[i].orderList.deliveryFee * 2 +
-                  user.customer[i].orderList.deliveryTip}
-                원
-              </div>
+              <div>OrderID : {v.OrderID}</div>
+              <div>{calculateTotalCost(i)} 원</div>
             </div>
-            <div className="text-caption">
-              <div className="flex justify-between">
-                {user.store[i].storeName}
-                <span className="ml-8">거리</span>
+
+            <div className="flex justify-between text-caption">
+              <div className="flex flex-col">
+                {v.orderMenu.map((A, i) => (
+                  <div className="w-[180px]" key={i}>
+                    <div>{`${A.foodname} ${A.quantity}개`}</div>
+                  </div>
+                ))}
               </div>
-              <div className="flex">{user.store[i].address}</div>
             </div>
           </div>
           <div className="flex justify-end gap-2 mb-2 mr-2">
