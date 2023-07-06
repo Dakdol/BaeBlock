@@ -55,25 +55,41 @@
 
   "store": [
     {
+      "id": 0,
       "storeName": "버거킹",
       "wallet": "0x0000",
       "sto_address": "서울 강남구 선릉로 429",
       "menu": [
         {
           "name": "와퍼",
-          "detail": "맛있는 와퍼세트",
+          "caption": "맛있는 와퍼세트",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
           "price": 5000,
           "recommend": false
         },
         {
           "name": "치즈와퍼",
-          "detail": "맛있는 치즈와퍼",
+          "caption": "맛있는 치즈와퍼",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
           "price": 8600,
           "recommend": false
         },
         {
           "name": "제로콜라",
-          "detail": "H662의 추천템",
+          "caption": "H662의 추천템",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
           "price": 1400,
           "recommend": true
         }
@@ -83,41 +99,96 @@
       "isOpen": false
     },
     {
+      "id": 1,
       "storeName": "스타벅스",
       "wallet": "0x0000",
       "sto_address": "서울 강남구 테헤란로64길 18",
       "menu": [
         {
           "name": "아메리카노",
-          "detail": "Ice",
+          "caption": "맛있는 커피를 드세요!",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
           "price": 4500,
           "recommend": true
+        },
+        {
+          "name": "라떼",
+          "caption": "맛있는 커피를 드세요!",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
+          "price": 4500,
+          "recommend": true
+        },
+        {
+          "name": "카푸치노",
+          "caption": "맛있는 커피를 드세요!",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
+          "price": 4500,
+          "recommend": false
+        },
+        {
+          "name": "자몽에이드",
+          "caption": "맛있는 커피를 드세요!",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
+          "price": 4500,
+          "recommend": false
         }
       ],
-      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
+      "nft": [{ "title": "디저트 맛집" }, { "title": "프랜차이즈" }],
       "deliveryFee": 1350,
       "isOpen": false
     },
     {
+      "id": 2,
       "storeName": "써브웨이",
       "wallet": "0x0000",
       "sto_address": "서울 강남구 봉은사로 627",
       "menu": [
         {
           "name": "이탈리안 비엠티",
-          "detail": "맛있는 와퍼세트",
+          "caption": "맛있는 와퍼세트",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
           "price": 6900,
           "recommend": true
         },
         {
           "name": "제로콜라",
-          "detail": "설탕이 들어있지 않은 최첨단 콜라",
+          "caption": "설탕이 들어있지 않은 최첨단 콜라",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
           "price": 2200,
           "recommend": true
         },
         {
           "name": "더블 초코칩 쿠키",
-          "detail": "초콜릿이 잔뜩 들어있는 맛있는 쿠키",
+          "caption": "초콜릿이 잔뜩 들어있는 맛있는 쿠키",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
           "price": 1300,
           "recommend": false
         }
@@ -127,13 +198,41 @@
       "isOpen": false
     },
     {
+      "id": 3,
       "storeName": "소담 칼국수",
       "wallet": "0x0000",
       "sto_address": "서울 성동구 성덕정길 131-8",
       "menu": [
         {
           "name": "칼국수",
-          "detail": "수타면",
+          "caption": "수타면",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
+          "price": 8000,
+          "recommend": true
+        },
+        {
+          "name": "매운 칼국수",
+          "caption": "하바네로 첨가",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
+          "price": 8000,
+          "recommend": true
+        },
+        {
+          "name": "수제비",
+          "caption": "쫄깃",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
           "price": 8000,
           "recommend": true
         }
@@ -143,19 +242,41 @@
       "isOpen": false
     },
     {
+      "id": 4,
       "storeName": "소문난 성수 감자탕",
       "wallet": "0x0000",
       "sto_address": "서울 성동구 연무장길 45",
       "menu": [
         {
           "name": "감자탕(소)",
-          "detail": "감자뼈 3개",
+          "caption": "감자뼈 3개",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
           "price": 27000,
           "recommend": false
         },
         {
+          "name": "감자국",
+          "caption": "감자뼈 1개, 감자 없음",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
+          "price": 12000,
+          "recommend": false
+        },
+        {
           "name": "뼈추가",
-          "detail": "뼈 2개 추가",
+          "caption": "뼈 2개 추가",
+          "detail": [
+            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "추가 선택", "options": ["추가", "추가"] },
+            { "title": "기타 선택", "options": ["추가"] }
+          ],
           "price": 11000,
           "recommend": true
         }

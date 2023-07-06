@@ -9,7 +9,6 @@ import NftMarket from "../components/Main_nftMarket";
 import LongBox from "../components/Main_longBox";
 import Box from "../components/Main_recBox";
 import WorkBadgeBTN from "../components/Work_Btn";
-import BtnNav from "../components/BtnNav";
 
 export default function RiderMain() {
   const Astore = user.store[0];

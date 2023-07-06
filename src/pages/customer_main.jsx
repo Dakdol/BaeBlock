@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BiSolidDownArrow } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 
-import CartIcon from "../components/cartIcon";
+import CartIcon from "../components/CartIcon";
 import BottomBar from "../components/Customer_BottomNav";
 import { CategoryCard } from "../components/CategoryCard";
 import { LatestOrderCard } from "../components/LatestOrderCard";
@@ -16,6 +16,8 @@ import Japanese from "../images/japanese.png";
 import Chick from "../images/chick.jpg";
 import Hen from "../images/hen.jpg";
 import Chicken from "../images/roastedChicken.jpg";
+import user from "../db/user.json";
+import { Link } from "react-router-dom";
 
 export const CustomerMain = () => {
   const [count, setCount] = useState(0);
@@ -82,9 +84,14 @@ export const CustomerMain = () => {
           최근 주문한 음식
         </div>
         <div className="flex overflow-x-auto gap-3 pb-2">
-          <LatestOrderCard img={Hamburger} />
-          <LatestOrderCard img={Hamburger} />
-          <LatestOrderCard img={Hamburger} />
+          {user.store.map((v, i) => (
+            <LatestOrderCard
+              key={i}
+              img={Hamburger}
+              storeName={v.storeName}
+              menuName={v.menu[0].name}
+            />
+          ))}
         </div>
       </div>
 
@@ -93,10 +100,17 @@ export const CustomerMain = () => {
           우리 동네 맛집
         </div>
         <div className="flex flex-col gap-4 mb-4">
-          <MatZipCard img1={Chick} img2={Hen} img3={Chicken} />
-          <MatZipCard img1={Chick} img2={Hen} img3={Chicken} />
-          <MatZipCard img1={Chick} img2={Hen} img3={Chicken} />
-          <MatZipCard img1={Chick} img2={Hen} img3={Chicken} />
+          {user.store.map((v, i) => (
+            <MatZipCard
+              key={i}
+              storeId={i}
+              storeName={v.storeName}
+              deliveryFee={v.deliveryFee}
+              img1={Chick}
+              img2={Hen}
+              img3={Chicken}
+            />
+          ))}
         </div>
       </div>
 
