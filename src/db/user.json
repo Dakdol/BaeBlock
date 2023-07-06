@@ -1,0 +1,170 @@
+{
+  "customer": [
+    {
+      "nickname": "멋쟁이",
+      "wallet": "0x0000",
+      "cus_address": "서울 강남구 선릉로93길 22",
+      "orderList": {
+        "storeName": "써브웨이",
+        "wishList": [
+          {
+            "foodname": "이탈리안 비엠티",
+            "cost": 6900,
+            "quantity": 1
+          },
+          {
+            "foodname": "제로콜라",
+            "cost": 2200,
+            "quantity": 1
+          },
+          {
+            "foodname": "더블 초코칩 쿠키",
+            "cost": 1300,
+            "quantity": 1
+          }
+        ],
+        "deliveryFee": 1850,
+        "deliveryTip": 500
+      },
+      "BBCoin": 15000
+    },
+    {
+      "nickname": "사자처럼",
+      "wallet": "0x0000",
+      "cus_address": "서울 성동구 둘레15길 7",
+      "orderList": {
+        "storeName": "소문난 성수 감자탕",
+        "wishList": [
+          {
+            "foodname": "감자탕(소)",
+            "cost": 27000,
+            "quantity": 1
+          },
+          {
+            "foodname": "뼈추가",
+            "cost": 11000,
+            "quantity": 1
+          }
+        ],
+        "deliveryFee": 1850,
+        "deliveryTip": 500
+      },
+      "BBCoin": 38200
+    }
+  ],
+
+  "store": [
+    {
+      "storeName": "버거킹",
+      "wallet": "0x0000",
+      "sto_address": "서울 강남구 선릉로 429",
+      "menu": [
+        { "name": "와퍼", "detail": "맛있는 와퍼세트", "price": 5000, "recommend": false },
+        { "name": "치즈와퍼", "detail": "맛있는 치즈와퍼", "price": 8600, "recommend": false },
+        { "name": "제로콜라", "detail": "H662의 추천템", "price": 1400, "recommend": true }
+      ],
+      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
+      "deliveryFee": 990,
+      "isOpen": false
+    },
+    {
+      "storeName": "스타벅스",
+      "wallet": "0x0000",
+      "sto_address": "서울 강남구 테헤란로64길 18",
+      "menu": [
+        {
+          "name": "아이스 아메리카노",
+          "detail": "맛있는 커피를 드세요!",
+          "price": 4500,
+          "recommend": true
+        }
+      ],
+      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
+      "deliveryFee": 1350,
+      "isOpen": false
+    },
+    {
+      "storeName": "써브웨이",
+      "wallet": "0x0000",
+      "sto_address": "서울 강남구 봉은사로 627",
+      "menu": [
+        {
+          "name": "이탈리안 비엠티",
+          "detail": "맛있는 와퍼세트",
+          "price": 6900,
+          "recommend": true
+        },
+        {
+          "name": "제로콜라",
+          "detail": "설탕이 들어있지 않은 최첨단 콜라",
+          "price": 2200,
+          "recommend": true
+        },
+        {
+          "name": "더블 초코칩 쿠키",
+          "detail": "초콜릿이 잔뜩 들어있는 맛있는 쿠키",
+          "price": 1300,
+          "recommend": false
+        }
+      ],
+      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
+      "deliveryFee": 1850,
+      "isOpen": false
+    },
+    {
+      "storeName": "소담 칼국수",
+      "wallet": "0x0000",
+      "sto_address": "서울 성동구 성덕정길 131-8",
+      "menu": [
+        {
+          "name": "칼국수",
+          "detail": "수타면",
+          "price": 8000,
+          "recommend": true
+        }
+      ],
+      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
+      "deliveryFee": 1350,
+      "isOpen": false
+    },
+    {
+      "storeName": "소문난 성수 감자탕",
+      "wallet": "0x0000",
+      "sto_address": "서울 성동구 연무장길 45",
+      "menu": [
+        {
+          "name": "감자탕(소)",
+          "detail": "감자뼈 3개",
+          "price": 27000,
+          "recommend": false
+        },
+        {
+          "name": "뼈추가",
+          "detail": "뼈 2개 추가",
+          "price": 11000,
+          "recommend": true
+        }
+      ],
+      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
+      "deliveryFee": 1850,
+      "isOpen": false
+    }
+  ],
+
+  "rider": [
+    {
+      "wallet": "0x0000",
+      "deliveryArea": "서울 강남구",
+      "deliveryBy": "오토바이",
+      "nft": [{ "title": "빠른 배달" }, { "title": "깔끔한 배달" }],
+      "isWork": false
+    },
+    {
+      "wallet": "0x0000",
+      "deliveryArea": "서울 성동구",
+      "deliveryBy": "자동차",
+      "nft": [{ "title": "빠른 배달" }, { "title": "깔끔한 배달" }],
+      "isWork": false
+    }
+  ]
+}
