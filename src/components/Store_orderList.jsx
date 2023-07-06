@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
 
 export const StoreOrderList = () => {
+  const navigate = useNavigate();
+  const { web3, account, orderContract, order_c_address } =
+    useContext(AppContext);
   const [accept, setAccept] = useState(false);
   const [decline, setDecline] = useState(false);
 
@@ -57,9 +60,6 @@ export const StoreOrderList = () => {
       console.error(error);
     }
   };
-  const navigate = useNavigate();
-  const { web3, account, orderContract, order_c_address } =
-    useContext(AppContext);
 
   return (
     <div className="flex flex-col ">
