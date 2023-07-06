@@ -69,7 +69,7 @@
     "orderMenu": [
       {
         "foodname": "칼국수",
-        "cost": 8000,
+        "price": 8000,
         "quantity": 3
       }
     ]
@@ -84,12 +84,12 @@
     "orderMenu": [
       {
         "foodname": "감자탕(소)",
-        "cost": 27000,
+        "price": 27000,
         "quantity": 1
       },
       {
         "foodname": "뼈추가",
-        "cost": 11000,
+        "price": 11000,
         "quantity": 1
       }
     ]
