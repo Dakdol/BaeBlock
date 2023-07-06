@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiSolidDownArrow } from 'react-icons/bi';
 import { BsSearch } from 'react-icons/bs';
 
@@ -19,6 +19,10 @@ import Chicken from '../images/roastedChicken.jpg';
 
 export const CustomerMain = () => {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className='bg-[#F8F8F8]'>

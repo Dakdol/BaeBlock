@@ -4,7 +4,7 @@ import MenuList from '../components/MenuList';
 import CartIcon from '../components/CartIcon';
 import BottomBar from '../components/Customer_BottomNav';
 import StoreIntro from '../components/Store_Intro';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DeliveryFeeChip } from '../components/DeliveryFeeChip';
 import { Link } from 'react-router-dom';
 
@@ -64,6 +64,10 @@ export default function CustomerViewMenu() {
       ownerRecommend: false,
     },
   ]; //로그인시 프롭스로 내려줘야함??
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className='flex flex-col justify-start items-center z-20'>
