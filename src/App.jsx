@@ -104,29 +104,6 @@ function App() {
               store_c_address,
             }}
           >
-            <Route path="/customer/signin" element={<CustomerSignIn />} />
-            <Route path="/customer/regist" element={<CustomerRegist />} />
-            <Route
-              path="/customer/regist/detail"
-              element={<CustomerRegistDetail />}
-            />
-            <Route path="/customer/main" element={<CustomerMain />} />
-            <Route
-              path="/customer/viewmenu/:storeId"
-              element={<CustomerViewMenu />}
-              scrollPosition={scrollPosition}
-            />
-            <Route
-              path="/customer/viewmenu/:storeId/:menuId"
-              element={<CustomerSelectMenu />}
-              scrollPosition={scrollPosition}
-            />
-            <Route path="/customer/payment" element={<CustomerPayment />} />
-            <Route
-              path="/customer/ordercomplete"
-              element={<CustomerOrderComplete />}
-            />
-
             <div className="min-w-full flex justify-center ">
               {account ? (
                 <div>
