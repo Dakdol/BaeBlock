@@ -47,7 +47,76 @@
           }
         ],
         "deliveryFee": 1850,
-        "deliveryTip": 500
+        "deliveryTip": 100
+      },
+      "BBCoin": 38200
+    },
+    {
+      "nickname": "사자처럼",
+      "wallet": "0x0000",
+      "cus_address": "서울 성동구 둘레15길 7",
+      "orderList": {
+        "storeName": "소문난 성수 감자탕",
+        "wishList": [
+          {
+            "foodname": "감자탕(소)",
+            "cost": 27000,
+            "quantity": 1
+          },
+          {
+            "foodname": "뼈추가",
+            "cost": 11000,
+            "quantity": 1
+          }
+        ],
+        "deliveryFee": 1850,
+        "deliveryTip": 100
+      },
+      "BBCoin": 38200
+    },
+    {
+      "nickname": "사자처럼",
+      "wallet": "0x0000",
+      "cus_address": "서울 성동구 둘레15길 7",
+      "orderList": {
+        "storeName": "소문난 성수 감자탕",
+        "wishList": [
+          {
+            "foodname": "감자탕(소)",
+            "cost": 27000,
+            "quantity": 1
+          },
+          {
+            "foodname": "뼈추가",
+            "cost": 11000,
+            "quantity": 1
+          }
+        ],
+        "deliveryFee": 1850,
+        "deliveryTip": 100
+      },
+      "BBCoin": 38200
+    },
+    {
+      "nickname": "사자처럼",
+      "wallet": "0x0000",
+      "cus_address": "서울 성동구 둘레15길 7",
+      "orderList": {
+        "storeName": "소문난 성수 감자탕",
+        "wishList": [
+          {
+            "foodname": "감자탕(소)",
+            "cost": 27000,
+            "quantity": 1
+          },
+          {
+            "foodname": "뼈추가",
+            "cost": 11000,
+            "quantity": 1
+          }
+        ],
+        "deliveryFee": 1850,
+        "deliveryTip": 100
       },
       "BBCoin": 38200
     }
@@ -64,7 +133,7 @@
           "name": "와퍼",
           "caption": "맛있는 와퍼세트",
           "detail": [
-            { "title": "기본 선택", "options": ["추가", "추가", "추가"] },
+            { "title": "기본 선택", "options": ["치즈", "양배추", "패티"] },
             { "title": "추가 선택", "options": ["추가", "추가"] },
             { "title": "기타 선택", "options": ["추가"] }
           ],
@@ -94,7 +163,7 @@
           "recommend": true
         }
       ],
-      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
+      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }, { "title": "빠른 조리" }],
       "deliveryFee": 990,
       "isOpen": false
     },

@@ -5,7 +5,7 @@ export const CustomerMenuDetail = ({ title, options }) => {
       <div className='flex flex-col gap-3'>
         {options.map((value, index) => (
           <div className='flex' key={index}>
-            <input className='w-4 accent-purple' type='radio' name='radio' />
+            <input className='w-4 accent-purple' type='radio' name={title} />
             <span className='ml-2 text-caption'>{value}</span>
           </div>
         ))}

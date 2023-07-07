@@ -13,7 +13,10 @@
         "price": 3100,
         "quantity": 1
       }
-    ]
+    ],
+    "isAccept": false,
+    "isFinish": false,
+    "isDelivered": false
   },
   {
     "OrderID": 10,
@@ -29,7 +32,10 @@
         "price": 3100,
         "quantity": 1
       }
-    ]
+    ],
+    "isAccept": false,
+    "isFinish": false,
+    "isDelivered": false
   },
   {
     "OrderID": 20,
@@ -45,7 +51,10 @@
         "price": 3100,
         "quantity": 10
       }
-    ]
+    ],
+    "isAccept": false,
+    "isFinish": false,
+    "isDelivered": false
   },
   {
     "OrderID": 30,
@@ -61,7 +70,10 @@
         "price": 2900,
         "quantity": 2
       }
-    ]
+    ],
+    "isAccept": false,
+    "isFinish": false,
+    "isDelivered": false
   },
   {
     "OrderID": 40,
@@ -77,6 +89,9 @@
         "price": 3400,
         "quantity": 1
       }
-    ]
+    ],
+    "isAccept": false,
+    "isFinish": false,
+    "isDelivered": false
   }
 ]

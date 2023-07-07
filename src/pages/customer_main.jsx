@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { BiSolidDownArrow } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 
-import CartIcon from "../components/cartIcon";
+import CartIcon from "../components/CartIcon";
 import BottomBar from "../components/Customer_BottomNav";
 import { CategoryCard } from "../components/CategoryCard";
 import { LatestOrderCard } from "../components/LatestOrderCard";
-import { MatZipCard } from "../components/matZipCard";
+import { MatZipCard } from "../components/MatZipCard";
 
 import moneyBag from "../images/icon_moneyBag.png";
 import Korean from "../images/korean.png";
@@ -16,16 +16,10 @@ import Japanese from "../images/japanese.png";
 import Chick from "../images/chick.jpg";
 import Hen from "../images/hen.jpg";
 import Chicken from "../images/roastedChicken.jpg";
-
 import user from "../db/user.json";
-import { Link } from "react-router-dom";
 
 export const CustomerMain = () => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const [cartCount, setCartCount] = useState(0);
 
   return (
     <div className="bg-[#F8F8F8]">
@@ -106,7 +100,7 @@ export const CustomerMain = () => {
               key={i}
               storeId={i}
               storeName={v.storeName}
-              deliveryFee={v.deliveryFee}
+              deliveryFee={v.deliveryFee.toLocaleString()}
               img1={Chick}
               img2={Hen}
               img3={Chicken}
@@ -117,7 +111,7 @@ export const CustomerMain = () => {
 
       <div className="sticky bottom-0">
         <div className="absolute right-2 bottom-16">
-          <CartIcon cartMenuCount={count} />
+          <CartIcon cartMenuCount={cartCount} />
         </div>
         <BottomBar />
       </div>
