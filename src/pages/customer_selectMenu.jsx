@@ -1,10 +1,13 @@
 import food from '../images/food.png';
+import user from '../db/user.json';
 import { useState } from 'react';
 import { CustomerMenuDetail } from '../components/Customer_menuDetail';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function CustomerSelectMenu() {
+  const { storeId, menuId } = useParams();
   const [counter, setCounter] = useState(1);
+
   const onClickAdd = () => {
     setCounter(counter + 1);
   };
@@ -21,13 +24,17 @@ function CustomerSelectMenu() {
       </div>
 
       <div className='flex justify-between items-center mx-6 mt-4 mb-6'>
-        <div className='font-bold text-headline'>타코야키</div>
-        <div className='font-bold text-body'>15000원</div>
+        <div className='font-bold text-headline'>
+          {user.store[Number(storeId)].menu[Number(menuId)].name}
+        </div>
+        <div className='font-bold text-body'>
+          {user.store[Number(storeId)].menu[Number(menuId)].price}원
+        </div>
       </div>
 
-      <CustomerMenuDetail />
-      <CustomerMenuDetail />
-      <CustomerMenuDetail />
+      {user.store[Number(storeId)].menu[Number(menuId)].detail.map((v, i) => (
+        <CustomerMenuDetail key={i} menuId={i} title={v.title} options={v.options} />
+      ))}
 
       <div className='flex justify-between items-center mx-6 mb-8'>
         <div className='font-bold text-body'>수량</div>
@@ -42,7 +49,7 @@ function CustomerSelectMenu() {
 
       <div className='sticky bottom-0 bg-white rounded-b-2xl w-[386px] flex justify-between items-center px-4 py-4 border-t-2 border-lightGray'>
         <div className='font-bold text-body'>총 : 15000 원</div>
-        <Link to='/customer/viewmenu'>
+        <Link to={`/customer/viewmenu/${storeId}`}>
           <button className='text-subtitle font-bold bg-lightYellow rounded-xl px-6 py-2'>
             카트에 담기
           </button>

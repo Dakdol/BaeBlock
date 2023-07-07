@@ -31,7 +31,7 @@ import { RiderSignIn } from "./pages/rider_signIn";
 import { RiderRegist } from "./pages/rider_regist";
 import { RiderRegistDetail } from "./pages/rider_registDetail";
 import RiderMarket from "./pages/rider_market";
-import { ChakraProvider } from "@chakra-ui/react";
+
 import ORDER_C_ABI from "./contracts/order_c_abi.json";
 import RIDER_C_ABI from "./contracts/rider_c_abi.json";
 import STORE_C_ABI from "./contracts/store_c_abi.json";
@@ -84,94 +84,65 @@ function App() {
   }, []);
 
   return (
-    <ChakraProvider>
-      <BrowserRouter>
-        <div className="min-h-screen flex justify-center items-center noDrag">
-          <div
-            className="bg-white border-2 rounded-2xl border-black w-screen h-screen max-w-screen-width max-h-[844px] mx-auto overflow-y-auto text-black"
-            ref={scrollRef}
-          >
-            <Header />
-            <div className="min-w-full flex justify-center ">
-              {account ? (
-                <div>
-                  {account.substring(0, 4)}...
-                  {account.substring(account.length - 4)}
-                </div>
-              ) : (
-                <button onClick={onClickAccount}>지갑연결</button>
-              )}
-            </div>
-            <BtnNav scrollPosition={scrollPosition} />
+    <BrowserRouter>
+      <div className="min-h-screen flex justify-center items-center noDrag">
+        <div
+          className="bg-white border-2 rounded-2xl border-black w-screen h-screen max-w-screen-width max-h-[844px] mx-auto overflow-y-auto text-black"
+          ref={scrollRef}
+        >
+          <Header />
+          <BtnNav scrollPosition={scrollPosition} />
+          <Routes>
+            <Route path="/" element={<LoginSelect />} />
 
-            <AppContext.Provider
-              value={{
-                web3,
-                account,
-                orderContract,
-                riderNftContract,
-                storeNftContract,
-                order_c_address,
-                rider_c_address,
-                store_c_address,
-              }}
-            >
-              <Routes>
-                <Route path="/" element={<LoginSelect />} />
+            <Route path="/customer/signin" element={<CustomerSignIn />} />
+            <Route path="/customer/regist" element={<CustomerRegist />} />
+            <Route
+              path="/customer/regist/detail"
+              element={<CustomerRegistDetail />}
+            />
+            <Route path="/customer/main" element={<CustomerMain />} />
+            <Route
+              path="/customer/viewmenu/:storeId"
+              element={<CustomerViewMenu />}
+            />
+            <Route
+              path="/customer/viewmenu/:storeId/:menuId"
+              element={<CustomerSelectMenu />}
+            />
+            <Route path="/customer/payment" element={<CustomerPayment />} />
+            <Route
+              path="/customer/ordercomplete"
+              element={<CustomerOrderComplete />}
+            />
 
-                <Route path="/customer/signin" element={<CustomerSignIn />} />
-                <Route path="/customer/regist" element={<CustomerRegist />} />
-                <Route
-                  path="/customer/regist/detail"
-                  element={<CustomerRegistDetail />}
-                />
-                <Route path="/customer/main" element={<CustomerMain />} />
-                <Route
-                  path="/customer/viewmenu"
-                  element={<CustomerViewMenu />}
-                />
-                <Route
-                  path="/customer/selectmenu"
-                  element={<CustomerSelectMenu />}
-                />
-                <Route path="/customer/payment" element={<CustomerPayment />} />
-                <Route
-                  path="/customer/ordercomplete"
-                  element={<CustomerOrderComplete />}
-                />
+            <Route path="/store/signin" element={<StoreSignIn />} />
+            <Route path="/store/regist" element={<StoreRegist />} />
+            <Route
+              path="/store/regist/detail"
+              element={<StoreRegistDetail />}
+            />
+            <Route path="/store/main" element={<StoreMain />} />
+            <Route path="/store/newlist" element={<StoreNewList />} />
+            <Route path="/store/mylist" element={<StoreMyList />} />
+            <Route path="/store/edit" element={<StoreMenu />} />
+            <Route path="/store/edit/menu" element={<StoreMenuEdit />} />
+            <Route path="/store/nftmarket" element={<StoreMarket />} />
 
-                <Route path="/store/signin" element={<StoreSignIn />} />
-                <Route path="/store/regist" element={<StoreRegist />} />
-                <Route
-                  path="/store/regist/detail"
-                  element={<StoreRegistDetail />}
-                />
-                <Route path="/store/main" element={<StoreMain />} />
-                <Route path="/store/newlist" element={<StoreNewList />} />
-                <Route path="/store/mylist" element={<StoreMyList />} />
-                <Route path="/store/edit" element={<StoreMenu />} />
-                <Route path="/store/edit/menu" element={<StoreMenuEdit />} />
-                <Route path="/store/nftmarket" element={<StoreMarket />} />
-
-                <Route path="/rider/signin" element={<RiderSignIn />} />
-                <Route path="/rider/regist" element={<RiderRegist />} />
-                <Route
-                  path="/rider/regist/detail"
-                  element={<RiderRegistDetail />}
-                />
-                <Route path="/rider/main" element={<RiderMain />} />
-                <Route
-                  path="/rider/delivery"
-                  element={<RiderDeliveryStatus />}
-                />
-                <Route path="/rider/newlist" element={<RiderNewList />} />
-                <Route path="/rider/nftmarket" element={<RiderMarket />} />
-              </Routes>
-            </AppContext.Provider>
-          </div>
+            <Route path="/rider/signin" element={<RiderSignIn />} />
+            <Route path="/rider/regist" element={<RiderRegist />} />
+            <Route
+              path="/rider/regist/detail"
+              element={<RiderRegistDetail />}
+            />
+            <Route path="/rider/main" element={<RiderMain />} />
+            <Route path="/rider/delivery" element={<RiderDeliveryStatus />} />
+            <Route path="/rider/newlist" element={<RiderNewList />} />
+            <Route path="/rider/nftmarket" element={<RiderMarket />} />
+          </Routes>
         </div>
-      </BrowserRouter>
-    </ChakraProvider>
+      </div>
+    </BrowserRouter>
   );
 }
 

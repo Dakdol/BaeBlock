@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import plus from "../images/icon_plus.png";
 import food from "../images/food.png";
+import user from "../db/user.json";
+
 import MenuList from "../components/menuList";
 import StoreIntroEdit from "../components/Store_IntroEdit";
 import { Link } from "react-router-dom";
@@ -8,52 +10,30 @@ import { Link } from "react-router-dom";
 export default function CustomerViewMenu() {
   const [deliveryFee, setDeliveryFee] = useState(1000);
   const [cartCount, setCartCount] = useState(0); //로그인시 프롭스로 내려줘야함??
+  const [Astore, setAStore] = useState(user.store[0]);
 
-  const nftTitle = [{ name: "사장님" }, { name: "잘 되는지 확인" }]; //로그인시 프롭스로 내려줘야함??
-  const menuList = [
-    {
-      menuName: "사과",
-      menuFrom: "국내산",
-      menuPrice: "12000",
-      menuImage: "../images/orange.png",
-      ownerRecommend: true,
-    },
-    {
-      menuName: "복숭아",
-      menuFrom: "캐나다산",
-      menuPrice: "17000",
-      menuImage: "../images/orange.png",
-      ownerRecommend: false,
-    },
-    {
-      menuName: "복숭아",
-      menuFrom: "캐나다산",
-      menuPrice: "17000",
-      menuImage: "../images/orange.png",
-      ownerRecommend: false,
-    },
-    {
-      menuName: "복숭아",
-      menuFrom: "캐나다산",
-      menuPrice: "17000",
-      menuImage: "../images/orange.png",
-      ownerRecommend: false,
-    },
-    {
-      menuName: "복숭아",
-      menuFrom: "캐나다산",
-      menuPrice: "17000",
-      menuImage: "../images/orange.png",
-      ownerRecommend: false,
-    },
-    {
-      menuName: "복숭아",
-      menuFrom: "캐나다산",
-      menuPrice: "17000",
-      menuImage: "../images/orange.png",
-      ownerRecommend: false,
-    },
-  ]; //로그인시 프롭스로 내려줘야함??
+  const getStoreData = async () => {
+    try {
+      const accounts = await window.ethereum?.request({
+        method: "eth_requestAccounts",
+      });
+      user.store.forEach((store) => {
+        if (store.wallet.toLowerCase() === accounts[0]) {
+          setAStore(store);
+          console.log(store);
+        }
+        console.log("a:", store.wallet);
+        console.log("b:", accounts[0]);
+      });
+    } catch (error) {
+      console.error("Error fetching store data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getStoreData();
+  }, []);
+
   return (
     <div className="flex flex-col justify-start items-center">
       <div className="min-w-full h-[250px]">
@@ -63,8 +43,8 @@ export default function CustomerViewMenu() {
           <div className="absolute left-8 -top-14 flex flex-col justify-center items-center">
             <div className="flex flex-col">
               <StoreIntroEdit
-                storeName="도널드 트럼프의 점심"
-                nftTitle={nftTitle}
+                storeName={Astore.storeName}
+                nftTitle={Astore.nft}
                 starCount="5"
               />
             </div>
@@ -83,14 +63,13 @@ export default function CustomerViewMenu() {
         </Link>
 
         <div className="flex flex-col gap-4 mb-4">
-          {menuList.map((v, i) => (
+          {Astore.menu.map((v, i) => (
             <MenuList
               key={i}
-              menuName={menuList[i].menuName}
-              menuFrom={menuList[i].menuFrom}
-              menuPrice={menuList[i].menuPrice}
-              menuImage={menuList[i].menuImage}
-              ownerRecommend={menuList[i].ownerRecommend}
+              name={v.name}
+              caption={v.caption}
+              price={v.price}
+              isRecommend={v.recommend}
               showPencile={true}
             />
           ))}
