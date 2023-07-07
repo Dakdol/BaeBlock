@@ -41,7 +41,7 @@ export default function RiderMain() {
         <div className='w-[360px] flex flex-col gap-2 justify-between my-8'>
           <div className='text-headline font-bold'>{nickName} 라이더님!</div>
           <div className='text-subtitle font-bold'>어제 {deliveryCount}번 배달했어요!</div>
-          <div className='text-subtitle font-bold'>오늘도 안전 운전하세요!</div>{' '}
+          <div className='text-subtitle font-bold'>오늘도 안전 운전하세요!</div>
         </div>
 
         <div className='w-[360px] flex justify-between items-end gap-2'>
