@@ -13,6 +13,7 @@ export default function CustomerViewMenu({ scrollPosition }) {
   // const [deliveryFee, setDeliveryFee] = useState(1000);
   const [cartCount, setCartCount] = useState(0); //로그인시 프롭스로 내려줘야함??
   const { storeId } = useParams();
+  const store = user.store[Number(storeId)];
 
   useEffect(() => {
     scrollPosition = 0;
@@ -29,12 +30,8 @@ export default function CustomerViewMenu({ scrollPosition }) {
         <div className='relative'>
           <div className='absolute left-8 -top-24 flex flex-col justify-center items-center'>
             <div className='flex flex-col'>
-              <DeliveryFeeChip deliveryFee={user.store[Number(storeId)].deliveryFee} />
-              <StoreIntro
-                storeName={user.store[Number(storeId)].storeName}
-                nftTitle={user.store[Number(storeId)].nft}
-                starCount='5'
-              />
+              <DeliveryFeeChip deliveryFee={store.deliveryFee.toLocaleString()} />
+              <StoreIntro storeName={store.storeName} nftTitle={store.nft} starCount='5' />
             </div>
           </div>
         </div>
@@ -43,15 +40,15 @@ export default function CustomerViewMenu({ scrollPosition }) {
       <div className='mt-28'>
         <div className='text-subtitle font-bold text-left mb-2 ml-1'>메뉴</div>
         <div className='flex flex-col gap-4 mb-8'>
-          {user.store[Number(storeId)].menu.map((v, i) => (
+          {store.menu.map((v, i) => (
             <MenuList
               key={i}
               menuId={i}
-              name={user.store[Number(storeId)].menu[i].name}
-              caption={user.store[Number(storeId)].menu[i].caption}
-              price={user.store[Number(storeId)].menu[i].price}
+              name={store.menu[i].name}
+              caption={store.menu[i].caption}
+              price={store.menu[i].price.toLocaleString()}
               menuImage={''}
-              isRecommend={user.store[Number(storeId)].menu[i].recommend}
+              isRecommend={store.menu[i].recommend}
             />
           ))}
         </div>

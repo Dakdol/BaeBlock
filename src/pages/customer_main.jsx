@@ -96,7 +96,7 @@ export const CustomerMain = () => {
               key={i}
               storeId={i}
               storeName={v.storeName}
-              deliveryFee={v.deliveryFee}
+              deliveryFee={v.deliveryFee.toLocaleString()}
               img1={Chick}
               img2={Hen}
               img3={Chicken}
