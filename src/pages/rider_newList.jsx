@@ -28,7 +28,6 @@ export const RiderNewList = () => {
   useEffect(() => {
     const getOrderList = user.customer.map((customer) => customer.orderList);
     setOrders(getOrderList);
-    console.log(getOrderList);
   }, []);
 
   return (

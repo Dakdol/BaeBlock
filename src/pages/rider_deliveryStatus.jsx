@@ -1,12 +1,47 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { RiderSelectedOrder } from '../components/Rider_selectedOrder';
+const { kakao } = window;
 
 export const RiderDeliveryStatus = () => {
   const [finished, setFinished] = useState(false);
+  const [currentPosition, setCurrentPosition] = useState();
 
   const onClickFinish = () => {
     setFinished(!finished);
   };
+
+  useEffect(() => {
+    const getCurrentPosition = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          setCurrentPosition({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        });
+      } else {
+        alert('위치 정보를 사용할 수 없습니다.');
+      }
+    };
+
+    getCurrentPosition();
+  }, []);
+
+  useEffect(() => {
+    if (!currentPosition) return;
+
+    kakao.maps.load(() => {
+      const mapContainer = document.getElementById('map');
+      const location = new kakao.maps.LatLng(currentPosition.lat, currentPosition.lng);
+      const option = {
+        center: location,
+        level: 5,
+      };
+      const map = new kakao.maps.Map(mapContainer, option);
+      const marker = new kakao.maps.Marker({ position: location });
+      marker.setMap(map);
+    });
+  }, [currentPosition]);
 
   return (
     <div>
@@ -36,11 +71,7 @@ export const RiderDeliveryStatus = () => {
         ) : null}
 
         <div className='w-full h-[520px] relative overflow-hidden mt-6'>
-          <img
-            className='absolute top-0 left-0 w-full h-full object-cover'
-            src={process.env.PUBLIC_URL + '/images/testMap.jpg'}
-            alt='지도'
-          />
+          <div id='map' className='absolute top-0 left-0 w-full h-full object-cover'></div>
         </div>
       </div>
 

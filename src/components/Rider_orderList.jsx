@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 
 export const RiderOrderList = ({ orders }) => {
-  // 리스트 선택 시 고를 수 있는 기능
-
   useEffect(() => {
     console.log(orders);
   }, []);
