@@ -32,7 +32,7 @@ const RiderMarket = () => {
           },
         ],
       });
-      getNftTime();
+      setTimeout(getNftTime, 15000);
     } catch (error) {
       console.error(error);
     }
