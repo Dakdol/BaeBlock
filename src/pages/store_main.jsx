@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NFTChips } from "../components/Nft_Chips";
 import { Link } from "react-router-dom";
 
@@ -10,13 +10,35 @@ import Box from "../components/Main_recBox";
 import WorkBadgeBTN from "../components/Work_Btn";
 
 export default function RiderMain() {
-  const Astore = user.store[0];
+  const [Astore, setAStore] = useState(user.store[0]);
   const [monthProfit, setMonthProfit] = useState("100,000,000"); //로그인에서 프롭스로 내려야할것같음
   const [isWork, setIsWork] = useState(false);
 
   const toggleWorkBtn = () => {
     setIsWork(!isWork);
   };
+
+  const getStoreData = async () => {
+    try {
+      const accounts = await window.ethereum?.request({
+        method: "eth_requestAccounts",
+      });
+      user.store.forEach((store) => {
+        if (store.wallet.toLowerCase() === accounts[0]) {
+          setAStore(store);
+          console.log(store);
+        }
+        console.log("a:", store.wallet);
+        console.log("b:", accounts[0]);
+      });
+    } catch (error) {
+      console.error("Error fetching store data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getStoreData();
+  }, []);
 
   return (
     <>
