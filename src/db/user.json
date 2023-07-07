@@ -47,7 +47,7 @@
           }
         ],
         "deliveryFee": 1850,
-        "deliveryTip": 500
+        "deliveryTip": 100
       },
       "BBCoin": 38200
     }
@@ -94,7 +94,7 @@
           "recommend": true
         }
       ],
-      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
+      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }, { "title": "빠른 조리" }],
       "deliveryFee": 990,
       "isOpen": false
     },

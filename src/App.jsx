@@ -67,8 +67,16 @@ function App() {
             <Route path='/customer/regist' element={<CustomerRegist />} />
             <Route path='/customer/regist/detail' element={<CustomerRegistDetail />} />
             <Route path='/customer/main' element={<CustomerMain />} />
-            <Route path='/customer/viewmenu/:storeId' element={<CustomerViewMenu />} />
-            <Route path='/customer/viewmenu/:storeId/:menuId' element={<CustomerSelectMenu />} />
+            <Route
+              path='/customer/viewmenu/:storeId'
+              element={<CustomerViewMenu />}
+              scrollPosition={scrollPosition}
+            />
+            <Route
+              path='/customer/viewmenu/:storeId/:menuId'
+              element={<CustomerSelectMenu />}
+              scrollPosition={scrollPosition}
+            />
             <Route path='/customer/payment' element={<CustomerPayment />} />
             <Route path='/customer/ordercomplete' element={<CustomerOrderComplete />} />
 

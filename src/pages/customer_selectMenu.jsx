@@ -1,10 +1,10 @@
 import food from '../images/food.png';
 import user from '../db/user.json';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CustomerMenuDetail } from '../components/Customer_menuDetail';
 import { Link, useParams } from 'react-router-dom';
 
-function CustomerSelectMenu() {
+function CustomerSelectMenu({ scrollPosition }) {
   const { storeId, menuId } = useParams();
   const [counter, setCounter] = useState(1);
 
@@ -16,6 +16,10 @@ function CustomerSelectMenu() {
       setCounter(counter - 1);
     }
   };
+
+  useEffect(() => {
+    scrollPosition = 0;
+  }, []);
 
   return (
     <div className='flex flex-col'>
