@@ -14,6 +14,7 @@ const RiderMarket = () => {
   const [nftDay, setNftDay] = useState(0);
   const [nftTime, setNftTime] = useState(0);
   const [nowTime, setNowTime] = useState(0);
+
   const onClickMint = async () => {
     try {
       var a = web3.utils.numberToHex(Number(1)); /*nft가격*/
@@ -31,6 +32,7 @@ const RiderMarket = () => {
           },
         ],
       });
+      getNftTime();
     } catch (error) {
       console.error(error);
     }
@@ -68,19 +70,26 @@ const RiderMarket = () => {
       setNftTime(parseInt(nftTime));
       const nowTime = await orderContract.methods.getBlockTimeStamp().call();
       setNowTime(parseInt(nowTime));
-      // const calculateTime = (
-      //   (parseInt(nftTime) - parseInt(nowTime)) /
-      //   86400
-      // ).toFixed(0);
-      // setNftDay(calculateTime);
+      const calculateTime = (
+        (parseInt(nftTime) - parseInt(nowTime)) /
+        86400
+      ).toFixed(0);
+      setNftDay(calculateTime);
     } catch (error) {
       console.error(error);
     }
   };
+  useEffect(() => {
+    getNftTime();
+  }, []);
   getNftTime();
   useEffect(() => {
+    const time = ((nftTime - nowTime) / 86400).toFixed(0);
+    setNftDay(time);
+    console.log(nftTime);
     //setNftDay(((nftTime - nowTime) / 86400).toFixed(0));
   }, [nftTime]);
+
   return (
     <div className="mt-20 flex flex-col justify-center items-center ">
       <div>NFT 만료까지 남은 기간</div>
@@ -88,11 +97,7 @@ const RiderMarket = () => {
         className="mt-6 mb-4 font-bold text-3xl"
         style={{ fontSize: "80px" }}
       >
-        {nftTime > 0 ? (
-          <div>{((nftTime - nowTime) / 86400).toFixed(0)}일 </div>
-        ) : (
-          0
-        )}
+        {nftTime > 0 ? <div>{nftDay}일 </div> : 0}
       </div>
       <div className="h-16"></div>
       <button onClick={onClickBurn}>
