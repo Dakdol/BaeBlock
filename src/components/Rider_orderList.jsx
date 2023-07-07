@@ -13,8 +13,10 @@ export const RiderOrderList = () => {
             <div className='flex justify-between font-bold'>
               <div>15분</div>
               <div>
-                {user.customer[i].orderList.deliveryFee * 2 +
-                  user.customer[i].orderList.deliveryTip}
+                {(
+                  user.customer[i].orderList.deliveryFee * 2 +
+                  user.customer[i].orderList.deliveryTip
+                ).toLocaleString()}
                 원
               </div>
             </div>

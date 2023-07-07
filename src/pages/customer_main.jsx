@@ -19,7 +19,7 @@ import Chicken from '../images/roastedChicken.jpg';
 import user from '../db/user.json';
 
 export const CustomerMain = () => {
-  const [count, setCount] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
 
   return (
     <div className='bg-[#F8F8F8]'>
@@ -107,7 +107,7 @@ export const CustomerMain = () => {
 
       <div className='sticky bottom-0'>
         <div className='absolute right-2 bottom-16'>
-          <CartIcon cartMenuCount={count} />
+          <CartIcon cartMenuCount={cartCount} />
         </div>
         <BottomBar />
       </div>

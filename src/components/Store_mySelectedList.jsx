@@ -47,7 +47,7 @@ export const StoreMySelectedList = () => {
           <div className='px-4 py-2'>
             <div className='flex justify-between font-bold'>
               <div>OrderID : {v.OrderID}</div>
-              <div>총 {calculateTotalCost(i)} 원</div>
+              <div>총 {calculateTotalCost(i).toLocaleString()} 원</div>
             </div>
 
             <div className='flex justify-between text-caption'>

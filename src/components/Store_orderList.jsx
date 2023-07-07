@@ -76,11 +76,12 @@ export const StoreOrderList = () => {
                   </div>
                 ))}
               </div>
-              <div>총 {calculateTotalCost(i)} 원</div>
+              <div>총 {calculateTotalCost(i).toLocaleString()} 원</div>
             </div>
           </div>
+
           <div className='flex justify-between items-center px-4 pt-2'>
-            <div className='text-caption'>배달비 : {v.deliveryFee} 원</div>
+            <div className='text-caption'>배달비 : {v.deliveryFee.toLocaleString()} 원</div>
             <div className='flex justify-end gap-2 mb-2'>
               <button
                 className='bg-lightGray px-2 py-1 rounded-xl font-bold border-[1.5px] border-black text-caption text-darkGray'
