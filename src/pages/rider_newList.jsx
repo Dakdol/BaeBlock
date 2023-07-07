@@ -1,15 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { RiderOrderList } from '../components/Rider_orderList';
+import user from '../db/user.json';
 import { Link } from 'react-router-dom';
 
 export const RiderNewList = () => {
   const [startDelivery, setStartDelivery] = useState(false);
+  const [orders, setOrders] = useState([]);
   // 배달 최대 3개 선택 되면 1, 2, 3 동그라미 컬러 변경
   const [selectDelivery, setSelectDelivery] = useState(0);
 
   const onClickPopUp = () => {
     setStartDelivery(!startDelivery);
   };
+
+  const onClickSortByFee = () => {
+    const sortedOrders = [...orders].sort(
+      (a, b) => b.deliveryFee + b.deliveryTip - (a.deliveryFee + a.deliveryTip)
+    );
+    setOrders(sortedOrders);
+  };
+
+  const onClickSortByDist = () => {
+    const sortedOrders = [...orders].sort((a, b) => a.distance - b.distance);
+    setOrders(sortedOrders);
+  };
+
+  useEffect(() => {
+    const getOrderList = user.customer.map((customer) => customer.orderList);
+    setOrders(getOrderList);
+    console.log(getOrderList);
+  }, []);
 
   return (
     <div className='flex flex-col'>
@@ -58,12 +78,16 @@ export const RiderNewList = () => {
       ) : null}
 
       <div className='flex justify-center mt-8'>
-        <button className='bg-mint px-4 py-2 rounded-md mr-8 font-bold'>거리순</button>
-        <button className='bg-deepYellow px-4 py-2 rounded-md font-bold'>배달료순</button>
+        <button className='bg-mint px-4 py-2 rounded-md mr-8 font-bold' onClick={onClickSortByDist}>
+          거리순
+        </button>
+        <button className='bg-deepYellow px-4 py-2 rounded-md font-bold' onClick={onClickSortByFee}>
+          배달료순
+        </button>
       </div>
 
       <div className='flex flex-col justify-center items-center mt-4'>
-        <RiderOrderList />
+        <RiderOrderList orders={orders} />
       </div>
 
       <div className='flex justify-center my-4'>
