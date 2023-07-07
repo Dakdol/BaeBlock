@@ -1,17 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import plus from "../images/icon_plus.png";
 import food from "../images/food.png";
+import user from "../db/user.json";
 
 import MenuList from "../components/menuList";
 import StoreIntroEdit from "../components/Store_IntroEdit";
 import { Link } from "react-router-dom";
 
-import user from "../db/user.json";
-
 export default function CustomerViewMenu() {
   const [deliveryFee, setDeliveryFee] = useState(1000);
   const [cartCount, setCartCount] = useState(0); //로그인시 프롭스로 내려줘야함??
-  const Astore = user.store[0];
+  const [Astore, setAStore] = useState(user.store[0]);
+
+  const getStoreData = async () => {
+    try {
+      const accounts = await window.ethereum?.request({
+        method: "eth_requestAccounts",
+      });
+      user.store.forEach((store) => {
+        if (store.wallet.toLowerCase() === accounts[0]) {
+          setAStore(store);
+          console.log(store);
+        }
+        console.log("a:", store.wallet);
+        console.log("b:", accounts[0]);
+      });
+    } catch (error) {
+      console.error("Error fetching store data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getStoreData();
+  }, []);
 
   return (
     <div className="flex flex-col justify-start items-center">
