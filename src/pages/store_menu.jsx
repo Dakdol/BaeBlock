@@ -3,7 +3,7 @@ import plus from "../images/icon_plus.png";
 import food from "../images/food.png";
 import user from "../db/user.json";
 
-import MenuList from "../components/menuList";
+import MenuList from "../components/MenuList";
 import StoreIntroEdit from "../components/Store_IntroEdit";
 import { Link } from "react-router-dom";
 

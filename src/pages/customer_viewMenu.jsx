@@ -1,8 +1,8 @@
 import food from "../images/food.png";
 import user from "../db/user.json";
 
-import MenuList from "../components/menuList";
-import CartIcon from "../components/cartIcon";
+import MenuList from "../components/MenuList";
+import CartIcon from "../components/CartIcon";
 import BottomBar from "../components/Customer_BottomNav";
 import StoreIntro from "../components/Store_Intro";
 import { useEffect, useState } from "react";
