@@ -13,7 +13,7 @@ export const CustomerRegist = () => {
         method: 'eth_requestAccounts',
       });
       setAccount(accounts[0]);
-      navigate('/customer/signin', { replace: true });
+      navigate('/customer/regist/detail', { replace: true });
       console.log(accounts);
     } catch (error) {
       console.error(error);
