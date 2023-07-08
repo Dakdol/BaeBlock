@@ -124,6 +124,54 @@
         "distance": 1.2
       },
       "BBCoin": 38200
+    },
+    {
+      "nickname": "사자처럼",
+      "wallet": "0x0000",
+      "cus_address": "서울 성동구 둘레15길 7",
+      "orderList": {
+        "storeName": "소문난 성수 감자탕",
+        "wishList": [
+          {
+            "foodname": "감자탕(소)",
+            "cost": 27000,
+            "quantity": 1
+          },
+          {
+            "foodname": "뼈추가",
+            "cost": 11000,
+            "quantity": 1
+          }
+        ],
+        "deliveryFee": 1850,
+        "deliveryTip": 0,
+        "distance": 1.2
+      },
+      "BBCoin": 38200
+    },
+    {
+      "nickname": "사자처럼",
+      "wallet": "0x0000",
+      "cus_address": "서울 성동구 둘레15길 7",
+      "orderList": {
+        "storeName": "소문난 성수 감자탕",
+        "wishList": [
+          {
+            "foodname": "감자탕(소)",
+            "cost": 27000,
+            "quantity": 1
+          },
+          {
+            "foodname": "뼈추가",
+            "cost": 11000,
+            "quantity": 1
+          }
+        ],
+        "deliveryFee": 1850,
+        "deliveryTip": 0,
+        "distance": 1.2
+      },
+      "BBCoin": 38200
     }
   ],
 

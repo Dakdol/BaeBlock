@@ -68,7 +68,7 @@ export const RiderNewList = () => {
         </div>
       </div>
 
-      <div className='flex justify-between gap-16 items-center mt-14'>
+      <div className='flex justify-center gap-16 items-center mt-14 bg-white w-[386px] absolute'>
         <div
           className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${getColor(
             1
@@ -114,7 +114,7 @@ export const RiderNewList = () => {
         </div>
       ) : null}
 
-      <div className='flex justify-center mt-8'>
+      <div className='flex justify-center mt-24'>
         <button className='bg-mint px-4 py-2 rounded-md mr-8 font-bold' onClick={onClickSortByDist}>
           거리순
         </button>
@@ -127,7 +127,7 @@ export const RiderNewList = () => {
         <RiderOrderList orders={orders} />
       </div>
 
-      <div className='sticky bottom-0'>
+      <div className='sticky bottom-0 bg-white pt-4 pb-6 rounded-b-2xl w-[386px] flex justify-center items-center border-t-2 border-lightGray'>
         <button
           className='bg-red-500 px-4 py-2 rounded-md font-bold text-white'
           onClick={onClickPopUp}>

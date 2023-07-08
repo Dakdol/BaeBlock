@@ -69,7 +69,7 @@ export default function RiderMain() {
             <LongBox text='현재 배달 중인 목록' color='bg-lightGray' />
           </Link>
 
-          <div className='flex justify-between w-full'>
+          <div className='flex justify-around w-full'>
             <Box text='오늘의 수익' color='bg-lightBage' width='24' />
             <Box text='프로필 보기' color='bg-deepYellow' width='24' />
           </div>
