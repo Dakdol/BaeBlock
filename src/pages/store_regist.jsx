@@ -6,7 +6,15 @@ import { AppContext } from "../App";
 
 export const StoreRegist = () => {
   const navigate = useNavigate();
-  const { account, orderContract, order_c_address } = useContext(AppContext);
+  const {
+    web3,
+    account,
+    orderContract,
+    order_c_address,
+    storeNftContract,
+    store_c_address,
+  } = useContext(AppContext);
+  const [firstMint, setFirstMint] = useState(0);
   const onClickStore = async () => {
     try {
       await window.ethereum.request({
@@ -19,6 +27,29 @@ export const StoreRegist = () => {
           },
         ],
       });
+      const firstMinting = await storeNftContract.methods
+        .firstMinting(account)
+        .call();
+
+      if (firstMinting < 1) {
+        setFirstMint(0);
+      } else {
+        setFirstMint(3); /*nft가격*/
+      }
+
+      await window.ethereum.request({
+        method: "eth_sendTransaction",
+        params: [
+          {
+            from: account,
+            to: store_c_address,
+            data: storeNftContract.methods.storeMint().encodeABI() /*민팅개수*/,
+            gas: "100000",
+            value: web3.utils.numberToHex(Number(firstMint)),
+          },
+        ],
+      });
+
       navigate("/store/regist/detail", {
         replace: true,
       });
