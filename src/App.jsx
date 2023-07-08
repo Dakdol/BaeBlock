@@ -1,6 +1,10 @@
 import React, { createContext, useEffect, useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import axios from "axios";
+
+import user from "./db/user.json";
+
 import LoginSelect from "./pages/login_select";
 import { Header } from "./components/Header";
 import BtnNav from "./components/BtnNav";
@@ -36,11 +40,16 @@ import ORDER_C_ABI from "./contracts/order_c_abi.json";
 import RIDER_C_ABI from "./contracts/rider_c_abi.json";
 import STORE_C_ABI from "./contracts/store_c_abi.json";
 import Web3 from "web3";
+
 import CustomerMypage from "./pages/customer_myPage";
+
 export const AppContext = createContext();
 
 function App() {
   const [account, setAccount] = useState();
+  const [exchangeRate, setExchangeRate] = useState(0);
+  const [Astore, setAStore] = useState(user.store[0]);
+
   const onClickAccount = async () => {
     try {
       const accounts = await window.ethereum.request({
@@ -84,6 +93,32 @@ function App() {
     };
   }, []);
 
+  const getStoreData = async () => {
+    try {
+      user.store.forEach((store) => {
+        if (store.wallet.toLowerCase() === account) {
+          setAStore(store);
+        }
+      });
+    } catch (error) {
+      console.error("Error fetching store data:", error);
+    }
+  };
+
+  const getExchangeRate = async () => {
+    try {
+      const response = await axios.get(
+        `https://api.upbit.com/v1/ticker?markets= KRW-MATIC`
+      );
+      setExchangeRate(response.data[0].trade_price);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    getExchangeRate();
+    getStoreData();
+  }, []);
   return (
     <BrowserRouter>
       <div className="min-h-screen flex justify-center items-center noDrag">
@@ -103,6 +138,10 @@ function App() {
               order_c_address,
               rider_c_address,
               store_c_address,
+
+              Astore,
+              exchangeRate,
+              getExchangeRate,
             }}
           >
             <BtnNav
@@ -143,6 +182,7 @@ function App() {
                 path="/customer/ordercomplete"
                 element={<CustomerOrderComplete />}
               />
+
               <Route path="/customer/mypage" element={<CustomerMypage />} />
 
               <Route path="/store/signin" element={<StoreSignIn />} />

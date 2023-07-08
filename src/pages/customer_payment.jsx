@@ -1,12 +1,20 @@
 import { Link, useNavigate } from "react-router-dom";
 import { PaymentMenu } from "../components/Payment_menu";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../App";
 
 export const CustomerPayment = () => {
   const navigate = useNavigate();
-  const { web3, account, orderContract, order_c_address } =
-    useContext(AppContext);
+  const [pay, setPay] = useState(false);
+  const [payment, setPayment] = useState(true);
+  const {
+    web3,
+    account,
+    orderContract,
+    order_c_address,
+    exchangeRate,
+    getExchangeRate,
+  } = useContext(AppContext);
 
   const onClickOrder = async () => {
     var a = web3.utils.numberToHex(Number(3)); /*Number안에 음식값+배달비*/
@@ -35,11 +43,17 @@ export const CustomerPayment = () => {
       console.error(error);
     }
   };
-  const [pay, setPay] = useState(false);
 
   const onClickPay = () => {
     setPay(!pay);
   };
+  const onClickPayment = () => {
+    setPayment(!payment);
+  };
+
+  useEffect(() => {
+    getExchangeRate();
+  }, []);
 
   return (
     <div className="bg-[#F8F8F8]">
@@ -96,11 +110,21 @@ export const CustomerPayment = () => {
       <div className="bg-white mt-4 px-5 py-4 category-shadow">
         <div className="font-bold text-subtitle">결제 수단</div>
         <div className="flex mt-4">
-          <input class="w-4 accent-purple" type="radio" name="radio" />
+          <input
+            class="w-4 accent-purple"
+            type="radio"
+            name="radio"
+            onClick={onClickPayment}
+          />
           <span class="ml-2 text-caption font-bold">폴리곤으로 결제</span>
         </div>
         <div className="flex mt-2">
-          <input class="w-4 accent-purple" type="radio" name="radio" />
+          <input
+            class="w-4 accent-purple"
+            type="radio"
+            name="radio"
+            onClick={onClickPayment}
+          />
           <span class="ml-2 text-caption font-bold">BB 코인으로 결제</span>
         </div>
       </div>
@@ -121,7 +145,13 @@ export const CustomerPayment = () => {
         </div>
         <div className="flex justify-between items-center border-t-[1.5px] pt-4 mt-4 border-lightGray">
           <div className="font-bold text-body">총 결제금액</div>
-          <div className="font-bold text-subtitle">31,350원</div>
+          {payment ? (
+            <div className="font-bold text-subtitle">31,350원</div>
+          ) : (
+            <div className="font-bold text-subtitle">
+              {`${Number((31350 / exchangeRate).toFixed(3))}`} MATIC
+            </div>
+          )}
         </div>
       </div>
 
