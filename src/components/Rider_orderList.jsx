@@ -22,18 +22,13 @@ export const RiderOrderList = ({ orders }) => {
     }
   };
 
-  const RiderPick = () => (
-    <div className='bg-yellow-400 flex flex-col justify-center items-center'>
-      <button onClick={() => onClickSetDelivery(0)}>선택</button>
-    </div>
-  );
-
   return (
     <div className='flex flex-col '>
       {orders.map((order, i) => (
         <button
           key={i}
-          className='bg-white w-[350px] mb-3 rounded-lg border-[1.5px] border-darkGray solid-shadow'>
+          className='bg-white w-[350px] mb-3 rounded-lg border-[1.5px] border-darkGray solid-shadow'
+          onClick={() => onClickSetDelivery(0)}>
           <div className='px-4 py-2'>
             <div className='flex justify-between font-bold'>
               <div>15분</div>
@@ -48,7 +43,6 @@ export const RiderOrderList = ({ orders }) => {
               {/* <div className='flex'>매장 위치: {order.sto_address}</div> */}
             </div>
           </div>
-          <RiderPick />
         </button>
       ))}
     </div>

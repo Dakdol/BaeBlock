@@ -60,7 +60,7 @@ export const RiderNewList = () => {
   };
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col items-center'>
       <div className='bg-white w-[386px] h-14 absolute z-10'></div>
       <div className='flex justify-center pt-4'>
         <div className='font-bold text-subtitle max-w-[250px] whitespace-nowrap overflow-ellipsis overflow-hidden absolute z-20'>
@@ -68,7 +68,7 @@ export const RiderNewList = () => {
         </div>
       </div>
 
-      <div className='flex justify-evenly items-center mt-14'>
+      <div className='flex justify-between gap-16 items-center mt-14'>
         <div
           className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${getColor(
             1
@@ -105,7 +105,7 @@ export const RiderNewList = () => {
               <Link to='/rider/delivery'>
                 <button
                   className='bg-lightYellow p-2 rounded-xl font-bold border-[1.5px] border-black'
-                  onClick={(onClickPopUp, onClickStartDelivery.blind(null, selectDelivery))}>
+                  onClick={(onClickPopUp, onClickStartDelivery)}>
                   배달 시작!
                 </button>
               </Link>
@@ -127,7 +127,7 @@ export const RiderNewList = () => {
         <RiderOrderList orders={orders} />
       </div>
 
-      <div className='flex justify-center my-4'>
+      <div className='sticky bottom-0'>
         <button
           className='bg-red-500 px-4 py-2 rounded-md font-bold text-white'
           onClick={onClickPopUp}>
