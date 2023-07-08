@@ -1,8 +1,10 @@
 import React, { createContext, useEffect, useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import axios from "axios";
 
 import user from "./db/user.json";
+
 import LoginSelect from "./pages/login_select";
 import { Header } from "./components/Header";
 import BtnNav from "./components/BtnNav";
@@ -38,6 +40,9 @@ import ORDER_C_ABI from "./contracts/order_c_abi.json";
 import RIDER_C_ABI from "./contracts/rider_c_abi.json";
 import STORE_C_ABI from "./contracts/store_c_abi.json";
 import Web3 from "web3";
+
+import CustomerMypage from "./pages/customer_myPage";
+
 export const AppContext = createContext();
 
 function App() {
@@ -133,6 +138,7 @@ function App() {
               order_c_address,
               rider_c_address,
               store_c_address,
+
               Astore,
               exchangeRate,
               getExchangeRate,
@@ -176,6 +182,8 @@ function App() {
                 path="/customer/ordercomplete"
                 element={<CustomerOrderComplete />}
               />
+
+              <Route path="/customer/mypage" element={<CustomerMypage />} />
 
               <Route path="/store/signin" element={<StoreSignIn />} />
               <Route path="/store/regist" element={<StoreRegist />} />

@@ -2,7 +2,7 @@
   "customer": [
     {
       "nickname": "멋쟁이",
-      "wallet": "0x0000",
+      "wallet": "0x3b0A2c32055d72803f12BCa33bb53B3AAC4bEcdB",
       "cus_address": "서울 강남구 선릉로93길 22",
       "orderList": {
         "storeName": "써브웨이",
@@ -168,7 +168,11 @@
           "recommend": true
         }
       ],
-      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }, { "title": "빠른 조리" }],
+      "nft": [
+        { "title": "친절한 사장님" },
+        { "title": "우리동네 맛집" },
+        { "title": "빠른 조리" }
+      ],
       "deliveryFee": 990,
       "isOpen": false
     },
