@@ -1,4 +1,28 @@
+import { useContext } from "react";
+import { AppContext } from "../App";
+
 const CustomerOrderList = (props) => {
+  const { account, orderContract, order_c_address } = useContext(AppContext);
+
+  const onClickRiderCompleteAndPay = async () => {
+    try {
+      await window.ethereum.request({
+        method: "eth_sendTransaction",
+        params: [
+          {
+            from: account,
+            to: order_c_address,
+            data: orderContract.methods
+              .orderComplete(0, true)
+              .encodeABI() /* 주문번호,true*/,
+            gas: "100000",
+          },
+        ],
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div
       className={`flex items-center justify-center ${props.color} w-[360px] h-[110px] rounded-lg border-[1.5px] border-black basic-shadow`}
@@ -17,7 +41,9 @@ const CustomerOrderList = (props) => {
           </div>
         </div>
         <div className="bg-purple p-4 rounded-xl">
-          <button className="text-white">음식수령완료</button>
+          <button onClick={onClickRiderCompleteAndPay} className="text-white">
+            음식수령완료
+          </button>
         </div>
       </div>
     </div>
