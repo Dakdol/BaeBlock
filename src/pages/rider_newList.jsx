@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { RiderOrderList } from '../components/Rider_orderList';
 import user from '../db/user.json';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../App';
 
 export const RiderNewList = () => {
+  const { account, orderContract, order_c_address } = useContext(AppContext);
   const [startDelivery, setStartDelivery] = useState(false);
   const [orders, setOrders] = useState([]);
   // 배달 최대 3개 선택 되면 1, 2, 3 동그라미 컬러 변경
@@ -30,6 +32,33 @@ export const RiderNewList = () => {
     setOrders(getOrderList);
   }, []);
 
+  const onClickStartDelivery = async (orderNumber) => {
+    try {
+      await window.ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [
+          {
+            from: account,
+            to: order_c_address,
+            data: orderContract.methods.startDelivery(orderNumber).encodeABI(),
+            gas: '300000',
+          },
+        ],
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const getColor = (index) => {
+    if (selectDelivery === index) {
+      if (index === 1) return 'bg-red-300';
+      if (index === 2) return 'bg-yellow-300';
+      if (index === 3) return 'bg-green-300';
+    }
+    return '';
+  };
+
   return (
     <div className='flex flex-col'>
       <div className='bg-white w-[386px] h-14 absolute z-10'></div>
@@ -40,13 +69,22 @@ export const RiderNewList = () => {
       </div>
 
       <div className='flex justify-evenly items-center mt-14'>
-        <div className='flex justify-center items-center w-8 h-8 rounded-full border-2 border-black'>
+        <div
+          className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${getColor(
+            1
+          )}`}>
           1
         </div>
-        <div className='flex justify-center items-center w-8 h-8 rounded-full border-2 border-black'>
+        <div
+          className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${getColor(
+            2
+          )}`}>
           2
         </div>
-        <div className='flex justify-center items-center w-8 h-8 rounded-full border-2 border-black'>
+        <div
+          className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${getColor(
+            3
+          )}`}>
           3
         </div>
       </div>
@@ -67,7 +105,7 @@ export const RiderNewList = () => {
               <Link to='/rider/delivery'>
                 <button
                   className='bg-lightYellow p-2 rounded-xl font-bold border-[1.5px] border-black'
-                  onClick={onClickPopUp}>
+                  onClick={(onClickPopUp, onClickStartDelivery.blind(null, selectDelivery))}>
                   배달 시작!
                 </button>
               </Link>
