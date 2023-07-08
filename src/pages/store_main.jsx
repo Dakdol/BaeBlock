@@ -3,8 +3,6 @@ import { AppContext } from '../App';
 import { NFTChips } from '../components/Nft_Chips';
 import { Link } from 'react-router-dom';
 
-import user from '../db/user.json';
-
 import NftMarket from '../components/Main_nftMarket';
 import LongBox from '../components/Main_longBox';
 import Box from '../components/Main_recBox';
