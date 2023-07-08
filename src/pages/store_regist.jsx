@@ -53,15 +53,17 @@ export const StoreRegist = () => {
   return (
     <div className='flex flex-col justify-center items-center mt-24'>
       <div className='font-bold text-[24px]'>메타마스크로 간편하게 가입해요.</div>
-      <div className='flex flex-col justify-center items-center gap-1 mt-8'>
-        <div className='text-body'>배불럭은 이더리움의 스마트 컨트랙트를 활용한</div>
-        <div className='text-body'>새로운 배달앱 입니다!</div>
-        <div className='text-body'>
-          사장님은 <span className='font-bold text-purple'>저렴한 수수료로 즐겁게</span> 요리해요!
+      <div className='regist-entry'>
+        <div className='flex flex-col justify-center items-center gap-1 mt-8'>
+          <div className='text-body'>배불럭은 이더리움의 스마트 컨트랙트를 활용한</div>
+          <div className='text-body'>새로운 배달앱 입니다!</div>
+          <div className='text-body'>
+            사장님은 <span className='font-bold text-purple'>저렴한 수수료로 즐겁게</span> 요리해요!
+          </div>
         </div>
-      </div>
-      <div className='font-bold text-subtitle mt-16'>
-        <span className='font-bold text-purple'>여우를 눌러 가입</span>해보세요!
+        <div className='flex justify-center font-bold text-subtitle mt-16'>
+          <span className='font-bold text-purple'>여우를 눌러 가입</span>해보세요!
+        </div>
       </div>
 
       <button onClick={onClickStore}>

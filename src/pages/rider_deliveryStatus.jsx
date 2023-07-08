@@ -112,7 +112,7 @@ export const RiderDeliveryStatus = () => {
         </div>
       </div>
 
-      <div className='flex overflow-x-auto pt-5 pb-2 ml-5'>
+      <div className='flex overflow-x-auto pt-5 pb-2 ml-5 scrollbar-hide'>
         <RiderSelectedOrder onClickEvent={onClickFinish} />
         <RiderSelectedOrder onClickEvent={onClickFinish} />
         <RiderSelectedOrder onClickEvent={onClickFinish} />

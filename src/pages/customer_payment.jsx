@@ -10,7 +10,7 @@ export const CustomerPayment = () => {
   const [payment, setPayment] = useState(true);
   const [Acustomer, setACustomer] = useState(user.customer[0].orderList);
   const [totalFoodCost, setTotalFoodCost] = useState(0);
-  const [totalCost, setTotalCost] = useState(0);
+
   const {
     web3,
     account,
@@ -74,6 +74,7 @@ export const CustomerPayment = () => {
       });
       navigate("/Acustomer/ordercomplete", { replace: true });
     } catch (error) {
+      ``;
       console.error(error);
     }
   };
@@ -201,6 +202,7 @@ export const CustomerPayment = () => {
           <div className="font-bold text-caption">배달팁</div>
           <div className="text-caption">{Acustomer.deliveryTip}원</div>
         </div>
+
         <div className="flex justify-between items-center border-t-[1.5px] pt-4 mt-4 border-lightGray">
           <div className="font-bold text-body">총 결제금액</div>
           {payment ? (

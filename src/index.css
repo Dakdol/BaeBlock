@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'SUIT-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2')
-    format('woff2');
+  font-family: "SUIT-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -52,5 +52,24 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+  }
+
+  .regist-entry {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation-name: slide-down;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
