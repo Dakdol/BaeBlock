@@ -1,11 +1,18 @@
 import { useContext, useState } from "react";
-import storeNewOrder from "../db/storeNewOrder.json";
+// import storeNewOrder from "../db/storeNewOrder.json";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
 export const StoreOrderList = () => {
   const navigate = useNavigate();
-  const { web3, account, orderContract, order_c_address } =
-    useContext(AppContext);
+  const {
+    web3,
+    account,
+    orderContract,
+    order_c_address,
+    getStoreOrderList,
+    storeOrderList,
+    setStoreOrderList,
+  } = useContext(AppContext);
   const [accept, setAccept] = useState({});
   const [decline, setDecline] = useState({});
   const [toggle, setToggle] = useState({ index: null, type: null });
@@ -113,7 +120,7 @@ export const StoreOrderList = () => {
   // };
 
   const calculateTotalCost = (i) => {
-    const orderList = storeNewOrder[i].orderMenu;
+    const orderList = storeOrderList[i].orderMenu;
     let totalCost = 0;
 
     orderList.forEach((item) => {
@@ -164,7 +171,7 @@ export const StoreOrderList = () => {
         </div>
       )}
 
-      {storeNewOrder.map((v, i) => {
+      {storeOrderList.map((v, i) => {
         if (accept[i] || decline[i]) return null;
         return (
           <div
