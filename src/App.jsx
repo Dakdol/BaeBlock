@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from "axios";
 
+import user from "./db/user.json";
 import LoginSelect from "./pages/login_select";
 import { Header } from "./components/Header";
 import BtnNav from "./components/BtnNav";
@@ -66,6 +68,36 @@ function App() {
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const scrollRef = useRef(null);
+  const [exchangeRate, setExchangeRate] = useState(0);
+  const [Astore, setAStore] = useState(user.store[0]);
+
+  const getStoreData = async () => {
+    try {
+      user.store.forEach((store) => {
+        if (store.wallet.toLowerCase() === account) {
+          setAStore(store);
+        }
+      });
+    } catch (error) {
+      console.error("Error fetching store data:", error);
+    }
+  };
+
+  const getExchangeRate = async () => {
+    try {
+      const response = await axios.get(
+        `https://api.upbit.com/v1/ticker?markets= KRW-MATIC`
+      );
+      setExchangeRate(response.data[0].trade_price);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getExchangeRate();
+    getStoreData();
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -102,6 +134,9 @@ function App() {
               order_c_address,
               rider_c_address,
               store_c_address,
+              exchangeRate,
+              getExchangeRate,
+              Astore,
             }}
           >
             <div className="min-w-full flex justify-center ">
