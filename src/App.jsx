@@ -56,9 +56,9 @@ function App() {
     }
   };
   var web3 = new Web3(process.env.REACT_APP_API);
-  var order_c_address = "0x2E130761fDd79C8fFE9a37cEd16C88C62C228BC2";
-  var rider_c_address = "0x25187959eaa664Bfbb70c3bDC68B0A683B030BFA";
-  var store_c_address = "0xb78e47a41463DB3171c337273C11A8d39a197E4B";
+  var order_c_address = "0x59cBa00D13Ef230290f7d1e74D0a5b0D0Ad2893c";
+  var rider_c_address = "0x396d83bc8BEE44f2cF2a057140459D352aBD7ea7";
+  var store_c_address = "0xA5517d6772E0625EAf203Db4291b46C8Dda7E04a";
   var order_c_abi = ORDER_C_ABI;
   var rider_c_abi = RIDER_C_ABI;
   var store_c_abi = STORE_C_ABI;
@@ -70,6 +70,7 @@ function App() {
   const scrollRef = useRef(null);
   const [exchangeRate, setExchangeRate] = useState(0);
   const [Astore, setAStore] = useState(user.store[0]);
+  const [storeOrderList, setStoreOrderList] = useState();
 
   const getStoreData = async () => {
     try {
@@ -94,10 +95,27 @@ function App() {
     }
   };
 
+  const getStoreOrderList = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/storeOrder`
+      );
+      if (response.status !== 200) {
+        alert("에러 발생!");
+        return;
+      }
+      setStoreOrderList(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
+    getStoreOrderList();
     getExchangeRate();
     getStoreData();
-  });
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -137,6 +155,8 @@ function App() {
               exchangeRate,
               getExchangeRate,
               Astore,
+              storeOrderList,
+              getStoreOrderList,
             }}
           >
             <div className="min-w-full flex justify-center ">

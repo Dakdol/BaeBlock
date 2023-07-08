@@ -1,13 +1,18 @@
-import { useContext, useState } from "react";
-import storeNewOrder from "../db/storeNewOrder.json";
+import { useContext, useEffect, useState } from "react";
+// import storeNewOrder from "../db/storeNewOrder.json";
 import { AppContext } from "../App";
 
 export const StoreMySelectedList = () => {
   const [finished, setFinished] = useState({});
   const [toggle, setToggle] = useState({ index: null });
-
-  const { web3, account, orderContract, order_c_address } =
-    useContext(AppContext);
+  const {
+    web3,
+    account,
+    orderContract,
+    order_c_address,
+    storeOrderList,
+    getStoreOrderList,
+  } = useContext(AppContext);
 
   const onClickFinish = async (i) => {
     await window.ethereum.request({
@@ -33,7 +38,7 @@ export const StoreMySelectedList = () => {
   };
 
   const calculateTotalCost = (i) => {
-    const orderList = storeNewOrder[i].orderMenu;
+    const orderList = storeOrderList[i].orderMenu;
     let totalCost = 0;
 
     orderList.forEach((item) => {
@@ -43,6 +48,9 @@ export const StoreMySelectedList = () => {
 
     return totalCost;
   };
+  useEffect(() => {
+    getStoreOrderList();
+  }, []);
 
   return (
     <div className="flex flex-col">
@@ -65,7 +73,7 @@ export const StoreMySelectedList = () => {
         </div>
       )}
 
-      {storeNewOrder.map((v, i) => {
+      {storeOrderList.map((v, i) => {
         if (finished[i]) return null;
         return (
           <div
