@@ -36,6 +36,7 @@ import ORDER_C_ABI from "./contracts/order_c_abi.json";
 import RIDER_C_ABI from "./contracts/rider_c_abi.json";
 import STORE_C_ABI from "./contracts/store_c_abi.json";
 import Web3 from "web3";
+import CustomerMypage from "./pages/customer_myPage";
 export const AppContext = createContext();
 
 function App() {
@@ -142,6 +143,7 @@ function App() {
                 path="/customer/ordercomplete"
                 element={<CustomerOrderComplete />}
               />
+              <Route path="/customer/mypage" element={<CustomerMypage />} />
 
               <Route path="/store/signin" element={<StoreSignIn />} />
               <Route path="/store/regist" element={<StoreRegist />} />
