@@ -130,29 +130,6 @@ export const CustomerPayment = () => {
         ))}
         <div className="text-center font-bold text-purple">+ 메뉴 추가</div>
       </div>
-      <div className="bg-white mt-4 px-5 py-4 category-shadow">
-        <div className="font-bold text-subtitle">배달팁</div>
-        <div className="flex mt-4">
-          <input className="w-4 accent-purple" type="radio" name="radio1" />
-          <span className="ml-2 text-caption font-bold">추가 없음</span>
-        </div>
-        <div className="flex mt-2">
-          <input className="w-4 accent-purple" type="radio" name="radio1" />
-          <span className="ml-2 text-caption font-bold">300 원</span>
-        </div>
-        <div className="flex mt-2">
-          <input className="w-4 accent-purple" type="radio" name="radio1" />
-          <span className="ml-2 text-caption font-bold">500 원</span>
-        </div>
-        <div className="flex mt-2">
-          <input className="w-4 accent-purple" type="radio" name="radio1" />
-          <span className="ml-2 text-caption font-bold">700 원</span>
-        </div>
-        <div className="flex mt-2">
-          <input className="w-4 accent-purple" type="radio" name="radio1" />
-          <span className="ml-2 text-caption font-bold">1000 원</span>
-        </div>
-      </div>
 
       <div className="bg-white mt-4 px-5 py-4 category-shadow">
         <div className="font-bold text-subtitle">결제 수단</div>
