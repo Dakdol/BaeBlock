@@ -44,13 +44,15 @@ export const CustomerPayment = () => {
     ); /*Number안에 음식값+배달비*/
     try {
       console.log(
-        Number(
-          (
+        web3.utils.toWei(
+          Number(
             (totalFoodCost + Acustomer.deliveryFee + Acustomer.deliveryTip) /
-            exchangeRate
+              exchangeRate
           ).toFixed(0)
-        )
+        ),
+        "ether"
       );
+
       await window.ethereum.request({
         method: "eth_sendTransaction",
         params: [
@@ -60,11 +62,18 @@ export const CustomerPayment = () => {
             data: orderContract.methods
               .ordering(
                 "0x74913Ee32a84941A71774439E0A3b581beF378cA" /*스토어 wallet*/,
-                Number(totalFoodCost / exchangeRate).toFixed(0) /*음식값*/,
-                Number(Acustomer.deliveryFee / exchangeRate).toFixed(
-                  0
-                ) /*배달비*/,
-                Number(Acustomer.deliveryTip / exchangeRate).toFixed(0)
+                web3.utils.toWei(
+                  Number(totalFoodCost / exchangeRate).toFixed(0)
+                ),
+                "ether" /*음식값*/,
+                web3.utils.toWei(
+                  Number(Acustomer.deliveryFee / exchangeRate).toFixed(0)
+                ),
+                "ether" /*배달비*/,
+                web3.utils.toWei(
+                  Number(Acustomer.deliveryTip / exchangeRate).toFixed(0)
+                ),
+                "ether"
               )
               .encodeABI(),
             gas: "100000",
