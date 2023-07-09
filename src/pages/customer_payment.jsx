@@ -34,8 +34,13 @@ export const CustomerPayment = () => {
   }, []);
 
   const onClickOrder = async () => {
-    var a = 13 * 10 ** 18;
-    /*Number안에 음식값+배달비*/
+    var a = web3.utils.numberToHex(
+      (
+        ((totalFoodCost + Acustomer.deliveryTip + Acustomer.deliveryFee) *
+          10 ** 18) /
+        exchangeRate
+      ).toFixed(0)
+    );
     try {
       await window.ethereum.request({
         method: "eth_sendTransaction",
@@ -46,11 +51,9 @@ export const CustomerPayment = () => {
             data: orderContract.methods
               .ordering(
                 "0x74913Ee32a84941A71774439E0A3b581beF378cA" /*스토어 wallet*/,
-                13 * 10 ** 18 /*음식값*/,
-                0 /*((Acustomer.deliveryFee / exchangeRate) * 10 ** 18).toFixed(
-                  0
-                ) 배달비*/,
-                0 /*((Acustomer.deliveryTip / exchangeRate) * 10 ** 18).toFixed(0)*/
+                ((totalFoodCost / exchangeRate) * 10 ** 18).toFixed(0),
+                ((Acustomer.deliveryFee / exchangeRate) * 10 ** 18).toFixed(0),
+                ((Acustomer.deliveryTip / exchangeRate) * 10 ** 18).toFixed(0)
               )
               .encodeABI(),
             gas: "100000",
