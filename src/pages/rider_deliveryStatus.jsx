@@ -31,26 +31,6 @@ export const RiderDeliveryStatus = () => {
     }
   };
 
-  const onClickRiderCompleteAndPay = async () => {
-    try {
-      await window.ethereum.request({
-        method: "eth_sendTransaction",
-        params: [
-          {
-            from: account,
-            to: order_c_address,
-            data: orderContract.methods
-              .orderComplete(0, true)
-              .encodeABI() /* 주문번호,true*/,
-            gas: "100000",
-          },
-        ],
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   useEffect(() => {
     const getCurrentPosition = () => {
       if (navigator.geolocation) {
@@ -106,10 +86,7 @@ export const RiderDeliveryStatus = () => {
                 <div className="text-caption">고객님께 배달 완료를 알려요!</div>
               </div>
               <div className="flex justify-center gap-4">
-                <button
-                  className="bg-lightYellow w-20 p-2 rounded-xl font-bold border-[1.5px] border-black"
-                  onClick={onClickRiderCompleteAndPay}
-                >
+                <button className="bg-lightYellow w-20 p-2 rounded-xl font-bold border-[1.5px] border-black">
                   완료
                 </button>
               </div>

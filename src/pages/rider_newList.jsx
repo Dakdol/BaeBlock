@@ -83,7 +83,7 @@ export const RiderNewList = () => {
         </div>
       </div>
 
-      {startDelivery ? (
+      {startDelivery && selectDelivery >= 1 ? (
         <div className="flex justify-center items-center">
           <div className="flex flex-col justify-between absolute w-72 h-44 py-4 mt-[500px] bg-white border-2 border-black solid-shadow px-4 rounded-2xl text-black">
             <div className="flex flex-col gap-2 justify-center items-center">
@@ -136,10 +136,32 @@ export const RiderNewList = () => {
       <div className="sticky bottom-0">
         <button
           className="bg-red-500 px-4 py-2 rounded-md font-bold text-white"
-          onClick={onClickPopUp}
+          onClick={() => {
+            if (selectDelivery < 1) {
+              setStartDelivery(true);
+            } else {
+              onClickPopUp();
+            }
+          }}
         >
           배달 시작!
         </button>
+        {startDelivery && selectDelivery < 1 && (
+          <div className="flex justify-center items-center z-30">
+            <div className="flex flex-col justify-between absolute w-72 h-44 py-4 mb-[360px] bg-white border-2 border-black solid-shadow px-4 rounded-2xl text-black">
+              <div className="font-bold text-headline">
+                주문을 선택해 주세요
+              </div>
+
+              <button
+                className="bg-lightYellow p-2 rounded-xl font-bold border-[1.5px] border-black mt-4"
+                onClick={onClickPopUp}
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
