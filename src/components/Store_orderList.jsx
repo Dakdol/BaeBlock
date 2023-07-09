@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import storeNewOrder from "../db/storeNewOrder.json";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
+import Order from "../db/order.json";
 export const StoreOrderList = () => {
   const navigate = useNavigate();
   const { web3, account, orderContract, order_c_address } =
@@ -53,7 +54,7 @@ export const StoreOrderList = () => {
               from: account,
               to: order_c_address,
               data: orderContract.methods
-                .storeAccept_Decline(1, false) /*주문번호,수락or거절*/
+                .storeAccept_Decline(0, false) /*주문번호,수락or거절*/
                 .encodeABI(),
               gas: "100000",
             },
