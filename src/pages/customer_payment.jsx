@@ -34,25 +34,9 @@ export const CustomerPayment = () => {
   }, []);
 
   const onClickOrder = async () => {
-    var a = web3.utils.numberToHex(
-      Number(
-        (
-          (totalFoodCost + Acustomer.deliveryFee + Acustomer.deliveryTip) /
-          exchangeRate
-        ).toFixed(0)
-      )
-    ); /*Number안에 음식값+배달비*/
+    var a = 13 * 10 ** 18;
+    /*Number안에 음식값+배달비*/
     try {
-      console.log(
-        web3.utils.toWei(
-          Number(
-            (totalFoodCost + Acustomer.deliveryFee + Acustomer.deliveryTip) /
-              exchangeRate
-          ).toFixed(0)
-        ),
-        "ether"
-      );
-
       await window.ethereum.request({
         method: "eth_sendTransaction",
         params: [
@@ -62,18 +46,11 @@ export const CustomerPayment = () => {
             data: orderContract.methods
               .ordering(
                 "0x74913Ee32a84941A71774439E0A3b581beF378cA" /*스토어 wallet*/,
-                web3.utils.toWei(
-                  Number(totalFoodCost / exchangeRate).toFixed(0)
-                ),
-                "ether" /*음식값*/,
-                web3.utils.toWei(
-                  Number(Acustomer.deliveryFee / exchangeRate).toFixed(0)
-                ),
-                "ether" /*배달비*/,
-                web3.utils.toWei(
-                  Number(Acustomer.deliveryTip / exchangeRate).toFixed(0)
-                ),
-                "ether"
+                13 * 10 ** 18 /*음식값*/,
+                0 /*((Acustomer.deliveryFee / exchangeRate) * 10 ** 18).toFixed(
+                  0
+                ) 배달비*/,
+                0 /*((Acustomer.deliveryTip / exchangeRate) * 10 ** 18).toFixed(0)*/
               )
               .encodeABI(),
             gas: "100000",
@@ -81,9 +58,8 @@ export const CustomerPayment = () => {
           },
         ],
       });
-      navigate("/Acustomer/ordercomplete", { replace: true });
+      navigate("/customer/ordercomplete", { replace: true });
     } catch (error) {
-      ``;
       console.error(error);
     }
   };
