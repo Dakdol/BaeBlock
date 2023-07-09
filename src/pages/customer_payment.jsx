@@ -36,12 +36,7 @@ export const CustomerPayment = () => {
 
   const onClickOrder = async () => {
     var a = web3.utils.numberToHex(
-      Number(
-        (
-          (totalFoodCost + Acustomer.deliveryFee + Acustomer.deliveryTip) /
-          exchangeRate
-        ).toFixed(0)
-      )
+      Number(13960396039603900)
     ); /*Number안에 음식값+배달비*/
     try {
       console.log(
@@ -57,11 +52,9 @@ export const CustomerPayment = () => {
             data: orderContract.methods
               .ordering(
                 "0x74913Ee32a84941A71774439E0A3b581beF378cA" /*스토어 wallet*/,
-                Number(totalFoodCost / exchangeRate).toFixed(0) /*음식값*/,
-                Number(Acustomer.deliveryFee / exchangeRate).toFixed(
-                  0
-                ) /*배달비*/,
-                Number(Acustomer.deliveryTip / exchangeRate).toFixed(0)
+                13960396039603900 /*음식값*/,
+                0 /*배달비*/,
+                0
               )
               .encodeABI(),
             gas: "100000",
