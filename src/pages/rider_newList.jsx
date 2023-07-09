@@ -50,15 +50,6 @@ export const RiderNewList = () => {
     }
   };
 
-  const getColor = (index) => {
-    if (selectDelivery === index) {
-      if (index === 1) return "bg-red-300";
-      if (index === 2) return "bg-yellow-300";
-      if (index === 3) return "bg-green-300";
-    }
-    return "";
-  };
-
   return (
     <div className="flex flex-col items-center">
       <div className="bg-white w-[386px] h-14 absolute z-10"></div>
@@ -68,25 +59,25 @@ export const RiderNewList = () => {
         </div>
       </div>
 
-      <div className="flex justify-center gap-16 items-center mt-14 bg-white w-[386px] absolute">
+      <div className="flex justify-between gap-16 items-center mt-14">
         <div
-          className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${getColor(
-            1
-          )}`}
+          className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${
+            selectDelivery >= 1 ? "bg-red-300" : ""
+          }`}
         >
           1
         </div>
         <div
-          className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${getColor(
-            2
-          )}`}
+          className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${
+            selectDelivery >= 2 ? "bg-yellow-300" : ""
+          }`}
         >
           2
         </div>
         <div
-          className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${getColor(
-            3
-          )}`}
+          className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${
+            selectDelivery >= 3 ? "bg-green-300" : ""
+          }`}
         >
           3
         </div>
@@ -109,7 +100,7 @@ export const RiderNewList = () => {
               <Link to="/rider/delivery">
                 <button
                   className="bg-lightYellow p-2 rounded-xl font-bold border-[1.5px] border-black"
-                  onClick={(onClickPopUp, onClickStartDelivery)}
+                  onClick={onClickStartDelivery.bind(null, selectDelivery)}
                 >
                   배달 시작!
                 </button>
@@ -119,7 +110,7 @@ export const RiderNewList = () => {
         </div>
       ) : null}
 
-      <div className="flex justify-center mt-24">
+      <div className="flex justify-center mt-8">
         <button
           className="bg-mint px-4 py-2 rounded-md mr-8 font-bold"
           onClick={onClickSortByDist}
@@ -135,10 +126,14 @@ export const RiderNewList = () => {
       </div>
 
       <div className="flex flex-col justify-center items-center mt-4">
-        <RiderOrderList orders={orders} />
+        <RiderOrderList
+          orders={orders}
+          setSelectDelivery={setSelectDelivery}
+          selectDelivery={selectDelivery}
+        />
       </div>
 
-      <div className="sticky bottom-0 bg-white pt-4 pb-6 rounded-b-2xl w-[386px] flex justify-center items-center border-t-2 border-lightGray">
+      <div className="sticky bottom-0">
         <button
           className="bg-red-500 px-4 py-2 rounded-md font-bold text-white"
           onClick={onClickPopUp}

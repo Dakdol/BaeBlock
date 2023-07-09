@@ -1,7 +1,11 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
 
-export const RiderOrderList = ({ orders }) => {
+export const RiderOrderList = ({
+  orders,
+  setSelectDelivery,
+  selectDelivery,
+}) => {
   const { account, orderContract, order_c_address } = useContext(AppContext);
 
   const onClickSetDelivery = async (orderNumber) => {
@@ -17,6 +21,7 @@ export const RiderOrderList = ({ orders }) => {
           },
         ],
       });
+      setSelectDelivery(orderNumber + 1);
     } catch (error) {
       console.error(error);
     }
@@ -28,7 +33,7 @@ export const RiderOrderList = ({ orders }) => {
         <button
           key={i}
           className="bg-white w-[350px] mb-3 rounded-lg border-[1.5px] border-darkGray solid-shadow"
-          onClick={() => onClickSetDelivery(0)}
+          onClick={() => onClickSetDelivery(i)}
         >
           <div className="px-4 py-2">
             <div className="flex justify-between font-bold">
