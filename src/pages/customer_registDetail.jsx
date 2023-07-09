@@ -6,10 +6,10 @@ export const CustomerRegistDetail = () => {
   return (
     <div className='flex flex-col justify-center items-center mt-24'>
       <div className='font-bold text-[24px]'>메타마스크 연결에 성공했어요!</div>
-      <div className='text-subtitle text-center mt-5'>
-        안전한 배달을 위해<p className='mt-1'>고객님의 추가 정보를 입력해주세요!</p>
+      <div className='text-subtitle text-center mt-5 regist-entry'>
+        안전한 배달을 위해<p>고객님의 추가 정보를 입력해주세요!</p>
       </div>
-      <div>
+      <div className='regist-entry'>
         <div className='mt-20'>
           <div className='text-gray text-caption font-bold'>닉네임</div>
           <input
@@ -27,7 +27,7 @@ export const CustomerRegistDetail = () => {
         <div className='text-caption text-purple mt-8'>비밀번호는 필요 없나요?</div>
       </div>
       <Link to='/customer/main'>
-        <button className='bg-lightYellow btn-style text-black yellow-shadow mt-20'>
+        <button className='bg-lightYellow btn-style text-black yellow-shadow mt-20 ease-in-out duration-200 hover:scale-105'>
           주문하러 가기!
         </button>
       </Link>
