@@ -8,9 +8,9 @@ export const CustomerPayment = () => {
   const navigate = useNavigate();
   const [pay, setPay] = useState(false);
   const [payment, setPayment] = useState(true);
+
   const [Acustomer, setACustomer] = useState(user.customer[0].orderList);
   const [totalFoodCost, setTotalFoodCost] = useState(0);
-
   const {
     web3,
     account,
@@ -42,6 +42,10 @@ export const CustomerPayment = () => {
       ).toFixed(0)
     );
     try {
+      console.log(
+        typeof ((Acustomer.deliveryFee / exchangeRate) * 10 ** 18),
+        (totalFoodCost / exchangeRate) * 10 ** 18
+      );
       await window.ethereum.request({
         method: "eth_sendTransaction",
         params: [
