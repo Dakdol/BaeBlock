@@ -32,23 +32,18 @@
         "storeName": "써브웨이",
         "wishList": [
           {
-            "foodname": "이탈리안 비엠티",
-            "cost": 6900,
+            "foodname": "치즈와퍼",
+            "cost": 8600,
             "quantity": 1
           },
           {
-            "foodname": "제로콜라",
-            "cost": 2200,
+            "foodname": "코카콜라L",
+            "cost": 3100,
             "quantity": 1
-          },
-          {
-            "foodname": "더블 초코칩 쿠키",
-            "cost": 1300,
-            "quantity": 2.2
           }
         ],
-        "deliveryFee": 1850,
-        "deliveryTip": 500,
+        "deliveryFee": 990,
+        "deliveryTip": 0,
         "distance": 1
       },
       "BBCoin": 15000

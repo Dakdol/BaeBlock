@@ -4,7 +4,7 @@
     "cus_address": "서울 강남구 선릉로93길 22",
     "sto_address": "서울 강남구 선릉로 429",
     "deliveryFee": 990,
-    "deliveryTip": 500,
+    "deliveryTip": 0,
     "storeName": "버거킹",
     "orderMenu": [
       {
@@ -21,7 +21,7 @@
   },
   {
     "OrderID": 1,
-    "cus_address": "서울 강남구 선릉로93길 22",
+    "cus_address": "서울 강남구 테헤란로 335",
     "sto_address": "서울 강남구 테헤란로64길 18",
     "deliveryFee": 1350,
     "deliveryTip": 0,

@@ -11,7 +11,6 @@ export const CustomerPayment = () => {
 
   const [Acustomer, setACustomer] = useState(user.customer[0].orderList);
   const [totalFoodCost, setTotalFoodCost] = useState(0);
-  const [totalCost, setTotalCost] = useState(0);
   const {
     web3,
     account,
@@ -36,8 +35,12 @@ export const CustomerPayment = () => {
 
   const onClickOrder = async () => {
     var a = web3.utils.numberToHex(
-      Number(1396039603960390)
-    ); /*Number안에 음식값+배달비*/
+      (
+        ((totalFoodCost + Acustomer.deliveryTip + Acustomer.deliveryFee) *
+          10 ** 18) /
+        exchangeRate
+      ).toFixed(0)
+    );
     try {
       console.log(
         typeof ((Acustomer.deliveryFee / exchangeRate) * 10 ** 18),
@@ -52,9 +55,9 @@ export const CustomerPayment = () => {
             data: orderContract.methods
               .ordering(
                 "0x74913Ee32a84941A71774439E0A3b581beF378cA" /*스토어 wallet*/,
-                1396039603960390 /*음식값*/,
-                0 /*배달비*/,
-                0
+                ((totalFoodCost / exchangeRate) * 10 ** 18).toFixed(0),
+                ((Acustomer.deliveryFee / exchangeRate) * 10 ** 18).toFixed(0),
+                ((Acustomer.deliveryTip / exchangeRate) * 10 ** 18).toFixed(0)
               )
               .encodeABI(),
             gas: "100000",
@@ -62,8 +65,7 @@ export const CustomerPayment = () => {
           },
         ],
       });
-
-      navigate("/Acustomer/ordercomplete", { replace: true });
+      navigate("/customer/ordercomplete", { replace: true });
     } catch (error) {
       console.error(error);
     }
@@ -75,7 +77,6 @@ export const CustomerPayment = () => {
   const onClickPayment = () => {
     setPayment(!payment);
   };
-
   return (
     <div className="bg-[#F8F8F8]">
       <div className="bg-white w-[386px] h-14 absolute z-10"></div>
@@ -199,7 +200,24 @@ export const CustomerPayment = () => {
           onClick={onClickPay}
         >
           <span>
-            {totalFoodCost + Acustomer.deliveryFee + Acustomer.deliveryTip}
+            {payment ? (
+              <div className="font-bold text-subtitle">
+                {totalFoodCost + Acustomer.deliveryFee + Acustomer.deliveryTip}
+                원
+              </div>
+            ) : (
+              <div className="font-bold text-subtitle">
+                {`${Number(
+                  (
+                    (totalFoodCost +
+                      Acustomer.deliveryFee +
+                      Acustomer.deliveryTip) /
+                    exchangeRate
+                  ).toFixed(3)
+                )}`}{" "}
+                MATIC
+              </div>
+            )}
           </span>
           결제하기
         </button>
