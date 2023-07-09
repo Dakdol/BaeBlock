@@ -36,7 +36,7 @@ export const CustomerPayment = () => {
 
   const onClickOrder = async () => {
     var a = web3.utils.numberToHex(
-      Number(13960396039603900)
+      Number(1396039603960390)
     ); /*Number안에 음식값+배달비*/
     try {
       console.log(
@@ -52,7 +52,7 @@ export const CustomerPayment = () => {
             data: orderContract.methods
               .ordering(
                 "0x74913Ee32a84941A71774439E0A3b581beF378cA" /*스토어 wallet*/,
-                13960396039603900 /*음식값*/,
+                1396039603960390 /*음식값*/,
                 0 /*배달비*/,
                 0
               )
