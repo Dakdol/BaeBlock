@@ -6,6 +6,8 @@ export const StoreMySelectedList = () => {
   const [finished, setFinished] = useState({});
   const [toggle, setToggle] = useState({ index: null });
   const { web3, account, orderContract, order_c_address } = useContext(AppContext);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
 
   const onClickFinish = async (i) => {
     setToggle({ index: null });
@@ -24,6 +26,7 @@ export const StoreMySelectedList = () => {
       ...finished,
       [i]: true,
     });
+    handleToast('조리를 완료하였습니다.');
   };
 
   const onClickToggle = (i) => {
@@ -32,6 +35,14 @@ export const StoreMySelectedList = () => {
 
   const onClickCancle = () => {
     setToggle({ index: null });
+  };
+
+  const handleToast = (message) => {
+    setToastMessage(message);
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 1950);
   };
 
   const calculateTotalCost = (i) => {
@@ -47,7 +58,7 @@ export const StoreMySelectedList = () => {
   };
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col items-center'>
       {toggle.index !== null && (
         <div className='flex justify-center items-center'>
           <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mt-[500px] bg-white border-2 border-black solid-shadow px-4 rounded-2xl text-black'>
@@ -102,6 +113,12 @@ export const StoreMySelectedList = () => {
           </div>
         );
       })}
+
+      {showToast && (
+        <div className='absolute z-30 mt-[600px] bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in-out'>
+          {toastMessage}
+        </div>
+      )}
     </div>
   );
 };
