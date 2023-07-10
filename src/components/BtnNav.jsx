@@ -17,7 +17,7 @@ const BtnNav = ({ scrollPosition, account, onClickAccount }) => {
         {account ? (
           <div className='relative group'>
             <TbWallet size={24} />
-            <div className='absolute mt-2 right-0 bg-purple text-white px-1 rounded-2xl transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100'>
+            <div className='absolute mt-2 right-0 bg-purple text-white px-2 rounded-2xl transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100'>
               {`${account.substring(0, 4)}...${account.substring(account.length - 4)}`}
             </div>
           </div>
