@@ -9,8 +9,8 @@ export const RiderNewList = () => {
   const [startDelivery, setStartDelivery] = useState(false);
   const [orders, setOrders] = useState([]);
   const [activeBtn, setActiveBtn] = useState();
-  const [showPopup, setShowPopup] = useState(false);
-  const [popupMessage, setPopupMessage] = useState('');
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
 
   // 배달 최대 3개 선택 되면 1, 2, 3 동그라미 컬러 변경
   const [selectDelivery, setSelectDelivery] = useState(0);
@@ -19,12 +19,12 @@ export const RiderNewList = () => {
     setStartDelivery(!startDelivery);
   };
 
-  const handleShowPopup = (message) => {
-    setPopupMessage(message);
-    setShowPopup(true);
+  const handleToast = (message) => {
+    setToastMessage(message);
+    setShowToast(true);
     setTimeout(() => {
-      setShowPopup(false);
-    }, 1500);
+      setShowToast(false);
+    }, 1450);
   };
 
   const onClickSortByFee = () => {
@@ -33,14 +33,14 @@ export const RiderNewList = () => {
     );
     setOrders(sortedOrders);
     setActiveBtn('fee');
-    handleShowPopup('배달료순으로 정렬되었습니다.');
+    handleToast('배달료순으로 정렬되었습니다.');
   };
 
   const onClickSortByDist = () => {
     const sortedOrders = [...orders].sort((a, b) => a.distance - b.distance);
     setOrders(sortedOrders);
     setActiveBtn('dist');
-    handleShowPopup('거리순으로 정렬되었습니다.');
+    handleToast('거리순으로 정렬되었습니다.');
   };
 
   useEffect(() => {
@@ -151,9 +151,9 @@ export const RiderNewList = () => {
         </button>
       </div>
 
-      {showPopup && (
+      {showToast && (
         <div className='absolute z-30 mt-[690px] bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in fade-in-out'>
-          {popupMessage}
+          {toastMessage}
         </div>
       )}
 
