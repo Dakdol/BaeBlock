@@ -5,6 +5,7 @@
       "wallet": "0x3b0A2c32055d72803f12BCa33bb53B3AAC4bEcdB",
       "cus_address": "서울 강남구 선릉로93길 22",
       "orderList": {
+        "id": 0,
         "storeName": "버거킹",
         "wishList": [
           {
@@ -20,6 +21,7 @@
             "detail": "L"
           }
         ],
+        "cus_address": "서울 강남구 선릉로93길 22",
         "deliveryFee": 990,
         "deliveryTip": 500,
         "distance": 1
@@ -31,6 +33,7 @@
       "wallet": "0x3b0A2c32055d72803f12BCa33bb53B3AAC4bEcdB",
       "cus_address": "서울 강남구 선릉로93길 22",
       "orderList": {
+        "id": 1,
         "storeName": "써브웨이",
         "wishList": [
           {
@@ -46,6 +49,7 @@
             "detail": "L"
           }
         ],
+        "cus_address": "서울 강남구 선릉로93길 22",
         "deliveryFee": 990,
         "deliveryTip": 0,
         "distance": 1
@@ -57,6 +61,7 @@
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
+        "id": 2,
         "storeName": "소문난 성수 감자탕",
         "wishList": [
           {
@@ -72,8 +77,9 @@
             "detail": ""
           }
         ],
+        "cus_address": "서울 성동구 둘레15길 7",
         "deliveryFee": 1850,
-        "deliveryTip": 100,
+        "deliveryTip": 500,
         "distance": 2.7
       },
       "BBCoin": 38200
@@ -83,6 +89,7 @@
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
+        "id": 3,
         "storeName": "소문난 성수 감자탕",
         "wishList": [
           {
@@ -98,6 +105,7 @@
             "detail": ""
           }
         ],
+        "cus_address": "서울 성동구 둘레15길 7",
         "deliveryFee": 1850,
         "deliveryTip": 1000,
         "distance": 1.3
@@ -109,6 +117,7 @@
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
+        "id": 4,
         "storeName": "소문난 성수 감자탕",
         "wishList": [
           {
@@ -124,6 +133,7 @@
             "detail": ""
           }
         ],
+        "cus_address": "서울 성동구 둘레15길 7",
         "deliveryFee": 1850,
         "deliveryTip": 2000,
         "distance": 0.8
@@ -135,6 +145,7 @@
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
+        "id": 5,
         "storeName": "소문난 성수 감자탕",
         "wishList": [
           {
@@ -150,6 +161,7 @@
             "detail": ""
           }
         ],
+        "cus_address": "서울 성동구 둘레15길 7",
         "deliveryFee": 1850,
         "deliveryTip": 0,
         "distance": 1.2
@@ -161,6 +173,7 @@
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
+        "id": 6,
         "storeName": "소문난 성수 감자탕",
         "wishList": [
           {
@@ -176,6 +189,7 @@
             "detail": ""
           }
         ],
+        "cus_address": "서울 성동구 둘레15길 7",
         "deliveryFee": 1850,
         "deliveryTip": 0,
         "distance": 1.2
@@ -187,6 +201,7 @@
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
+        "id": 7,
         "storeName": "소문난 성수 감자탕",
         "wishList": [
           {
@@ -202,6 +217,7 @@
             "detail": ""
           }
         ],
+        "cus_address": "서울 성동구 둘레15길 7",
         "deliveryFee": 1850,
         "deliveryTip": 0,
         "distance": 1.2
