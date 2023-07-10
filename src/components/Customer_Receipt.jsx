@@ -44,12 +44,14 @@ export const CustomerReceipt = ({ foodTotal, exchangeRate }) => {
             </div>
           </div>
           <div className='flex justify-between'>
-            총 배달비
-            <div className='font-normal'>
-              {(order[0].deliveryFee + order[0].deliveryTip).toLocaleString()} 원
-            </div>
+            배달비
+            <div className='font-normal'>{order[0].deliveryFee.toLocaleString()} 원</div>
           </div>
           <div className='flex justify-between border-darkGray border-dashed border-b-[1px] pb-4'>
+            배달팁
+            <div className='font-normal'>{order[0].deliveryTip.toLocaleString()} 원</div>
+          </div>
+          <div className='flex justify-between border-darkGray border-dashed border-b-[1px] mt-4 pb-4'>
             총 결제금액
             <div className='font-normal'>
               {((foodTotal + order[0].deliveryFee + order[0].deliveryTip) / exchangeRate).toFixed(
