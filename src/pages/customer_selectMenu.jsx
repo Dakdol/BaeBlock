@@ -29,7 +29,11 @@ function CustomerSelectMenu({ scrollPosition }) {
   return (
     <div className="flex flex-col">
       <div className="min-w-full h-[250px]">
-        <img className="w-full h-full object-cover" src={food} alt="food" />
+        <img
+          className="w-full h-full object-cover"
+          src={`${user.store[storeId].menu[menuId].menuImage}`}
+          alt="food"
+        />
       </div>
 
       <div className="flex justify-between items-center mx-6 mt-4 mb-6">
