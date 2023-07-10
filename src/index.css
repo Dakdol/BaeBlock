@@ -74,7 +74,7 @@
 
   .fade-in-out {
     animation-name: fadeInOut;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
     animation-timing-function: ease-in-out;
   }
   @keyframes fadeInOut {
@@ -82,7 +82,7 @@
       opacity: 0;
       transform: translateY(0px);
     }
-    30% {
+    50% {
       opacity: 1;
     }
     100% {

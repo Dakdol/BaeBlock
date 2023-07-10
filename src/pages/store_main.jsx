@@ -57,12 +57,13 @@ export default function RiderMain() {
             <LongBox text='현재 수락한 주문 리스트' color='bg-lightGray' />
           </Link>
 
-          <div className='flex justify-between w-full'>
+          <div className='flex justify-around w-full'>
             <Box text='매출 보기' color='bg-lightBage' width='20' />
             <Link to={'/store/edit'}>
               <Box text='메뉴 수정' color='bg-deepYellow' width='20' />
             </Link>
           </div>
+
           <Link to='/store/nftmarket'>
             <NftMarket />
           </Link>

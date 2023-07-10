@@ -9,15 +9,12 @@ export const StoreOrderList = () => {
   const [accept, setAccept] = useState({});
   const [decline, setDecline] = useState({});
   const [toggle, setToggle] = useState({ index: null, type: null });
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
 
   const onClickConfirm = async (i, type) => {
-    // 팝업창을 없앰.
     setToggle({ index: null, type: null });
     if (type === 'accept') {
-      setAccept({
-        ...accept,
-        [i]: true,
-      });
       var order = await orderContract.methods.returnOrder(0).call();
       var a = web3.utils.numberToHex(Number(order.deliveryFee)); /*해당 주문번호의 배달비*/
       try {
@@ -35,14 +32,15 @@ export const StoreOrderList = () => {
             },
           ],
         });
+        setAccept({
+          ...accept,
+          [i]: true,
+        });
+        handleToast('주문을 수락하였습니다.');
       } catch (error) {
         console.error(error);
       }
     } else if (type === 'decline') {
-      setDecline({
-        ...decline,
-        [i]: true,
-      });
       try {
         await window.ethereum.request({
           method: 'eth_sendTransaction',
@@ -57,6 +55,11 @@ export const StoreOrderList = () => {
             },
           ],
         });
+        setDecline({
+          ...decline,
+          [i]: true,
+        });
+        handleToast('주문을 거절하였습니다.');
       } catch (error) {
         console.error(error);
       }
@@ -65,6 +68,14 @@ export const StoreOrderList = () => {
 
   const onClickToggle = (i, type) => {
     setToggle({ index: i, type });
+  };
+
+  const handleToast = (message) => {
+    setToastMessage(message);
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 1950);
   };
 
   const calculateTotalCost = (i) => {
@@ -80,7 +91,7 @@ export const StoreOrderList = () => {
   };
 
   return (
-    <div className='flex flex-col '>
+    <div className='flex flex-col items-center'>
       {toggle.type === 'accept' && (
         <div className='flex justify-center items-center'>
           <div className='flex flex-col justify-between absolute w-72 h-44 py-4 mt-[500px] bg-white border-2 border-black solid-shadow px-4 rounded-2xl text-black'>
@@ -153,6 +164,12 @@ export const StoreOrderList = () => {
           </div>
         );
       })}
+
+      {showToast && (
+        <div className='absolute z-30 mt-[600px] bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in-out'>
+          {toastMessage}
+        </div>
+      )}
     </div>
   );
 };
