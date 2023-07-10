@@ -235,11 +235,7 @@
           "recommend": true
         }
       ],
-      "nft": [
-        { "title": "친절한 사장님" },
-        { "title": "우리동네 맛집" },
-        { "title": "빠른 조리" }
-      ],
+      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }, { "title": "빠른 조리" }],
       "deliveryFee": 990,
       "isOpen": false
     },
@@ -438,14 +434,66 @@
       "deliveryArea": "서울 강남구",
       "deliveryBy": "오토바이",
       "nft": [{ "title": "빠른 배달" }, { "title": "깔끔한 배달" }],
-      "isWork": false
+      "isWork": false,
+      "orderList": [
+        {
+          "id": "1",
+          "sto_address": "서울 성동구 연무장길 45",
+          "cust_address": "서울 성동구 둘레15길 7",
+          "time": 12,
+          "distance": 1.2,
+          "isFinished": false
+        },
+        {
+          "id": "2",
+          "sto_address": "서울 성동구 연무장길 45",
+          "cust_address": "서울 성동구 둘레15길 7",
+          "time": 12,
+          "distance": 1.2,
+          "isFinished": false
+        },
+        {
+          "id": "3",
+          "sto_address": "서울 성동구 연무장길 45",
+          "cust_address": "서울 성동구 둘레15길 7",
+          "time": 12,
+          "distance": 1.2,
+          "isFinished": false
+        }
+      ]
     },
     {
       "wallet": "0x0000",
       "deliveryArea": "서울 성동구",
       "deliveryBy": "자동차",
       "nft": [{ "title": "빠른 배달" }, { "title": "깔끔한 배달" }],
-      "isWork": false
+      "isWork": false,
+      "orderList": [
+        {
+          "id": "1",
+          "sto_address": "서울 성동구 연무장길 45",
+          "cust_address": "서울 성동구 둘레15길 7",
+          "time": 12,
+          "distance": 1.2,
+          "isFinished": false
+        },
+        {
+          "id": "2",
+          "sto_address": "서울 성동구 연무장길 45",
+          "cust_address": "서울 성동구 둘레15길 7",
+          "time": 12,
+          "distance": 1.2,
+          "isFinished": false
+        },
+        {
+          "id": "3",
+          "sto_address": "서울 성동구 연무장길 45",
+          "cust_address": "서울 성동구 둘레15길 7",
+          "time": 12,
+          "distance": 1.2,
+          "isFinished": false
+        }
+      ]
     }
   ]
 }

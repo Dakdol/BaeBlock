@@ -57,7 +57,7 @@ function CustomerSelectMenu({ scrollPosition }) {
           >
             -
           </div>
-          <div className="pl-1">{counter}</div>
+          <div>{counter}</div>
           <div onClick={onClickAdd}>+</div>
         </div>
       </div>

@@ -130,10 +130,21 @@ export const CustomerPayment = () => {
             key={i}
             foodName={v.foodname}
             option="곱빼기"
-            price={v.cost}
+            price={v.cost.toLocaleString()}
           />
         ))}
         <div className="text-center font-bold text-purple">+ 메뉴 추가</div>
+      </div>
+
+      <div className="bg-white mt-4 px-5 py-4 category-shadow">
+        <div className="font-bold text-subtitle">배달팁</div>
+        <div className="flex items-center mt-4">
+          <input
+            type="text"
+            className="w-28 text-body font-bold text-black border-b-[1.5px] border-darkGray focus: outline-none focus:border-b-[1.5px] focus:border-deepYellow"
+          />
+          <div>원</div>
+        </div>
       </div>
 
       <div className="bg-white mt-4 px-5 py-4 category-shadow">
@@ -162,22 +173,31 @@ export const CustomerPayment = () => {
         <div className="font-bold text-subtitle">결제금액</div>
         <div className="flex justify-between items-center mt-2">
           <div className="font-bold text-caption">총 주문금액</div>
-          <div className="text-caption">{totalFoodCost}원</div>
+          <div className="text-caption">{totalFoodCost.toLocaleString()}원</div>
         </div>
         <div className="flex justify-between items-center">
           <div className="font-bold text-caption">배달비</div>
-          <div className="text-caption">{Acustomer.deliveryFee}원</div>
+          <div className="text-caption">
+            {Acustomer.deliveryFee.toLocaleString()}원
+          </div>
         </div>
         <div className="flex justify-between items-center">
           <div className="font-bold text-caption">배달팁</div>
-          <div className="text-caption">{Acustomer.deliveryTip}원</div>
+          <div className="text-caption">
+            {Acustomer.deliveryTip.toLocaleString()}원
+          </div>
         </div>
 
         <div className="flex justify-between items-center border-t-[1.5px] pt-4 mt-4 border-lightGray">
           <div className="font-bold text-body">총 결제금액</div>
           {payment ? (
             <div className="font-bold text-subtitle">
-              {totalFoodCost + Acustomer.deliveryFee + Acustomer.deliveryTip}원
+              {(
+                totalFoodCost +
+                Acustomer.deliveryFee +
+                Acustomer.deliveryTip
+              ).toLocaleString()}
+              원
             </div>
           ) : (
             <div className="font-bold text-subtitle">
@@ -203,7 +223,11 @@ export const CustomerPayment = () => {
           <span>
             {payment ? (
               <div className="font-bold text-subtitle">
-                {totalFoodCost + Acustomer.deliveryFee + Acustomer.deliveryTip}
+                {(
+                  totalFoodCost +
+                  Acustomer.deliveryFee +
+                  Acustomer.deliveryTip
+                ).toLocaleString()}
                 원
               </div>
             ) : (
