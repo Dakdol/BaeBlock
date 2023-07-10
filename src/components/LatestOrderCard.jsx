@@ -3,7 +3,7 @@ import star from '../images/icon_star.png';
 
 export const LatestOrderCard = ({ img, storeName, menuName }) => {
   return (
-    <div className='flex-shrink-0 w-72 h-[115px] px-4 pt-1 border-darkGray border-[1.5px] rounded-2xl solid-shadow'>
+    <div className='flex-shrink-0 w-72 h-[115px] px-4 pt-1 border-darkGray border-[1.5px] rounded-2xl solid-shadow mr-3'>
       <div className='flex justify-between items-center'>
         <div>
           <div className='font-bold text-body'>{storeName}</div>
