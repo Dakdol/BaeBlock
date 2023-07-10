@@ -64,7 +64,12 @@ export const RiderOrderList = ({ orders, setSelectDelivery, activeBtn }) => {
         </div>
       )}
 
-      <FlipMove className='flex flex-col justify-center' duration={400} easing='ease-in-out'>
+      <FlipMove
+        className='flex flex-col justify-center'
+        duration={400}
+        easing='ease-in-out'
+        enterAnimation='elevator'
+        leaveAnimation='elevator'>
         {orders.map((order, i) => {
           if (selected[i]) return null;
           return (
