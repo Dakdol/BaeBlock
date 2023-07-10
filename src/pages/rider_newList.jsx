@@ -132,17 +132,31 @@ export const RiderNewList = () => {
         </div>
       )}
 
-      <div className='flex justify-center mt-24'>
-        <button className='bg-mint px-4 py-2 rounded-md mr-8 font-bold' onClick={onClickSortByDist}>
+      <div className='flex justify-center mt-24 gap-8'>
+        <button
+          className={`border-darkGray ${
+            activeBtn === 'dist' ? 'bg-deepYellow' : 'bg-lightYellow border-deepYellow border-b-4'
+          } px-4 py-2 rounded-md font-bold`}
+          onClick={() => {
+            onClickSortByDist();
+            setActiveBtn('dist');
+          }}>
           거리순
         </button>
-        <button className='bg-deepYellow px-4 py-2 rounded-md font-bold' onClick={onClickSortByFee}>
+        <button
+          className={`border-darkGray ${
+            activeBtn === 'fee' ? 'bg-deepYellow' : 'bg-lightYellow border-deepYellow border-b-4'
+          } px-4 py-2 rounded-md font-bold`}
+          onClick={() => {
+            onClickSortByFee();
+            setActiveBtn('fee');
+          }}>
           배달료순
         </button>
       </div>
 
       {showToast && (
-        <div className='absolute z-30 mt-[690px] bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in fade-in-out'>
+        <div className='absolute z-30 mt-[690px] bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in-out'>
           {toastMessage}
         </div>
       )}

@@ -22,11 +22,11 @@ export const StoreMySelectedList = () => {
         },
       ],
     });
-    handleToast('조리를 완료하였습니다.');
     setFinished({
       ...finished,
       [i]: true,
     });
+    handleToast('조리를 완료하였습니다.');
   };
 
   const onClickToggle = (i) => {
@@ -115,7 +115,7 @@ export const StoreMySelectedList = () => {
       })}
 
       {showToast && (
-        <div className='absolute z-30 mt-[600px] bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in fade-in-out'>
+        <div className='absolute z-30 mt-[600px] bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in-out'>
           {toastMessage}
         </div>
       )}

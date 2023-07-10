@@ -32,11 +32,11 @@ export const StoreOrderList = () => {
             },
           ],
         });
-        handleToast('주문을 수락하였습니다.');
         setAccept({
           ...accept,
           [i]: true,
         });
+        handleToast('주문을 수락하였습니다.');
       } catch (error) {
         console.error(error);
       }
@@ -55,11 +55,11 @@ export const StoreOrderList = () => {
             },
           ],
         });
-        handleToast('주문을 거절하였습니다.');
         setDecline({
           ...decline,
           [i]: true,
         });
+        handleToast('주문을 거절하였습니다.');
       } catch (error) {
         console.error(error);
       }
@@ -166,7 +166,7 @@ export const StoreOrderList = () => {
       })}
 
       {showToast && (
-        <div className='absolute z-30 mt-[600px] bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in fade-in-out'>
+        <div className='absolute z-30 mt-[600px] bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in-out'>
           {toastMessage}
         </div>
       )}
