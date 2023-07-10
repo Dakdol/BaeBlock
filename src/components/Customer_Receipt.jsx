@@ -7,7 +7,7 @@ export const CustomerReceipt = ({ foodTotal, exchangeRate }) => {
 
   return (
     <div className='w-[340px] h-[340px] px-5 py-4'>
-      <div className='flex justify-between border-darkGray border-dashed border-b-[1px] pb-1 text-body font-bold'>
+      <div className='flex justify-between border-darkGray border-dashed border-b-[1px] pb-2 text-body font-bold'>
         주문번호 <div className='font-thin'>#{order[0].OrderID}</div>
       </div>
       <div className='flex flex-col mt-4'>
