@@ -55,7 +55,7 @@ export default function CustomerViewMenu({ scrollPosition }) {
               name={store.menu[i].name}
               caption={store.menu[i].caption}
               price={store.menu[i].price.toLocaleString()}
-              menuImage={""}
+              menuImage={store.menu[i].menuImage}
               isRecommend={store.menu[i].recommend}
             />
           ))}
