@@ -16,17 +16,6 @@ export default function RiderMain() {
     setIsWork(!isWork);
   };
 
-  const nftTitle = [
-    { title: '멕시칸' },
-    { title: '리뷰 최다' },
-    { title: '친절한 사장님' },
-    { title: '친절한 사장님' },
-    { title: '친절한 사장님' },
-    { title: '친절한 사장' },
-    { title: '친절한 사장님' },
-    { title: '친절한 사장님' },
-  ]; //로그인에서 프롭스로 내려야할것같음
-
   return (
     <>
       <div className='bg-white w-[386px] h-14 absolute z-10'></div>
