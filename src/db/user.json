@@ -10,12 +10,14 @@
           {
             "foodname": "치즈와퍼",
             "cost": 8600,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           },
           {
             "foodname": "제로콜라",
             "cost": 1400,
-            "quantity": 1
+            "quantity": 1,
+            "detail": "L"
           }
         ],
         "deliveryFee": 990,
@@ -34,12 +36,14 @@
           {
             "foodname": "치즈와퍼",
             "cost": 8600,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           },
           {
-            "foodname": "코카콜라L",
+            "foodname": "코카콜라",
             "cost": 3100,
-            "quantity": 1
+            "quantity": 1,
+            "detail": "L"
           }
         ],
         "deliveryFee": 990,
@@ -58,12 +62,14 @@
           {
             "foodname": "감자탕(소)",
             "cost": 27000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           },
           {
             "foodname": "뼈추가",
             "cost": 11000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           }
         ],
         "deliveryFee": 1850,
@@ -82,12 +88,14 @@
           {
             "foodname": "감자탕(소)",
             "cost": 27000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           },
           {
             "foodname": "뼈추가",
             "cost": 11000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           }
         ],
         "deliveryFee": 1850,
@@ -106,12 +114,14 @@
           {
             "foodname": "감자탕(소)",
             "cost": 27000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           },
           {
             "foodname": "뼈추가",
             "cost": 11000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           }
         ],
         "deliveryFee": 1850,
@@ -130,12 +140,14 @@
           {
             "foodname": "감자탕(소)",
             "cost": 27000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           },
           {
             "foodname": "뼈추가",
             "cost": 11000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           }
         ],
         "deliveryFee": 1850,
@@ -154,12 +166,14 @@
           {
             "foodname": "감자탕(소)",
             "cost": 27000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           },
           {
             "foodname": "뼈추가",
             "cost": 11000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           }
         ],
         "deliveryFee": 1850,
@@ -178,12 +192,14 @@
           {
             "foodname": "감자탕(소)",
             "cost": 27000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           },
           {
             "foodname": "뼈추가",
             "cost": 11000,
-            "quantity": 1
+            "quantity": 1,
+            "detail": ""
           }
         ],
         "deliveryFee": 1850,
@@ -235,7 +251,11 @@
           "recommend": true
         }
       ],
-      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }, { "title": "빠른 조리" }],
+      "nft": [
+        { "title": "친절한 사장님" },
+        { "title": "우리동네 맛집" },
+        { "title": "빠른 조리" }
+      ],
       "deliveryFee": 990,
       "isOpen": false
     },
