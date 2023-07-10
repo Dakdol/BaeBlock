@@ -227,7 +227,7 @@
           ],
           "price": 5000,
           "recommend": false,
-          "menuImage": "/images/burger.jpg"
+          "menuImage": "/images/cheeseburger.jpg"
         },
         {
           "name": "치즈와퍼",
@@ -239,7 +239,7 @@
           ],
           "price": 8600,
           "recommend": false,
-          "menuImage": "/images/cheeseburger.jpg"
+          "menuImage": "/images/burger.jpg"
         },
         {
           "name": "제로콜라",
@@ -254,11 +254,7 @@
           "menuImage": "/images/zerocoke.png"
         }
       ],
-      "nft": [
-        { "title": "친절한 사장님" },
-        { "title": "우리동네 맛집" },
-        { "title": "빠른 조리" }
-      ],
+      "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }, { "title": "빠른 조리" }],
       "deliveryFee": 990,
       "isOpen": false
     },
