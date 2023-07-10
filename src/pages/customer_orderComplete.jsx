@@ -29,8 +29,8 @@ function CustomerOrderComplete() {
           <div className='text-caption'>라이더와 매장의 사정으로 취소될 수 있어요.</div>
         </div>
 
-        <div className='w-[340px] h-[340px] my-8 border-[1px] rounded-3xl border-darkGray'>
-          <div className='flex px-6 py-4'>
+        <div className='w-[340px] h-[340px] overflow-y-auto scrollbar-hide my-8 border-[1px] rounded-3xl border-darkGray'>
+          <div className='flex'>
             <CustomerReceipt foodTotal={calculateTotalCost()} exchangeRate={exchangeRate} />
           </div>
         </div>
