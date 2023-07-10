@@ -8,9 +8,13 @@ import user from '../images/icon_user.png';
 const BottomBar = () => {
   return (
     <div className='bg-white up-shadow rounded-t-3xl pt-1 w-[386px] h-[60px] flex justify-evenly items-center'>
-      <img className='w-12' src={shop} alt='shop' />
+      <Link to='/customer/main'>
+        <img className='w-12' src={shop} alt='shop' />
+      </Link>
       <img className='w-12' src={list} alt='list' />
-      <img className='w-12' src={rocket} alt='rocket' />
+      <Link to='/customer/ordercomplete'>
+        <img className='w-12' src={rocket} alt='rocket' />
+      </Link>
       <img className='w-12' src={like} alt='like' />
       {/* <Link to="/customer/mypage"> */}
       <img className='w-12' src={user} alt='user' />

@@ -1,7 +1,7 @@
 {
   "customer": [
     {
-      "nickname": "멋쟁이",
+      "nickname": "배불럭제네시스",
       "wallet": "0x3b0A2c32055d72803f12BCa33bb53B3AAC4bEcdB",
       "cus_address": "서울 강남구 선릉로93길 22",
       "orderList": {
@@ -27,7 +27,7 @@
       "BBCoin": 15000
     },
     {
-      "nickname": "멋쟁이",
+      "nickname": "사자처럼",
       "wallet": "0x3b0A2c32055d72803f12BCa33bb53B3AAC4bEcdB",
       "cus_address": "서울 강남구 선릉로93길 22",
       "orderList": {
@@ -53,7 +53,7 @@
       "BBCoin": 15000
     },
     {
-      "nickname": "사자처럼",
+      "nickname": "블체스짱!",
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
@@ -79,7 +79,7 @@
       "BBCoin": 38200
     },
     {
-      "nickname": "사자처럼",
+      "nickname": "제네시스짱!",
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
@@ -105,7 +105,7 @@
       "BBCoin": 38200
     },
     {
-      "nickname": "사자처럼",
+      "nickname": "멋쟁이제네시스",
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
@@ -131,7 +131,7 @@
       "BBCoin": 38200
     },
     {
-      "nickname": "사자처럼",
+      "nickname": "나는배가고파",
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
@@ -157,7 +157,7 @@
       "BBCoin": 38200
     },
     {
-      "nickname": "사자처럼",
+      "nickname": "배고픈아기사자",
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
@@ -183,7 +183,7 @@
       "BBCoin": 38200
     },
     {
-      "nickname": "사자처럼",
+      "nickname": "배고픈열정사자",
       "wallet": "0x0000",
       "cus_address": "서울 성동구 둘레15길 7",
       "orderList": {
