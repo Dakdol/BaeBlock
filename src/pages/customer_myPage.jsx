@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../App";
 import CustomerOrderList from "../components/Customer_OrderList";
 import User from "../db/user.json";
@@ -18,24 +18,34 @@ const CustomerMypage = () => {
 
     return totalCost;
   };
-  console.log(account);
-  console.log(User.customer[0].wallet);
 
   return (
-    <div className="bg-blue-100 min-w-full min-h-full flex flex-col justify-center items-center gap-4">
-      <div className="mt-16 font-bold">나의 주문 목록</div>
-      {User.customer.map((v, i) =>
-        v.wallet.toLowerCase() === account.toLowerCase() ? (
-          <CustomerOrderList
-            key={i}
-            color="bg-deepYellow"
-            storeName={v.orderList.storeName}
-            foodPrice={calculateTotalCost(i)}
-            deliveryFee={v.orderList.deliveryFee}
-            deliveryTip={v.orderList.deliveryTip}
-          />
-        ) : null
-      )}
+    // <div className="bg-white min-w-full min-h-full flex flex-col justify-center  gap-4">
+    //   <div className="mt-16 ml-2 text-subtitle font-bold">나의 주문 목록</div>
+
+    // </div>
+
+    <div className="flex flex-col">
+      <div className="bg-white w-[386px] h-14 absolute z-10"></div>
+      <div className="flex justify-center pt-4">
+        <div className="font-bold text-subtitle max-w-[250px] whitespace-nowrap overflow-ellipsis overflow-hidden absolute z-20">
+          나의 주문 목록
+        </div>
+      </div>
+      <div className="flex flex-col justify-center items-center mt-14">
+        {User.customer.map((v, i) =>
+          v.wallet.toLowerCase() === account.toLowerCase() ? (
+            <CustomerOrderList
+              key={i}
+              color="bg-white"
+              storeName={v.orderList.storeName}
+              foodPrice={calculateTotalCost(i)}
+              deliveryFee={v.orderList.deliveryFee}
+              deliveryTip={v.orderList.deliveryTip}
+            />
+          ) : null
+        )}
+      </div>
     </div>
   );
 };
