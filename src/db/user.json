@@ -226,7 +226,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 5000,
-          "recommend": false
+          "recommend": false,
+          "menuImage": "/images/hamburger.png"
         },
         {
           "name": "치즈와퍼",
@@ -237,7 +238,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 8600,
-          "recommend": false
+          "recommend": false,
+          "menuImage": "/images/cheeseburger.jpg"
         },
         {
           "name": "제로콜라",
@@ -248,7 +250,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 1400,
-          "recommend": true
+          "recommend": true,
+          "menuImage": "/images/zerocoke.png"
         }
       ],
       "nft": [
@@ -274,7 +277,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 4500,
-          "recommend": true
+          "recommend": true,
+          "menuImage": "/images/americano.jpg"
         },
         {
           "name": "라떼",
@@ -285,7 +289,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 4500,
-          "recommend": true
+          "recommend": true,
+          "menuImage": "/images/latte.jpg"
         },
         {
           "name": "카푸치노",
@@ -296,7 +301,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 4500,
-          "recommend": false
+          "recommend": false,
+          "menuImage": "/images/capu.jpg"
         },
         {
           "name": "자몽에이드",
@@ -307,7 +313,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 4500,
-          "recommend": false
+          "recommend": false,
+          "menuImage": "/images/jamong.jpg"
         }
       ],
       "nft": [{ "title": "디저트 맛집" }, { "title": "프랜차이즈" }],
@@ -329,7 +336,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 6900,
-          "recommend": true
+          "recommend": true,
+          "menuImage": "/images/italianbmt.jpg"
         },
         {
           "name": "제로콜라",
@@ -340,7 +348,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 2200,
-          "recommend": true
+          "recommend": true,
+          "menuImage": "/images/zerocoke.png"
         },
         {
           "name": "더블 초코칩 쿠키",
@@ -351,7 +360,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 1300,
-          "recommend": false
+          "recommend": false,
+          "menuImage": "/images/chococookie.png"
         }
       ],
       "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
@@ -373,7 +383,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 8000,
-          "recommend": true
+          "recommend": true,
+          "menuImage": "/images/kalkuksu.jpg"
         },
         {
           "name": "매운 칼국수",
@@ -384,7 +395,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 8000,
-          "recommend": true
+          "recommend": true,
+          "menuImage": "/images/hotkalkuksu.jpg"
         },
         {
           "name": "수제비",
@@ -395,7 +407,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 8000,
-          "recommend": true
+          "recommend": true,
+          "menuImage": "/images/sujebi.jpg"
         }
       ],
       "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
@@ -417,7 +430,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 27000,
-          "recommend": false
+          "recommend": false,
+          "menuImage": "/images/gamjatang.jpg"
         },
         {
           "name": "감자국",
@@ -428,7 +442,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 12000,
-          "recommend": false
+          "recommend": false,
+          "menuImage": "/images/gamjakuk.jpg"
         },
         {
           "name": "뼈추가",
@@ -439,7 +454,8 @@
             { "title": "기타 선택", "options": ["추가"] }
           ],
           "price": 11000,
-          "recommend": true
+          "recommend": true,
+          "menuImage": "/images/bbyeo.jpg"
         }
       ],
       "nft": [{ "title": "친절한 사장님" }, { "title": "우리동네 맛집" }],
