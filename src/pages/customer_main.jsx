@@ -82,7 +82,7 @@ export const CustomerMain = () => {
           {user.store.map((v, i) => (
             <LatestOrderCard
               key={i}
-              img={Hamburger}
+              img={v.menu[0].menuImage}
               storeName={v.storeName}
               menuName={v.menu[0].name}
             />
@@ -101,9 +101,9 @@ export const CustomerMain = () => {
               storeId={i}
               storeName={v.storeName}
               deliveryFee={v.deliveryFee.toLocaleString()}
-              img1={Chick}
-              img2={Hen}
-              img3={Chicken}
+              img1={v.menu[2].menuImage}
+              img2={v.menu[1].menuImage}
+              img3={v.menu[0].menuImage}
             />
           ))}
         </div>
