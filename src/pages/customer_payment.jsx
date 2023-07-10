@@ -9,7 +9,6 @@ export const CustomerPayment = () => {
   const [pay, setPay] = useState(false);
   const [payment, setPayment] = useState(true);
 
-  const [Acustomer, setACustomer] = useState(user.customer[0].orderList);
   const [totalFoodCost, setTotalFoodCost] = useState(0);
   const {
     web3,
@@ -18,6 +17,8 @@ export const CustomerPayment = () => {
     order_c_address,
     exchangeRate,
     getExchangeRate,
+    Acustomer,
+    setACustomer,
   } = useContext(AppContext);
 
   const getTotalFoodCost = () => {

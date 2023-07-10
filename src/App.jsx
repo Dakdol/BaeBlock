@@ -49,6 +49,7 @@ function App() {
   const [account, setAccount] = useState();
   const [exchangeRate, setExchangeRate] = useState(0);
   const [Astore, setAStore] = useState(user.store[0]);
+  const [Acustomer, setACustomer] = useState(user.customer[0].orderList);
 
   const onClickAccount = async () => {
     try {
@@ -142,6 +143,8 @@ function App() {
               Astore,
               exchangeRate,
               getExchangeRate,
+              Acustomer,
+              setACustomer,
             }}
           >
             <BtnNav
