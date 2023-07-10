@@ -11,8 +11,6 @@ export const RiderNewList = () => {
   const [activeBtn, setActiveBtn] = useState();
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
-
-  // 배달 최대 3개 선택 되면 1, 2, 3 동그라미 컬러 변경
   const [selectDelivery, setSelectDelivery] = useState(0);
 
   const onClickPopUp = () => {
