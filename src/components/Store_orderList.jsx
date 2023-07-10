@@ -75,7 +75,7 @@ export const StoreOrderList = () => {
     setShowToast(true);
     setTimeout(() => {
       setShowToast(false);
-    }, 1450);
+    }, 1950);
   };
 
   const calculateTotalCost = (i) => {

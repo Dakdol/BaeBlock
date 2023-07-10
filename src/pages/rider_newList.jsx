@@ -24,7 +24,7 @@ export const RiderNewList = () => {
     setShowToast(true);
     setTimeout(() => {
       setShowToast(false);
-    }, 1450);
+    }, 1950);
   };
 
   const onClickSortByFee = () => {
@@ -75,7 +75,7 @@ export const RiderNewList = () => {
         </div>
       </div>
 
-      <div className='absolute z-20 bg-white w-[386px] flex justify-center items-center gap-16 mt-14'>
+      <div className='absolute z-10 pb-4 bg-white w-[386px] flex justify-center items-center gap-16 mt-14'>
         <div
           className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${
             selectDelivery >= 1 ? 'bg-red-300' : ''
