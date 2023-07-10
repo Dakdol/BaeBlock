@@ -25,7 +25,7 @@ export const PaymentMenu = (props) => {
           <div className={`${counter === 1 ? 'text-gray' : 'text-black'}`} onClick={onClickSub}>
             -
           </div>
-          <div className='pl-1'>{counter}</div>
+          <div>{counter}</div>
           <div onClick={onClickAdd}>+</div>
         </div>
       </div>
