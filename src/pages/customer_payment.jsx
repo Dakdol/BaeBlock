@@ -8,6 +8,7 @@ export const CustomerPayment = () => {
   const navigate = useNavigate();
   const [pay, setPay] = useState(false);
   const [payment, setPayment] = useState(true);
+  const [Tip, setTip] = useState(0);
 
   const [totalFoodCost, setTotalFoodCost] = useState(0);
   const {
@@ -78,6 +79,7 @@ export const CustomerPayment = () => {
   const onClickPayment = () => {
     setPayment(!payment);
   };
+
   return (
     <div className="bg-[#F8F8F8]">
       <div className="bg-white w-[386px] h-14 absolute z-10"></div>
@@ -129,7 +131,7 @@ export const CustomerPayment = () => {
           <PaymentMenu
             key={i}
             foodName={v.foodname}
-            option="곱빼기"
+            option={v.detail}
             price={v.cost.toLocaleString()}
           />
         ))}
@@ -142,6 +144,7 @@ export const CustomerPayment = () => {
           <input
             type="text"
             className="w-28 text-body font-bold text-black border-b-[1.5px] border-darkGray focus: outline-none focus:border-b-[1.5px] focus:border-deepYellow"
+            onChange={(e) => setTip(e.target.value)}
           />
           <div>원</div>
         </div>
@@ -183,9 +186,7 @@ export const CustomerPayment = () => {
         </div>
         <div className="flex justify-between items-center">
           <div className="font-bold text-caption">배달팁</div>
-          <div className="text-caption">
-            {Acustomer.deliveryTip.toLocaleString()}원
-          </div>
+          <div className="text-caption">{Number(Tip).toLocaleString()}원</div>
         </div>
 
         <div className="flex justify-between items-center border-t-[1.5px] pt-4 mt-4 border-lightGray">
@@ -195,7 +196,7 @@ export const CustomerPayment = () => {
               {(
                 totalFoodCost +
                 Acustomer.deliveryFee +
-                Acustomer.deliveryTip
+                Number(Tip)
               ).toLocaleString()}
               원
             </div>
@@ -203,9 +204,7 @@ export const CustomerPayment = () => {
             <div className="font-bold text-subtitle">
               {`${Number(
                 (
-                  (totalFoodCost +
-                    Acustomer.deliveryFee +
-                    Acustomer.deliveryTip) /
+                  (totalFoodCost + Acustomer.deliveryFee + Number(Tip)) /
                   exchangeRate
                 ).toFixed(3)
               )}`}{" "}
@@ -226,7 +225,7 @@ export const CustomerPayment = () => {
                 {(
                   totalFoodCost +
                   Acustomer.deliveryFee +
-                  Acustomer.deliveryTip
+                  Number(Tip)
                 ).toLocaleString()}
                 원
               </div>
@@ -234,9 +233,7 @@ export const CustomerPayment = () => {
               <div className="font-bold text-subtitle">
                 {`${Number(
                   (
-                    (totalFoodCost +
-                      Acustomer.deliveryFee +
-                      Acustomer.deliveryTip) /
+                    (totalFoodCost + Acustomer.deliveryFee + Number(Tip)) /
                     exchangeRate
                   ).toFixed(3)
                 )}`}{" "}
