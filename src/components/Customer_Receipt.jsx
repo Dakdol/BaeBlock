@@ -11,7 +11,7 @@ export const CustomerReceipt = ({ foodTotal, exchangeRate }) => {
         주문번호 <div className='font-thin'>#{order[0].OrderID}</div>
       </div>
       <div className='flex flex-col mt-4'>
-        <div className='flex flex-col gap-1'>
+        <div className='flex flex-col gap-0.5'>
           <div className='flex justify-between'>
             <div className='text-body font-bold'>배달 주소</div>
             <div className='text-body'>{order[0].cus_address}</div>
@@ -31,7 +31,7 @@ export const CustomerReceipt = ({ foodTotal, exchangeRate }) => {
             ))}
           </div>
         </div>
-        <div className='flex flex-col mt-4 text-body font-bold gap-1'>
+        <div className='flex flex-col mt-4 text-body font-bold gap-0.5'>
           <div className='flex justify-between'>
             음식 가격
             <div className='font-normal'>
