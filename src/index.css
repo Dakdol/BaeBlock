@@ -3,16 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "SUIT-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2")
-    format("woff2");
+  font-family: 'SUIT-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2')
+    format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @layer components {
   .menu-style {
-    @apply border-[1px] rounded-[10px];
   }
   .btn-style {
     @apply w-[276px] h-[52px] rounded-[12px] font-bold text-[20px];
@@ -70,6 +69,25 @@
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  .fade-in-out {
+    animation-name: fadeInOut;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(0px);
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-3px);
     }
   }
 }

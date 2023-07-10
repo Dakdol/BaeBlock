@@ -8,6 +8,10 @@ export const RiderNewList = () => {
   const { account, orderContract, order_c_address } = useContext(AppContext);
   const [startDelivery, setStartDelivery] = useState(false);
   const [orders, setOrders] = useState([]);
+  const [activeBtn, setActiveBtn] = useState();
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+
   // 배달 최대 3개 선택 되면 1, 2, 3 동그라미 컬러 변경
   const [selectDelivery, setSelectDelivery] = useState(0);
 
@@ -15,16 +19,28 @@ export const RiderNewList = () => {
     setStartDelivery(!startDelivery);
   };
 
+  const handleShowPopup = (message) => {
+    setPopupMessage(message);
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 1500);
+  };
+
   const onClickSortByFee = () => {
     const sortedOrders = [...orders].sort(
       (a, b) => b.deliveryFee + b.deliveryTip - (a.deliveryFee + a.deliveryTip)
     );
     setOrders(sortedOrders);
+    setActiveBtn('fee');
+    handleShowPopup('배달료순으로 정렬되었습니다.');
   };
 
   const onClickSortByDist = () => {
     const sortedOrders = [...orders].sort((a, b) => a.distance - b.distance);
     setOrders(sortedOrders);
+    setActiveBtn('dist');
+    handleShowPopup('거리순으로 정렬되었습니다.');
   };
 
   useEffect(() => {
@@ -59,7 +75,7 @@ export const RiderNewList = () => {
         </div>
       </div>
 
-      <div className='absolute bg-white w-[386px] flex justify-center items-center gap-16 mt-14'>
+      <div className='absolute z-20 bg-white w-[386px] flex justify-center items-center gap-16 mt-14'>
         <div
           className={`flex justify-center items-center w-8 h-8 rounded-full border-2 border-black ${
             selectDelivery >= 1 ? 'bg-red-300' : ''
@@ -118,24 +134,39 @@ export const RiderNewList = () => {
         </div>
       )}
 
-      <div className='flex justify-center mt-24'>
-        <button className='bg-mint px-4 py-2 rounded-md mr-8 font-bold' onClick={onClickSortByDist}>
+      <div className='flex justify-center mt-24 gap-8'>
+        <button
+          className={`border-darkGray ${
+            activeBtn === 'dist' ? 'bg-deepYellow' : 'bg-lightYellow border-deepYellow border-b-4'
+          } px-4 py-2 rounded-md font-bold`}
+          onClick={onClickSortByDist}>
           거리순
         </button>
-        <button className='bg-deepYellow px-4 py-2 rounded-md font-bold' onClick={onClickSortByFee}>
+        <button
+          className={`border-darkGray ${
+            activeBtn === 'fee' ? 'bg-deepYellow' : 'bg-lightYellow border-deepYellow border-b-4'
+          } px-4 py-2 rounded-md font-bold`}
+          onClick={onClickSortByFee}>
           배달료순
         </button>
       </div>
 
+      {showPopup && (
+        <div className='absolute z-30 mt-[690px] bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in fade-in-out'>
+          {popupMessage}
+        </div>
+      )}
+
       <div className='flex flex-col justify-center items-center mt-4'>
         <RiderOrderList
           orders={orders}
-          setSelectDelivery={setSelectDelivery}
+          activeBtn={activeBtn}
           selectDelivery={selectDelivery}
+          setSelectDelivery={setSelectDelivery}
         />
       </div>
 
-      <div className='sticky bottom-0  mt-[700px] bg-white rounded-b-2xl w-[386px] flex justify-center items-center px-4 py-4 border-t-2 border-lightGray'>
+      <div className='sticky bottom-0 mt-[700px] bg-white rounded-b-2xl w-[386px] flex justify-center items-center px-4 py-4 border-t-2 border-lightGray'>
         <button
           className='bg-red-500 px-4 py-2 rounded-md font-bold text-white'
           onClick={() => {
