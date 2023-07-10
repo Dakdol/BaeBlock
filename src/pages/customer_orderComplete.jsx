@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { useContext, useEffect } from "react";
-import { AppContext } from "../App";
-import { CustomerReceipt } from "../components/Customer_Receipt";
+import { Link } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import { AppContext } from '../App';
+import { CustomerReceipt } from '../components/Customer_Receipt';
 
 function CustomerOrderComplete() {
   const { Acustomer, exchangeRate } = useContext(AppContext);
@@ -18,37 +18,28 @@ function CustomerOrderComplete() {
 
   return (
     <div>
-      <div className="flex flex-col items-center">
-        <div className="w-[350px] mt-[8px] border-[1px] border-darkGray "></div>
-        <div className="flex flex-col items-center gap-6 mt-16">
-          <div className="font-bold text-3xl">주문 접수 완료!</div>
-          <div className="flex flex-col justify-center items-center font-bold text-subtitle">
+      <div className='flex flex-col items-center'>
+        <div className='w-[350px] mt-[8px] border-[1px] border-darkGray '></div>
+        <div className='flex flex-col items-center gap-6 mt-16'>
+          <div className='font-bold text-3xl'>주문 접수 완료!</div>
+          <div className='flex flex-col justify-center items-center font-bold text-subtitle'>
             <div>라이더와 매장이 주문을 수락하면</div>
             <div>차례대로 알려드릴게요!</div>
           </div>
-          <div className="text-caption">
-            라이더와 매장의 사정으로 취소될 수 있어요.
-          </div>
+          <div className='text-caption'>라이더와 매장의 사정으로 취소될 수 있어요.</div>
         </div>
 
-        <div className="w-[340px] h-[340px] my-8 border-[1px] rounded-3xl border-darkGray">
-          <div className="flex justify-center mt-8">
-            <CustomerReceipt
-              foodTotal={calculateTotalCost()}
-              exchangeRate={exchangeRate}
-            />
+        <div className='w-[340px] h-[340px] my-8 border-[1px] rounded-3xl border-darkGray'>
+          <div className='flex px-6 py-4'>
+            <CustomerReceipt foodTotal={calculateTotalCost()} exchangeRate={exchangeRate} />
           </div>
         </div>
-        <div className="flex flex-col items-center mt-4">
-          <Link to="/customer/main">
-            <button className="bg-purple btn-style text-lightGray">
-              주문 내역 보기
-            </button>
+        <div className='flex flex-col items-center mt-4'>
+          <Link to='/customer/main'>
+            <button className='bg-purple btn-style text-lightGray'>주문 내역 보기</button>
           </Link>
-          <Link to="/customer/main">
-            <div className="text-purple text-body mt-4">
-              다른 메뉴도 구경할래!
-            </div>
+          <Link to='/customer/main'>
+            <div className='text-purple text-body mt-4'>다른 메뉴도 구경할래!</div>
           </Link>
         </div>
       </div>
