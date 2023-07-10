@@ -28,7 +28,11 @@ export default function CustomerViewMenu({ scrollPosition }) {
   return (
     <div className="flex flex-col justify-start items-center z-20">
       <div className="min-w-full h-[250px]">
-        <img className="w-full h-full object-cover" src={food} alt="food" />
+        <img
+          className="w-full h-full object-cover"
+          src={store.menu[0].menuImage}
+          alt="food"
+        />
         <div className="relative">
           <div className="absolute left-8 -top-24 flex flex-col justify-center items-center">
             <div className="flex flex-col">
