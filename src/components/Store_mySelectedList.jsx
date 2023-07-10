@@ -30,6 +30,10 @@ export const StoreMySelectedList = () => {
     setToggle({ index: i });
   };
 
+  const onClickCancle = () => {
+    setToggle({ index: null });
+  };
+
   const calculateTotalCost = (i) => {
     const orderList = storeNewOrder[i].orderMenu;
     let totalCost = 0;
@@ -51,11 +55,16 @@ export const StoreMySelectedList = () => {
               <div className='font-bold text-headline'>조리를 완료했어요!</div>
               <div className='text-caption'>고객님께 조리 완료를 알려요!</div>
             </div>
-            <div className='flex justify-center gap-4'>
+            <div className='flex justify-center gap-8'>
+              <button
+                className='bg-lightGray w-20 p-2 rounded-xl font-bold border-[1.5px] border-black'
+                onClick={onClickCancle}>
+                취소
+              </button>
               <button
                 className='bg-lightYellow w-20 p-2 rounded-xl font-bold border-[1.5px] border-black'
                 onClick={() => onClickFinish(toggle.index)}>
-                선택
+                완료
               </button>
             </div>
           </div>
