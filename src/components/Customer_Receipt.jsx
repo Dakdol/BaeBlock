@@ -11,7 +11,7 @@ export const CustomerReceipt = ({ foodTotal, exchangeRate }) => {
         주문번호 <div className='font-thin'>#{order[0].OrderID}</div>
       </div>
       <div className='flex flex-col mt-4'>
-        <div className='flex flex-col'>
+        <div className='flex flex-col gap-1'>
           <div className='flex justify-between'>
             <div className='text-body font-bold'>배달 주소</div>
             <div className='text-body'>{order[0].cus_address}</div>
@@ -23,7 +23,7 @@ export const CustomerReceipt = ({ foodTotal, exchangeRate }) => {
         </div>
         <div className='text-body font-bold mt-4 border-darkGray border-dashed border-b-[1px] pb-4'>
           주문한 음식
-          <div className='mt-1 ml-1 text-body font-thin'>
+          <div className='mt-2 text-body font-thin'>
             {order[0].orderMenu.map((v) => (
               <div className='flex justify-between'>
                 ▪ {v.foodname} <div>{v.quantity} 개</div>
@@ -31,7 +31,7 @@ export const CustomerReceipt = ({ foodTotal, exchangeRate }) => {
             ))}
           </div>
         </div>
-        <div className='flex flex-col mt-4 text-body font-bold'>
+        <div className='flex flex-col mt-4 text-body font-bold gap-1'>
           <div className='flex justify-between'>
             음식 가격
             <div className='font-normal'>
