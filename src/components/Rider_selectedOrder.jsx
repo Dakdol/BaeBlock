@@ -10,9 +10,9 @@ export const RiderSelectedOrder = ({
 }) => {
   return (
     <div
-      className='flex-none w-60 h-[180px] border-[1.5px] rounded-lg px-2 py-2 bg-white border-darkGray mr-4 solid-shadow cursor-pointer hover:border-2 hover:border-black'
+      className='flex-none w-60 h-[180px] border-[1.5px] rounded-lg px-3 py-2 bg-white border-darkGray mr-4 solid-shadow cursor-pointer hover:border-2 hover:border-black'
       onClick={onClickEvent}>
-      <div className='font-bold text-subtitle'>{orderNum}번</div>
+      <div className='font-bold text-subtitle mb-2'>{orderNum}번</div>
       <div className='flex flex-col gap-4 mt-1'>
         <div className='flex flex-col'>
           <div className='text-body overflow-hidden overflow-ellipsis line-clamp-1'>

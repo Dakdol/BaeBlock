@@ -451,7 +451,8 @@
   "rider": [
     {
       "wallet": "0x0000",
-      "deliveryArea": "서울 강남구",
+      "nickName": "누구보다빠르게",
+      "deliveryArea": "서울 성동구",
       "deliveryBy": "오토바이",
       "nft": [{ "title": "빠른 배달" }, { "title": "깔끔한 배달" }],
       "isWork": false,
