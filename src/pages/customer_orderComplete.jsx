@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
 import { CustomerReceipt } from "../components/Customer_Receipt";
 
 function CustomerOrderComplete() {
-  const { Acustomer, exchangeRate } = useContext(AppContext);
+  const { Acustomer, exchangeRate, account, orderContract } =
+    useContext(AppContext);
   const calculateTotalCost = () => {
     let totalCost = 0;
 
@@ -12,9 +13,21 @@ function CustomerOrderComplete() {
       const { cost, quantity } = item;
       totalCost += cost * quantity;
     });
-
     return totalCost;
   };
+
+  const [state, setState] = useState(0); //이 state쓰시면 진행상태 숫자로 받아와서 라이더처럼 보여줄 수 있습니다.
+  const getOrderState = async () => {
+    try {
+      const response = await orderContract.methods.returnOrderState(0).call();
+      setState(state.push(Number(response)));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    getOrderState();
+  });
 
   return (
     <div>

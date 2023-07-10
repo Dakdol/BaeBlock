@@ -61,7 +61,7 @@ const CustomerOrderList = (props) => {
       <div className="min-w-full flex justify-between items-center tracking-tighter px-4">
         <div className="flex flex-col justify-between items-start">
           <div className="flex gap-2 justify-center items-center">
-            <div className="font-bold" style={{ fontSize: "20px" }}>
+            <div className="mt-1 font-bold" style={{ fontSize: "20px" }}>
               {props.storeName}
             </div>
           </div>
@@ -76,7 +76,7 @@ const CustomerOrderList = (props) => {
                 ))}
               </div>
             </div>
-            <div className="flex justify-between text-body font-bold pb-1">
+            <div className="flex justify-between text-body font-bold mb-2">
               <div>총 결제금액</div>
               <div className="ml-2">
                 {(
