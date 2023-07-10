@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { AppContext } from '../App';
 import { NFTChips } from '../components/Nft_Chips';
 import { Link } from 'react-router-dom';
