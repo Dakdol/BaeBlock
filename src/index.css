@@ -12,7 +12,6 @@
 
 @layer components {
   .menu-style {
-    @apply border-[1px] rounded-[10px];
   }
   .btn-style {
     @apply w-[276px] h-[52px] rounded-[12px] font-bold text-[20px];
@@ -70,6 +69,25 @@
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  .fade-in-out {
+    animation-name: fadeInOut;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(0px);
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-3px);
     }
   }
 }
