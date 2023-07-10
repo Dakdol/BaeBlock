@@ -31,7 +31,7 @@ export const CustomerMain = () => {
           <div className='flex justify-between items-center w-full px-4 mt-14 text-caption font-bold'>
             <div>뭐 먹을까? {user.customer[0].nickname}</div>
             <div className='flex justify-center items-center gap-1'>
-              <div>18,200 BB</div>
+              <div>{user.customer[0].BBCoin.toLocaleString()} BB</div>
               <img className='w-7' src={moneyBag} alt='돈주머니' />
             </div>
           </div>

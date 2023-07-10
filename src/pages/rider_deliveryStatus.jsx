@@ -40,6 +40,10 @@ export const RiderDeliveryStatus = () => {
     setToggle({ index: i });
   };
 
+  const onClickCancle = () => {
+    setToggle({ index: null });
+  };
+
   useEffect(() => {
     const getCurrentPosition = () => {
       if (navigator.geolocation) {
@@ -89,11 +93,16 @@ export const RiderDeliveryStatus = () => {
                 <div className='font-bold text-headline'>배달을 완료했어요!</div>
                 <div className='text-caption'>고객님께 배달 완료를 알려요!</div>
               </div>
-              <div className='flex justify-center gap-4'>
+              <div className='flex justify-center gap-8'>
                 <button
-                  className='bg-lightYellow w-24 p-2 rounded-xl font-bold border-[1.5px] border-black'
+                  className='bg-lightGray w-20 p-2 rounded-xl font-bold border-[1.5px] border-black'
+                  onClick={onClickCancle}>
+                  닫기
+                </button>
+                <button
+                  className='bg-lightYellow w-20 p-2 rounded-xl font-bold border-[1.5px] border-black'
                   onClick={() => onClickFinish(toggle.index)}>
-                  완료하기
+                  완료
                 </button>
               </div>
             </div>
