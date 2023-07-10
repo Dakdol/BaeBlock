@@ -51,7 +51,7 @@ export const RiderOrderList = ({ orders, setSelectDelivery, selectDelivery }) =>
               <button
                 className='bg-lightGray w-20 p-2 rounded-xl font-bold border-[1.5px] border-black'
                 onClick={onClickCancle}>
-                취소
+                닫기
               </button>
               <button
                 className='bg-lightYellow w-20 p-2 rounded-xl font-bold border-[1.5px] border-black'
