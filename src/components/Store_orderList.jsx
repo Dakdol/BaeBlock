@@ -13,7 +13,6 @@ export const StoreOrderList = () => {
   const [toastMessage, setToastMessage] = useState('');
 
   const onClickConfirm = async (i, type) => {
-    // 팝업창을 없앰.
     setToggle({ index: null, type: null });
     if (type === 'accept') {
       var order = await orderContract.methods.returnOrder(0).call();
