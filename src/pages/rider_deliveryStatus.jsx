@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import FlipMove from 'react-flip-move';
 import { RiderSelectedOrder } from '../components/Rider_selectedOrder';
 import { useContext } from 'react';
 import { AppContext } from '../App';
 import user from '../db/user.json';
+import { Link } from 'react-router-dom';
 
 const { kakao } = window;
 
 export const RiderDeliveryStatus = () => {
   const [finished, setFinished] = useState(false);
   const [toggle, setToggle] = useState({ index: null });
-
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
   const [currentPosition, setCurrentPosition] = useState();
+  const [remainingOrders, setRemainingOrders] = useState(user.rider[0].orderList.length);
   const { account, orderContract, order_c_address } = useContext(AppContext);
 
   const onClickFinish = async (i) => {
@@ -31,9 +35,19 @@ export const RiderDeliveryStatus = () => {
         ...finished,
         [i]: true,
       });
+      updateRemainingOrders();
+      handleToast('배달을 완료하였습니다.');
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleToast = (message) => {
+    setToastMessage(message);
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 1950);
   };
 
   const onClickToggle = (i) => {
@@ -42,6 +56,10 @@ export const RiderDeliveryStatus = () => {
 
   const onClickCancle = () => {
     setToggle({ index: null });
+  };
+
+  const updateRemainingOrders = () => {
+    setRemainingOrders((prevRemainingOrders) => prevRemainingOrders - 1);
   };
 
   useEffect(() => {
@@ -112,24 +130,48 @@ export const RiderDeliveryStatus = () => {
         <div className='w-full h-[520px] relative overflow-hidden mt-6'>
           <div id='map' className='absolute top-0 left-0 w-full h-full object-cover'></div>
         </div>
+
+        {showToast && (
+          <div className='absolute mt-[500px] z-30 bg-white border-[1.5px] border-darkGray px-4 py-2 rounded-2xl font-bold fade-in-out'>
+            {toastMessage}
+          </div>
+        )}
       </div>
 
-      <div className='flex overflow-x-auto pt-5 pb-2 ml-5 scrollbar-hide'>
+      {remainingOrders === 0 && (
+        <div className='font-bold text-headline flex flex-col items-center mt-8'>
+          현재 배달 중인 목록이 없습니다.
+          <Link to='/rider/newlist'>
+            <button className='bg-purple btn-style text-lightGray mt-8 regist-entry'>
+              배달 리스트 보러가기
+            </button>
+          </Link>
+        </div>
+      )}
+
+      <FlipMove
+        className='flex overflow-x-auto ml-5'
+        duration={400}
+        easing='ease-in-out'
+        enterAnimation='elevatorHorizontal'
+        leaveAnimation='elevatorHorizontal'>
         {user.rider[0].orderList.map((v, i) => {
           if (finished[i]) return null;
           return (
-            <RiderSelectedOrder
-              key={i}
-              orderNum={v.id}
-              stor_address={v.sto_address}
-              cust_address={v.cust_address}
-              time={v.time}
-              distance={v.distance}
-              onClickEvent={() => onClickToggle(i)}
-            />
+            <div className=' pt-5 pb-2 scrollbar-hide'>
+              <RiderSelectedOrder
+                key={i}
+                orderNum={v.id}
+                stor_address={v.sto_address}
+                cust_address={v.cust_address}
+                time={v.time}
+                distance={v.distance}
+                onClickEvent={() => onClickToggle(i)}
+              />
+            </div>
           );
         })}
-      </div>
+      </FlipMove>
     </div>
   );
 };

@@ -87,7 +87,7 @@
     }
     100% {
       opacity: 0;
-      transform: translateY(-3px);
+      transform: translateY(-5px);
     }
   }
 }

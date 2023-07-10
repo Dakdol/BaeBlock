@@ -1,7 +1,5 @@
-import React, { useContext } from 'react';
 import Logo from '../images/BBLogoLightGradient.png';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../App';
 
 export const StoreRegistDetail = () => {
   return (
