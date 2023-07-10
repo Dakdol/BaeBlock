@@ -34,6 +34,10 @@ export const RiderOrderList = ({ orders, setSelectDelivery, selectDelivery }) =>
     setToggle({ index: i });
   };
 
+  const onClickCancle = () => {
+    setToggle({ index: null });
+  };
+
   return (
     <div className='flex flex-col '>
       {toggle.index !== null && (
@@ -43,11 +47,16 @@ export const RiderOrderList = ({ orders, setSelectDelivery, selectDelivery }) =>
               <div className='font-bold text-headline'>주문을 선택할까요?</div>
               <div className='text-caption'>해당 주문을 선택해요!</div>
             </div>
-            <div className='flex justify-center gap-4'>
+            <div className='flex justify-center gap-8'>
+              <button
+                className='bg-lightGray w-20 p-2 rounded-xl font-bold border-[1.5px] border-black'
+                onClick={onClickCancle}>
+                닫기
+              </button>
               <button
                 className='bg-lightYellow w-20 p-2 rounded-xl font-bold border-[1.5px] border-black'
                 onClick={() => onClickSetDelivery(toggle.index)}>
-                완료
+                선택
               </button>
             </div>
           </div>
